@@ -1,0 +1,79 @@
+﻿<!doctype html>
+<head>
+<title>学员登录</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<meta name="format-detection" content="telephone=yes" />
+<meta name="format-detection" content="email=no" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="Keywords"  content="{$org.Org_Keywords}" />
+<meta name="Description" content="{$org.Org_Description}" />
+<link href="Styles/Public.css?tick={$tick}" rel="stylesheet" type="text/css" />
+<link href="Styles/icondefault/icondefault.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="CoreScripts/jquery.js"></script>
+<script type="text/javascript" src="CoreScripts/Extend.js"></script>
+<script type="text/javascript" src="Scripts/AutoLoyout.js"></script>
+<script type="text/javascript" src="CoreScripts/Extend.js"></script>
+<script type="text/javascript" src="CoreScripts/Verify.js"></script>
+<script type="text/javascript" src="Scripts/Public.js"></script>
+<script type="text/javascript" src="Scripts/MessageBox.js"></script>
+<script type="text/javascript" src="Scripts/Entry.js"></script>
+<link href="Styles/Entry.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<vt:include id="inc" file="inc/Header.html" />
+<div loyout="row"  class="context">
+  <div class="contextbox">
+    <div class="loginBody">
+      <div class="loginArea" tag="login">
+        <vt:if var="Student.st_id" value="0" compare=">">
+          <div class="isLoginBox">
+            <div class="loginRow">尊敬的：{$:#.Student.st_name} 您好！ </div>
+            <div class="loginRow">
+              <script type="text/javascript">
+			  window.location.href="selfInfo.ashx";
+              </script>
+            </div>
+          </div>
+          <vt:else/>
+          <form id="student" name="student" method="post">
+            <div class="loginRow">
+              <div class="loginRowRight icondefault">&#xe62f;</div>
+              <div class="loginRowLeft">
+                <input name="tbAcc" type="number"  class="textbox width" nullable="false"  group="login" />
+              </div>
+            </div>
+            <div class="loginRow">
+                <div class="loginRowRight icondefault">&#xe692;</div>
+              <div class="loginRowLeft">
+                <input name="tbPw" type="password"  class="textbox width" nullable="false"  group="login" />
+              </div>
+            </div>
+            <!--<div class="loginRow">
+              <div class="loginRowRight"> 验证码：</div>
+              <div class="loginRowLeft">
+                <input name="from" type="hidden" value="{$from}" />
+                <input name="tbCode" type="number"  class="textbox verify" size="8" nullable="false" lenlimit="4-4" datatype="number"   group="login" />
+                <img src="/Utility/codeimg.aspx?name=studentvcode" class="verifyCode"/> </div>
+            </div> -->
+            <div class="loginRow">
+              <label>
+              <input type="checkbox" name="cbSign"/>
+              <input name="signnum" type="hidden" value="30" />
+              一月内免登录 </label>
+              &nbsp;&nbsp; <a href="SelfPwFind.ashx">忘记密码</a> </div>
+            <div class="loginRow btnBar">
+              <input type="submit" name="btnSubmit" id="btnSubmit" value="登&nbsp;&nbsp;录"  verify="true"  group="login" class="btnLogin"/>
+              <a href="Register.ashx" class="aRegister">注&nbsp;&nbsp;册</a> </div>
+            <div class="loginRow btnBar"> <a href="Tryout.ashx?from={$from}" class="aTryout">暂时试用</a> </div>
+          </form>
+        </vt:if>
+      </div>
+    </div>
+  </div>
+</div>
+<vt:include id="inc" file="inc/footer.html" />
+</body>
+</html>

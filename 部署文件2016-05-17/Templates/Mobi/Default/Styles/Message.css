@@ -1,0 +1,50 @@
+﻿@charset "utf-8";
+#btnSubmit {
+	line-height: 30px;
+	text-align: center;
+	height: 30px;
+	width: 120px;
+	border-top-style: none;
+	border-right-style: none;
+	border-bottom-style: none;
+	border-left-style: none;
+	float: right;
+	background-color: #339900;
+	font-family: "微软雅黑", "黑体", "Simplified Arabic Fixed";
+	font-weight: bold;
+	color: #FFFFFF;
+	font-size: 16px;
+	margin-right: 10px;
+}row {
+	line-height: 40px;
+}
+#addnote .textbox {
+	border: 1px solid #999999;
+}
+.context {
+	width: 99%;
+	height: 100px;
+	border: 1px solid #CCCCCC;
+}
+.textbox {
+	font-size: 18px;
+	line-height: 30px;
+	height: 30px;
+	border: 1px solid #CCCCCC;
+	text-indent: 10px;
+	opacity:0.8;
+	filter:alpha(opacity=80);
+	color: #333333;
+	width: 98%;
+	float: right;
+}
+.tit {
+	font-family: "黑体", "微软雅黑";
+	line-height: 30px;
+	text-align: right;
+}
+
+
+.width {
+	width: 218px;
+}

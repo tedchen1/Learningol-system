@@ -1,0 +1,39 @@
+﻿<div id="header">
+  <div id="headerInner">
+    <vt:if var="org.org_logo" value="" compare="!="><a href="/"> <img src="{$orgPath}{$org.org_logo}" class="logo" /></a> </vt:if>
+    <div class="rightBox">
+      <div class="rightBar">
+       
+        <div class="menu teahcer">
+          <vt:if var="Teacher.th_id" value="0" compare=">"> <a href="/Teacher/panel.ashx">
+           <vt:if var="Teacher.th_name" value="" compare="=">（暂无姓名） <vt:else />{$Teacher.th_name} </vt:if>
+          </a>
+            <vt:else/>
+            <a href="/Teacher/index.ashx">我想授课</a> </vt:if>
+        </div>
+        <div class="menu student">
+          <vt:if var="Student.st_id" value="0" compare=">"> <a href="/student/panel.ashx">
+          <vt:if var="Student.st_name" value="" compare="=">（暂无姓名） <vt:else />{$Student.st_name} </vt:if>
+         </a>
+            <vt:else/>
+            <a href="/student/index.ashx">我要学习</a> </vt:if>
+        </div>
+       <div class="menu teahcer"><a href="/">首 页</a></div>
+       
+      </div>
+    </div>
+  </div>
+  <div class="menubBar">
+    <dl overClass="overMenu">
+    <dd class="courseBtn" hover="depart"> <a href="/Courses.ashx">课 程 中 心</a> </dd>
+    <!-- <dd><a href="/news.ashx" >新闻资讯</a> </dd>--><!-- <dd> <a href="/">首 页</a> </dd> -->
+      <dd><a href="/teacher/List.ashx">师资力量</a> </dd>
+      <dd><a href="/Training.ashx" >试题练习</a> </dd>
+      <dd><a href="/test.ashx" >模拟测试</a> </dd>
+      <dd><a href="/exam.ashx" >在线考试</a> </dd>
+     
+        <dd class="menu phone"  type="phone"><a href="/mobile/default.ashx" ><span class="iconphone" style="font-size:20px">&#xe610;</span>手机端</a></dd>
+          </dl>
+  </div>
+</div>
+ <div id="qrcode" type="phone" style="display:none"><img src="{$orgpath}qr_{$org.Org_TwoDomain}.png"/><div>手机扫描二维码</div></div>

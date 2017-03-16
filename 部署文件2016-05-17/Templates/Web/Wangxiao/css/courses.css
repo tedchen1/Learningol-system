@@ -1,0 +1,201 @@
+﻿@charset "utf-8";
+body {
+	background-color: #F7F7F7;
+}
+#bodyTop {
+	background-position: center 0px; width: 100%; height: 256px; background-image: url("../Images/course-banner.jpg"); background-repeat: no-repeat;
+}
+#TitleBar {
+	background-position: 0px 1px; border-style: none none solid; height: 40px; color: rgb(0, 0, 0); line-height: 35px; text-indent: 45px; font-family: "微软雅黑", "黑体", "Simplified Arabic Fixed"; font-size: 16px; font-weight: bold; margin-top: 25px; margin-bottom: 20px; border-bottom-color: rgb(204, 204, 204); border-bottom-width: 1px; background-image: url("../Images/icon1.png"); background-repeat: no-repeat;
+}
+#subject {
+	display:table;
+	width:100%;
+}
+#Context #selectArea {
+	border-style: none none solid; padding-bottom: 0px; margin-bottom: 0px; border-bottom-color: rgb(204, 204, 204); border-bottom-width: 0px;
+	display:table;
+}
+.selectBar {
+	display: table;
+}
+.selectLeft {
+	width: 100px; height: 30px; text-align: center; line-height: 30px; font-family: "微软雅黑", "黑体", "Simplified Arabic Fixed"; font-size: 15px; float: left;
+}
+.selectRight {
+	width: 869px; float: right;
+	min-height:30px;
+	display:table;
+}
+#subject .subjectItem {
+	width: auto; height: 30px; line-height: 30px; margin-right: 15px; float: left;
+}
+#subject .subjectItem a {
+	color: rgb(51, 51, 51); font-family: "微软雅黑", "黑体", "Simplified Arabic Fixed"; font-size: 14px;
+}
+#Selected .selectedItem {
+	border: 1px solid rgb(204, 204, 204); width: auto; height: 24px; line-height: 24px; padding-right: 5px; padding-left: 8px; font-family: "微软雅黑", "黑体", "Simplified Arabic Fixed"; font-size: 15px; margin-top: 3px; float: left; white-space: nowrap;
+}
+#Selected .selectedItemOver {
+	border: 1px solid rgb(255, 0, 0);
+}
+#Selected .selectedItem .name {
+	color: rgb(255, 0, 0); padding-right: 8px; float: left;
+}
+#Selected .selectedItem .close {
+	background-position: -209px -237px; width: 8px; height: 8px; margin-top: 8px; float: left; cursor: pointer; background-image: url("../Images/icon-1.png"); background-repeat: no-repeat;
+}
+#Selected .selectedItem .closeOver {
+	background-position: -217px -237px; cursor: pointer; background-image: url("../Images/icon-1.png"); background-repeat: no-repeat;
+}
+#selectArea #SelectedBar {
+	height: 30px;
+}
+.courseList {
+	width: 980px; height: auto; overflow: hidden; margin-right: auto; margin-bottom: 30px; margin-left: auto;
+}
+#noContext {
+	font-family: "黑体", "微软雅黑";
+	font-size: 18px;
+	line-height: 35px;
+	text-align: center;
+	margin-top: 20px;
+	color: #FF3300;
+}
+
+.courseList .courseListInner {
+	width: 998px;
+	margin-left:-15px;
+}
+.courseList .item {
+	border: 3px solid rgb(255, 255, 255); width: 200px; height: 123px; text-align: center; overflow: hidden; margin-right: 52px; margin-bottom: 20px; float: left;
+}
+.courseList .courseOver {
+	border: 3px solid rgb(204, 204, 204);
+}
+.courseList .courseOver .itemName a {
+	color: rgb(255, 255, 255);
+}
+.courseList .item a {
+	color: rgb(255, 255, 255); line-height: 30px; font-size: 15px; display: block;
+}
+.courseList .item img {
+	width: 200px; height: 123px;
+}
+.courseList .item .itemMark {
+	background: rgb(0, 0, 0); top: -45px; width: 200px; height: 123px; text-align: left; color: rgb(255, 255, 255); line-height: 35px; overflow: hidden; font-family: "微软雅黑"; font-size: 14px; filter: alpha(opacity=50); position: relative; opacity: 0.5; -moz-opacity: 0.5;
+}
+.courseList .item .itemInfo {
+	top: -168px; width: 200px; height: 123px; text-align: left; color: rgb(255, 255, 255); line-height: 35px; overflow: hidden; font-family: "微软雅黑"; font-size: 14px; position: relative; z-index: 10;
+}
+.courseList .item .itemInfo a {
+	height: 45px; line-height: 45px; text-indent: 10px; font-family: "微软雅黑", "黑体", "Simplified Arabic Fixed"; font-size: 18px; display: block;overflow: hidden;
+}
+.courseList .item .itemDetails {
+	width: 190px; height: 78px; line-height: 20px; font-family: "微软雅黑", "黑体", "Simplified Arabic Fixed"; font-size: 14px; margin-left: 10px; display: block;
+}
+.category_v1
+{
+	font-family: microsoft yahei;
+	padding-top: 5px;
+	margin-bottom: 0px;
+    border:1px solid #dddddd;
+
+	background-color: #ffffff;
+}
+.category_v1 .cat_main
+{
+	width: 121px;
+	text-align: center;
+	float: left;
+}
+.category_v1 .cat_main .s1
+{
+	height: 52px;
+	color: #676767;
+	line-height: 52px;
+	font-size: 15px;
+	display: block;
+}
+.category_v1 ul
+{
+	width: 1039px;
+	text-align: center;
+	padding-left: 0px;
+	float: left;
+}
+.category_v1 .ul_01
+{
+	padding-top: 0px;
+	padding-left: 0px;
+	font-size: 15px;
+	line-height: 52px;
+}
+.category_v1 li
+{
+	color: #000000; float: left; padding-right: 60px; font-size: 15px;	display: inline-block;white-space: nowrap;
+
+}
+.category_v1 li a:link
+{
+	color: #000000;
+}
+.category_v1 li a:hover
+{
+	color: #F39704;
+}
+
+.category_v2
+{
+	font-family: microsoft yahei;
+	margin-top: 0px;
+	margin-bottom: 0px;
+    border-top:0px solid #dddddd;    
+	border-right:1px solid #dddddd;
+    border-left:1px solid #dddddd;
+    border-bottom:1px solid #dddddd;
+
+	height:52px;
+	background-color: #ffffff;
+}
+.category_v2 .cat_main
+{
+	width: 121px;
+	text-align: center;
+	float: left;
+}
+.category_v2 .cat_main .s1
+{
+	height: 52px;
+	color: #676767;
+	line-height: 52px;
+	font-size: 15px;
+	display: block;
+}
+.category_v2 ul
+{
+	width: 1039px;
+	text-align: center;
+	padding-left: 0px;
+	float: left;
+}
+.category_v2 .ul_01
+{
+	padding-top: 0px;
+	padding-left: 0px;
+	font-size: 15px;
+	line-height: 52px;
+}
+.category_v2 li
+{
+	color: #000000; float: left; padding-right: 60px; font-size: 15px;	display: inline-block;white-space: nowrap;
+
+}
+.category_v2 li a:link
+{
+	color: #000000;
+}
+.category_v2 li a:hover
+{
+	color: #F39704;
+}

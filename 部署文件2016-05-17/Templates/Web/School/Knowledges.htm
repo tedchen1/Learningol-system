@@ -1,0 +1,34 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>知识库 - {$org.org_platformname}</title>
+<meta name="Keywords"  content="{$org.Org_Keywords}" />
+<meta name="Description" content="{$org.Org_Description}" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="Styles/public.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="CoreScripts/jquery.js"></script>
+<script type="text/javascript" src="CoreScripts/Extend.js"></script>
+<script type="text/javascript" src="CoreScripts/Tree.js"></script>
+<script type="text/javascript" src="CoreScripts/Node.js"></script>
+<script type="text/javascript" src="CoreScripts/easydrag.js"></script>
+<script type="text/javascript" src="CoreScripts/PageBox.js"></script>
+<script type="text/javascript" src="Scripts/Knowledges.js"></script>
+<script type="text/javascript" src="Scripts/Public.js"></script>
+<link href="Styles/Knowledges.css" rel="stylesheet" type="text/css" />
+
+<link href="Styles/PageBox.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<vt:include id="inc" file="inc/Header.html" />
+<vt:include id="inc" file="inc/Depart.html" />
+<div id="bodyTop">&nbsp;</div>
+<div id="Context">
+
+<div id="left">
+<div class="sortTitle">知识库分类</div>
+ <div id="leftInnert">{$tree}</div></div>
+<div id="right"><iframe id="frame" targetFile="/KnowledgesList.ashx" src="/KnowledgesList.ashx" width="720" height="1000" marginwidth="0" marginheight="0" scrolling="auto" frameborder="0"></iframe></div>
+</div>
+<vt:include id="inc" file="inc/footer.html" />
+</body>
+</html>

@@ -1,0 +1,511 @@
+﻿@charset "utf-8";
+
+* {
+	-webkit-text-size-adjust: none;
+	margin: 0;
+	padding: 0;
+	border: none;
+	-webkit-tap-highlight-color: rgba(0,0,0,0);
+	font-size: 12px;	
+}
+body {
+	margin: 0px;
+	padding: 0px;
+}
+body {
+	font-size: 13px;
+}
+a {
+	font-size: 13px;
+}
+p {
+	font-size: 13px;
+}
+div {
+	font-size: 13px;
+}
+td {
+	font-size: 13px;
+}
+a {
+	text-decoration: none;
+}
+a:hover {
+	text-decoration: underline;
+}
+img {
+	border-top-color: currentColor;
+	border-right-color: currentColor;
+	border-bottom-color: currentColor;
+	border-left-color: currentColor;
+	border-top-width: 0px;
+	border-right-width: 0px;
+	border-bottom-width: 0px;
+	border-left-width: 0px;
+	border-top-style: none;
+	border-right-style: none;
+	border-bottom-style: none;
+	border-left-style: none;
+}
+h1, h2, h3, h4, h5, h6 {
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	margin-left: 0px;
+}
+ul, ol {
+	padding-top: 0px;
+	padding-right: 0px;
+	padding-bottom: 0px;
+	padding-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	margin-left: 0px;
+	list-style-type: none;
+	list-style-position: outside;
+	list-style-image: none;
+}
+.header .logo {
+	float: left;
+	margin-top: 2px;
+	max-height: 75px;
+	max-width: 300px;
+}
+.VerifyShow_Box {
+	border: 1px solid rgb(255, 0, 0);
+	color: rgb(255, 0, 0);
+	line-height: 30px;
+	text-indent: 10px;
+	background-color: rgb(255, 255, 204);
+}
+.icoMore {
+	background-position: -86px -180px;
+	width: 18px;
+	height: 18px;
+	display: block;
+	background-image: url("../Images/icon-1.png");
+	background-repeat: no-repeat;
+}
+#header {
+	padding-top: 20px;
+	background-color: #ffffff;
+}
+#qrcode {
+	height: 200px;
+	width: 180px;
+	position: absolute;
+	z-index: 2000;
+	text-align: center;
+	background-color: #FFFFFF;
+	border-top-width: 1px;
+	border-right-width: 1px;
+	border-bottom-width: 1px;
+	border-left-width: 1px;
+	border-top-style: none;
+	border-right-style: solid;
+	border-bottom-style: solid;
+	border-left-style: solid;
+	border-top-color: #CCCCCC;
+	border-right-color: #CCCCCC;
+	border-bottom-color: #CCCCCC;
+	border-left-color: #CCCCCC;
+	color: #006633;
+}
+#qrcode img {
+	height: 160px;
+	width: 160px;
+	margin-top: 10px;
+	margin-left: 0px;
+}
+#headerInner {
+	width: 980px;
+	height: 70px;
+	text-align: left;
+	margin-right: auto;
+	margin-bottom: 0px;
+	margin-left: auto;
+	background-color: rgb(255, 255, 255);
+}
+#header .logo1 {
+	height: 80px;
+	margin-top: 2px;
+	float: left;
+}
+#header .rightBox {
+	width: 580px;
+	text-align: right;
+	margin-top: 5px;
+	margin-right: 5px;
+	float: right;
+}
+#header .rightBox .rightBar {
+	width: 400px;
+	height: 25px;
+	float: right;
+}
+#header .rightBox .rightBar .menu {
+	width: 85px;
+	height: 20px;
+	text-align: center;
+	line-height: 20px;
+	float: right;
+}
+#header .rightBox .rightBar .menu a {
+	color: rgb(255, 255, 255);
+	letter-spacing: 2px;
+}
+#header .rightBox .rightBar .teahcer {
+	width: 100px;
+	height: 25px;
+	color: rgb(255, 255, 255);
+	line-height: 25px;
+	font-family: "微软雅黑", "黑体", "Simplified Arabic Fixed";
+	margin-left: 10px;
+	background-color: rgb(0, 116, 203);
+}
+#header .rightBox .rightBar .student {
+	width: 100px;
+	height: 25px;
+	color: rgb(255, 255, 255);
+	line-height: 25px;
+	font-family: "微软雅黑", "黑体", "Simplified Arabic Fixed";
+	margin-left: 10px;
+	background-color: rgb(255, 144, 54);
+}
+#header .rightBox .rightBar .phone {
+	width: 100px;
+	height: 25px;
+	color: rgb(255, 255, 255);
+	line-height: 25px;
+	font-family: "微软雅黑", "黑体", "Simplified Arabic Fixed";
+	margin-left: 10px;
+	cursor: pointer;
+	background-color: rgb(0, 116, 203);
+}
+.menubBar {
+	width: 100%;
+	height: 45px;
+	line-height: 45px;
+	margin-top: 20px;
+	background-color: rgb(255, 88, 66);
+}
+.menubBar dl {
+	margin: 0px auto;
+	padding: 0px;
+	width: 980px;
+	height: 45px;
+}
+.menubBar dl dd {
+	margin: 0px;
+	padding: 0px;
+	width: 120px;
+	height: 45px;
+	text-align: center;
+	line-height: 45px;
+	font-size: 15px;
+	font-weight: bold;
+	float: left;
+}
+.menubBar dl dd a {
+	width: 100%;
+	height: 45px;
+	color: rgb(255, 255, 255);
+	line-height: 45px;
+	text-indent: 5px;
+	letter-spacing: 5px;
+	font-family: "微软雅黑", "黑体", "Simplified Arabic Fixed";
+	font-size: 16px;
+	display: block;
+}
+.menubBar dl dd a:hover {
+	text-decoration: none;
+}
+.menubBar dd.overMenu {
+	background-color: rgb(242, 73, 51);
+}
+.menubBar dd.overMenu a {
+}
+.menubBar dd.curr {
+	background-color: rgb(242, 73, 51);
+}
+.menubBar dd.curr a {
+	color: rgb(255, 255, 204);
+}
+#header .rightTxt {
+	width: 580px;
+	text-align: right;
+	line-height: 25px;
+	font-size: 24px;
+	margin-top: 10px;
+	float: right;
+}
+#top_xian_bg {
+	width: 100%;
+	height: 3px;
+	background: url(../images/top_xian_bg.jpg) repeat-x;
+}
+#Context {
+	margin: 0px auto;
+	width: 980px;
+	text-align: left;
+	display: table;
+}
+#footer {
+	width: 100%;
+	height: 200px;
+	text-align: center;
+	color: rgb(204, 204, 204);
+	margin-top: 50px;
+	display: table;
+	background-color: rgb(51, 51, 51);
+}
+.footerMenu {
+	margin: 0px auto;
+	padding: 0px;
+	height: 30px;
+	text-align: center;
+	background-color: rgb(204, 204, 204);
+}
+.footerMenu a {
+	color: #333333;
+	line-height: 30px;
+	font-size: 13px;
+	text-decoration: none;
+	margin-right: 20px;
+}
+#footer #footerConext {
+	margin: 40px auto;
+	width: 980px;
+	text-align: center;
+	color: #ffffff;
+	line-height: 30px;
+	font-size: 14px;
+}
+#pagerBar {
+	width: auto;
+	height: 40px;
+	margin-right: auto;
+	margin-left: auto;
+	display: table;
+}
+.pagerBtn {
+	height: 40px;
+	text-align: center;
+	line-height: 40px;
+	letter-spacing: 2px;
+	float: left;
+	background-color: #FFFFFF;
+}
+.pagerBtn a {
+	height: 40px;
+	color: rgb(51, 51, 51);
+	line-height: 40px;
+	font-size: 15px;
+	display: block;
+}
+.pagerFirst {
+	border: 1px solid rgb(204, 204, 204);
+	width: 60px;
+}
+.pagerLast {
+	border: 1px solid rgb(204, 204, 204);
+	width: 60px;
+}
+.pagerPrev {
+	border-width: 1px;
+	border-style: solid solid solid none;
+	border-color: rgb(204, 204, 204);
+	width: 80px;
+}
+.pagerIndex {
+	border-width: 1px;
+	border-style: solid solid solid none;
+	border-color: rgb(204, 204, 204);
+	width: 40px;
+}
+.pagerNext {
+	border-width: 1px;
+	border-style: solid none;
+	border-color: rgb(204, 204, 204);
+	width: 80px;
+}
+.pagerCurr {
+	background-color: rgb(204, 204, 204);
+}
+.hotkecheng {
+	width: 998px;
+	margin-top: 10px;
+	margin-right: auto;
+	margin-bottom: 0px;
+	margin-left: -15px;
+}
+.hotkecheng-list {
+	margin-left: 17px;
+	margin-right: 0px;
+	float: left;
+}
+.hotkecheng-list .promote-li {
+	width: 230px;
+	margin-bottom: 20px;
+	padding-bottom: 10px;
+	margin-left: 0px;
+	background-color: #FFFFFF;
+	border: #DDDDDD 1px solid;
+	padding-bottom: 25px;
+}
+.clearfix::before, .clearfix::after {
+	line-height: 0;
+	display: table;
+	content: "";
+}
+.clearfix::after {
+	clear: both;
+}
+.hot-left {
+	float: left;
+	font-size: 12px;
+	color: #666666;
+}
+.hot-right {
+	float: right;
+	font-size: 12px;
+	color: #666666;
+	padding-right: 5px;
+}
+.count {
+	padding-top: 5px;
+	padding-left: 18px;
+	background: url(../images/sl.gif) 0 4px no-repeat;
+}
+.jiaoshi {
+	margin-top: 5px;
+	margin-bottom: 0px;
+	padding-left: 5px;
+	line-height: 24px;
+	color: #333;
+	font-size: 12px;
+}
+.jiaoshi a {
+	color: #333333;
+}
+.jiaoshi a hover {
+	color: #333333;
+}
+.ellipsis {
+	word-break: normal;
+	word-wrap: normal;
+	display: block;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+.wrapper {
+	width: 980px;
+	margin-top: 0px;
+	margin-right: auto;
+	margin-bottom: 0px;
+	margin-left: auto;
+}
+.header {
+	height: 72px;
+	overflow: hidden;
+	min-width: 980px;
+	background-image: none;
+	background-attachment: scroll;
+	background-repeat: repeat;
+	background-position-x: 0%;
+	background-position-y: 0%;
+	background-size: auto;
+	background-origin: padding-box;
+	background-clip: border-box;
+	background-color: #FFF;
+}
+.logo {
+	margin-right: 0px;
+	float: left;
+	position: relative;
+}
+.logo a {
+	position: relative;
+	z-index: 2;
+}
+.htnav {
+	height: 72px;
+	line-height: 72px;
+	font-family: "微软雅黑";
+	font-size: 17px;
+	margin-top: 0px;
+	margin-right: 2px;
+	margin-bottom: 0px;
+	margin-left: 38px;
+	float: left;
+}
+.htnav li {
+	float: left;
+	font-size: 17px;
+}
+.htnav li a {
+	height: 72px;
+	font-size: 17px;
+	color: #666666;
+	line-height: 72px;
+	padding-top: 0px;
+	padding-right: 8px;
+	padding-bottom: 0px;
+	padding-left: 8px;
+	text-decoration: none;
+	display: block;
+	font-family: "Microsoft Yahei", "微软雅黑", Tahoma, Arial, Helvetica, STHeiti;
+	letter-spacing: 0.2em;
+}
+.htnav li a:hover {
+	color: #EF9904;
+	font-size: 17px;
+	text-decoration: none;
+}
+.htnav .curr {
+	color: #EF9904;
+	font-size: 17px;
+	text-decoration: none;
+}
+.htnav .curr a {
+	text-decoration: none;
+}
+.header .shouke {
+	float: right;
+	margin-left: 11px;
+	margin-top: 19px;
+	width: 100px;
+	height: 34px;
+	color: #ffffff;
+	line-height: 34px;
+	font-family: "微软雅黑";
+	font-size: 16px;
+	text-align: center;
+	background-color: #0D7CCB;
+}
+.header .student {
+	float: right;
+	margin-top: 19px;
+	width: 100px;
+	height: 34px;
+	color: #ffffff;
+	line-height: 34px;
+	font-family: "微软雅黑";
+	font-size: 16px;
+	text-align: center;
+	background-color: #F29804;
+}
+.shouke a, .student a {
+	-webkit-text-size-adjust: none;
+	margin: 0;
+	padding: 0;
+	border: none;
+	color: #ffffff;
+	line-height: 34px;
+	-webkit-tap-highlight-color: rgba(0,0,0,0);
+	font-size: 16px;
+	font-family: "Microsoft YaHei", "微软雅黑", "MicrosoftJhengHei", 华文细黑, STHeiti, MingLi;
+	font-weight: bold;
+}

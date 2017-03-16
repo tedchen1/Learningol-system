@@ -1,0 +1,74 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
+<!-- saved from url=(0025)http://exam.weisha100.cn/ -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<HTML 
+xmlns="http://www.w3.org/1999/xhtml">
+<HEAD>
+<TITLE>教师-{$org.org_platformname}</TITLE>
+<META content="text/html; charset=utf-8" http-equiv="Content-Type">
+<meta name="Keywords"  content="{$org.Org_Keywords}" />
+<meta name="Description" content="{$org.Org_Description}" />
+<link href="../styles/public.css" rel="stylesheet" type="text/css" />
+<LINK rel="stylesheet" type="text/css" href="../css/public.css">
+<LINK rel="stylesheet" type="text/css" href="../css/default.css">
+<LINK rel="stylesheet" type="text/css" href="../css/detail.css">
+<script type="text/javascript" src="../CoreScripts/jquery.js"></script>
+<script type="text/javascript" src="../CoreScripts/Extend.js"></script>
+<script type="text/javascript" src="../Scripts/public.js"></script>
+<SCRIPT type="text/javascript" src="../js/courses.js"></SCRIPT>
+<META name="GENERATOR" content="MSHTML 9.00.8112.16723">
+</HEAD>
+<BODY>
+<vt:include id="inc" file="../inc/Header.html" />
+<DIV id="top_xian_bg"></DIV>
+<!--第一行 -->
+<DIV id="bodyTop">&nbsp;</DIV>
+<DIV id="Context">
+  <DIV id="Navi"> <A href="/teacher/list.ashx">全部教师</A> <span>&gt;</span> {$th.th_name} </DIV>
+  <!--教师图片等主要信息 -->
+  <!--课程，履历等 -->
+  <DIV class="teacherBox">
+    <DIV id="teacherTop">
+      <DIV class="photo"><img src="{$th.th_photo}" width="124" height="157" /> </DIV>
+      <DIV class="details">
+        <DIV class="infoFirst">
+          <DIV class="name"> {$th.th_name} </DIV>
+          <DIV class="title">{$:#.th.Ths_Name}</DIV>
+        </DIV>
+        <DIV class="intro">{$th.th_signature}</DIV>
+      </DIV>
+    </DIV>
+    <DIV class="teacherLeft">
+      <!--当前老师的课程 -->
+      <DIV class="courseBox">
+        <DIV class="courseTitle">
+          <DIV class="title">教师简介</DIV>
+        </DIV>
+        <DIV class="info">{$:#.th.th_intro}</DIV>
+      </DIV>
+      <DIV class="courseBox">
+        <DIV class="courseTitle">
+          <DIV class="title">相关课程</DIV>
+        </DIV>
+        <DIV class="info">
+          <div class="xgkecheng">
+            <vt:if var="courses.length" value="0" compare="=">
+              <div class="noCourse">暂时没有发布课程</div>
+            </vt:if>
+            <vt:foreach from="$#.courses" item="c" index="i">
+              <div class="xgkecheng-list ">
+                <div class="promote-li"> <a href="/course.ashx?id={$:#.c.cou_id}"> <img width="230" height="130" src="{$:#.c.cou_logosmall}" /> </a>
+                  <div class="ellipsis jiaoshi"> <a href="/course.ashx?id={$:#.c.cou_id}">{$:#.c.cou_name} </a> </div>
+                  <div class="font-size-12 "> <span class="xg-left count">{$:#.c.cou_viewNum}</span> <span class="xg-right">{$:#.c.sbj_name}</span> </div>
+                </div>
+              </div>
+            </vt:foreach>
+          </div>
+        </DIV>
+      </DIV>
+    </DIV>
+  </DIV>
+</DIV>
+<vt:include id="inc" file="../inc/footer.html" />
+</BODY>
+</HTML>

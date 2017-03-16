@@ -1,0 +1,74 @@
+﻿<!doctype html>
+<head>
+<title>购买学习课程</title>
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<meta name="format-detection" content="telephone=yes" />
+<meta name="format-detection" content="email=no" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="Keywords"  content="{$org.Org_Keywords}" />
+<meta name="Description" content="{$org.Org_Description}" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script type="text/javascript" src="CoreScripts/jquery.js"></script>
+<script type="text/javascript" src="CoreScripts/Extend.js"></script>
+<script type="text/javascript" src="Scripts/AutoLoyout.js"></script>
+<script type="text/javascript" src="Scripts/Public.js"></script>
+<script type="text/javascript" src="Scripts/MessageBox.js"></script>
+<script type="text/javascript" src="Scripts/BuyCourse.js"></script>
+<link rel="stylesheet" href="Styles/iconfont.css"/>
+<link rel="stylesheet" href="Styles/moneyico/moneyico.css">
+<link href="Styles/Public.css?tick={$tick}" rel="stylesheet" type="text/css" />
+<link href="Styles/BuyCourse.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<vt:include id="inc" file="inc/Header.html" />
+<div loyout="row"  class="context">
+  <div class="infoTop">
+    <div class="subjectBox">所属专业：{$subject.Sbj_Name}</div>
+    <div class="courseBox">《{$course.Cou_Name}》</div>
+    <div class="courseInfo">章节{$olCount}个/试题{$quesCount}道</div>
+  </div>
+  <vt:if var="course.Cou_IsFree" value="True" compare="=">
+    <div class="freeBox"><span class="moneyico">&#xe83c;</span>当前课程免费</div>
+    <vt:if var="Student.st_id" value="" compare="!=">
+      <!-- 账户余额 -->
+      <div class="moneyBox">
+        <div class="veriTxt">账户余额：</div>
+        <span class="money">{$Student.st_money}</span>元 <a href="MoneyIncom.ashx">充值</a></div>
+    </vt:if>
+    <div class="FreeBtnBox"> <a href="Tryout.ashx?from={$from}&couid={$course.Cou_ID}" id="btnStudy" class="btnStudy">开始学习</a>
+      <!--     <input type="submit" name="btnSubmit" value="开始学习"  verify="true"  group="login" class="btnStudy"/> -->
+      <a href="javascript:window.history.go(-1);" class="btnStudyBack">返回</a> </div>
+    <vt:else/>
+    <div class="priceTitle">学习费用：</div>
+    <div class="priceBox">
+      <vt:if var="#.prices.Length" value="0" compare=">">
+        <vt:foreach id="prices" from="$#.prices" item="data" remark="价格列表">
+          <div class="priceItem" cpid=" {$:#.data.CP_ID}" couid="{$course.Cou_id}"><span class="ico iconfont">&#xf00c6;</span> {$:#.data.CP_Span}{$:#.data.CP_Unit}<span class="price">{$:#.data.CP_Price}</span>元 </div>
+        </vt:foreach>
+        <vt:else />
+        <div class="noPrice">没有设置价格</div>
+      </vt:if>
+    </div>
+    <div class="verifyBox">
+      <div class="verifyInfo" style="display:none">
+        <div class="veriTxt">验证码：</div>
+        <input name="tbCode" type="number"  class="textbox verify" size="4" nullable="false" lenlimit="4-4" datatype="number"   group="login" />
+        <img src="/Utility/codeimg.aspx?name=buycode" class="verifyCode"/></div>
+    </div>
+    <vt:if var="Student.st_id" value="" compare="!=">
+      <!-- 账户余额 -->
+      <div class="moneyBox">
+        <div class="veriTxt">账户余额：</div>
+        <span class="money">{$Student.st_money}</span>元 <a href="MoneyIncom.ashx">充值</a></div>
+    </vt:if>
+    <div class="StudyBtnBox">
+      <input type="submit" name="btnBuyStudy" id="btnBuyStudy" value="购买学习"  verify="true"  group="login" class="btnStudy"/>
+      <a href="javascript:window.history.go(-1);" class="btnStudyBack">返回</a> </div>
+    <div class="loginRow btnBar"> <a href="Tryout.ashx?from={$from}&couid={$course.Cou_ID}" course="{$course.Cou_Name}" IsTry="{$course.Cou_IsTry}" class="aTryout">暂时试用</a> </div>
+  </vt:if>
+</div>
+<vt:include id="inc" file="inc/footer.html" />
+</body>
+</html>

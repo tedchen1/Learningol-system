@@ -1,0 +1,479 @@
+﻿@font-face {
+font-family: "iconfont";
+ src: url('iconfont.eot'); /* IE9*/
+ src: url('iconfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */ url('iconfont.woff') format('woff'), /* chrome、firefox */ url('iconfont.ttf') format('truetype'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/ url('iconfont.svg#iconfont') format('svg'); /* iOS 4.1- */
+}
+
+.iconfont {
+	font-family:"iconfont" !important;
+	font-size:16px;
+	font-style:normal;
+	-webkit-font-smoothing: antialiased;
+	-webkit-text-stroke-width: 0.2px;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+html {
+	overflow-x:hidden;
+	overflow-y:hidden;
+}
+* {
+	border: 0 none;
+	margin: 0;
+	padding: 0;
+	font-size: 16px;
+}
+a {
+	color: #333333;
+	text-decoration: none;
+}
+body {
+	background-position: center center;
+	filter:"progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod='scale')";
+	-moz-background-size:100% 100%;
+	background-size:100% 100%;
+	background-color: #FFFFFF;
+}
+#header {
+	background-color: #009cff;
+	font-family: "黑体";
+	line-height: 50px;
+	color: #FFFFFF;
+	letter-spacing: 0.1em;
+	text-align: center;
+	font-size: 18px;
+}
+#header .text {
+	background-color: #009cff;
+	font-family: "黑体";
+	line-height: 50px;
+	color: #FFFFFF;
+	letter-spacing: 0.1em;
+	text-align: center;
+	font-size: 18px;
+}
+#header #btnMenu{
+	font-size: 22px;
+}
+.context
+{
+	overflow-x:hidden;
+	overflow-y:auto;
+}
+.context .contextbox {
+	margin-top: 15px;
+	margin-right: 10px;
+	margin-bottom: 15px;
+	margin-left: 10px;
+}
+.context .contextbox dd {
+	line-height: 30px;
+	height:30px;
+	white-space: nowrap;
+	width: 98%;
+	overflow: hidden;
+	text-overflow:ellipsis;
+	background:rgba(255, 255, 255, 0.6) none repeat scroll 0 0 !important;/*实现FF背景透明，文字不透明*/
+	filter:Alpha(opacity=60);
+	background:#fff;/*实现IE背景透明*/
+	margin-top: 0px;
+	padding-top: 0px;
+	text-indent: 8px;
+}
+.context .contextbox dd a {
+	position:relative;
+	font-family: "黑体";
+	font-size: 16px;
+}
+
+#footer {
+	background-color: #f7f5f5;
+	border-top-width: 1px;
+	border-top-style: solid;
+	border-right-style: none;
+	border-bottom-style: none;
+	border-left-style: none;
+	border-top-color: #CCCCCC;
+	border-right-color: #CCCCCC;
+	border-bottom-color: #CCCCCC;
+	border-left-color: #CCCCCC;
+	height: 54px;
+}
+#footer .menuItem {
+	text-align: center;
+}
+#footer a {
+	font-family: "黑体";
+	font-size: 14px;
+	color: #333333;
+	line-height: 20px;
+	text-decoration: none;
+}
+#footer .menuItem img {
+	height: 22px;
+	width: 22px;
+	margin-top: 6px;
+}
+#footer .menuItem .menuTxt {
+	font-family: "黑体";
+	font-size: 14px;
+	color: #333333;
+	line-height: 20px;
+}
+#moreBox {
+	height: 150px;
+	width: 130px;
+	background-color: #f7f5f5;
+	position: absolute;
+	z-index: 1000;
+	border-top-width: 1px;
+	border-right-width: 1px;
+	border-bottom-width: 1px;
+	border-left-width: 1px;
+	border-top-style: solid;
+	border-right-style: solid;
+	border-bottom-style: none;
+	border-left-style: solid;
+	border-top-color: #CCCCCC;
+	border-right-color: #CCCCCC;
+	border-bottom-color: #CCCCCC;
+	border-left-color: #CCCCCC;
+
+}
+#moreBox .moreItem {
+	line-height: 35px;
+	height: 35px;
+	font-family: "黑体";
+	font-size: 16px;
+	color: #333333;
+}
+#moreBox .row1 {
+	background-color: #f7f5f5;
+}
+#moreBox .row2 {
+	background-color: #E0E0E0;
+}
+#moreBox .moreItem a {
+	height: 30px;
+	font-family: "黑体";
+	font-size: 16px;
+	color: #333333;
+	text-decoration: none;
+}
+#moreBox .moreItem .ico {
+	font-family:iconfont !important;
+	font-size:22px;
+	font-style:normal;
+	-webkit-font-smoothing: antialiased;
+	-webkit-text-stroke-width: 0.2px;
+	-moz-osx-font-smoothing: grayscale;
+	margin-right: 8px;
+	margin-left: 8px;
+}
+/*右上角菜单*/
+#menuBox {
+	height: 150px;
+	width: 180px;
+	background-color: #77C9FF;
+	position: absolute;
+	z-index: 2000;
+	border-top-width: 1px;
+	border-right-width: 1px;
+	border-bottom-width: 1px;
+	border-left-width: 1px;
+	border-top-style: none;
+	border-right-style: solid;
+	border-bottom-style: solid;
+	border-left-style: solid;
+	border-top-color: #009cff;
+	border-right-color: #009cff;
+	border-bottom-color: #009cff;
+	border-left-color: #009cff;
+}
+#menuBox .menuBoxItem , #menuBox .menuBoxItem a{
+	line-height: 30px;
+	height: 30px;
+	font-family: "黑体";
+	font-size: 16px;
+	color: #333333;
+}
+#menuBox .menuBoxItem .ico {
+	font-family:iconfont !important;
+	font-size:22px;
+	font-style:normal;
+	-webkit-font-smoothing: antialiased;
+	-webkit-text-stroke-width: 0.2px;
+	-moz-osx-font-smoothing: grayscale;
+	margin-right: 8px;
+	margin-left: 8px;
+}
+#menuBox .line {
+	border-top-width: 1px;
+	border-top-style: solid;
+	border-right-style: none;
+	border-bottom-style: none;
+	border-left-style: none;
+	border-top-color: #009cff;
+	line-height: 1px;
+	height: 1px;
+}
+
+/*分享*/
+#shareBoxMask
+{
+	position: absolute;
+	display:none;
+	z-index: 20;
+	background: rgba(255,255,255,0.3);
+}
+#shareBox
+{
+	display:none;
+	position: absolute;
+	z-index: 30;
+	height: 225px;
+	width: 185px;
+	position: absolute;
+	z-index: 10;
+	background-color: #CCCCCC;
+	text-align: center;
+	background: rgba(200,200,200,0.4);
+}
+#shareBox #shareTitle
+{
+	text-align: left;
+	line-height: 30px;
+	height: 25px;
+}
+#shareBox #shareBoxInner
+{
+	height: 205px;
+	width: 155px;
+	left: 100px;
+	top: 100px;
+	background-color: #CCCCCC;
+	text-align: center;
+	padding-left: 10px;
+	margin-top: 10px;
+	margin-left: 10px;
+	background: rgba(200,200,200,0.8);
+}
+/*分页导航*/
+#pagerBar {
+	height: 40px;
+	display: table;
+	width: auto;
+	margin-right: auto;
+	margin-left: auto;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+.pagerBtn {
+	line-height: 40px;
+	letter-spacing: 2px;
+	text-align: center;
+	float: left;
+	height: 40px;
+}
+.pagerBtn a
+{
+	color: #333333;
+	line-height: 40px;
+	display: block;
+	height: 40px;
+	font-size: 15px;
+		font-family:"pagerico" !important;
+  font-size:16px;
+  font-style:normal;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-stroke-width: 0.2px;
+  -moz-osx-font-smoothing: grayscale;
+  color: #999999;
+}
+.pagerFirst {
+	width: 40px;
+	border: 1px solid #CCCCCC;
+}
+.pagerLast {
+	border: 1px solid #CCCCCC;
+	width: 40px;
+}
+.pagerPrev {
+	width: 40px;
+	border-top-width: 1px;
+	border-right-width: 1px;
+	border-bottom-width: 1px;
+	border-left-width: 1px;
+	border-top-style: solid;
+	border-right-style: solid;
+	border-bottom-style: solid;
+	border-left-style: none;
+	border-top-color: #CCCCCC;
+	border-right-color: #CCCCCC;
+	border-bottom-color: #CCCCCC;
+	border-left-color: #CCCCCC;
+}
+.pagerIndex {
+	width: 40px;
+	border-top-width: 1px;
+	border-right-width: 1px;
+	border-bottom-width: 1px;
+	border-left-width: 1px;
+	border-top-style: solid;
+	border-right-style: solid;
+	border-bottom-style: solid;
+	border-left-style: none;
+	border-top-color: #CCCCCC;
+	border-right-color: #CCCCCC;
+	border-bottom-color: #CCCCCC;
+	border-left-color: #CCCCCC;
+}
+.pagerNext {
+	width: 40px;
+	border-top-width: 1px;
+	border-right-width: 1px;
+	border-bottom-width: 1px;
+	border-left-width: 1px;
+	border-top-style: solid;
+	border-right-style: none;
+	border-bottom-style: solid;
+	border-left-style: none;
+	border-top-color: #CCCCCC;
+	border-right-color: #CCCCCC;
+	border-bottom-color: #CCCCCC;
+	border-left-color: #CCCCCC;
+}
+.pagerCurr
+{
+	background-color: #CCCCCC;
+}
+
+/*
+	弹出窗口
+*/
+#PageBox {
+	border: 10px solid rgba(100,100,100,0.3);
+	margin: 0px;
+	padding: 0px;
+	text-align: left;
+
+}
+#PageBox #PageBoxTitle {
+	background-color: #FFFFFF;
+	height: 30px;
+	font-size: 15px;
+	font-family: "黑体";
+	line-height: 30px;
+	text-indent: 10px;
+	border-bottom-width: 1px;
+	border-top-style: none;
+	border-right-style: none;
+	border-bottom-style: solid;
+	border-left-style: none;
+	border-bottom-color: #CCCCCC;
+}
+#PageBox #PageBoxTitle #btnPageBoxClose
+{
+	float: right;
+	height: 30px;
+	width: 30px;
+	font-family:iconfont !important;
+	font-size:16px;
+	font-style:normal;
+	-webkit-font-smoothing: antialiased;
+	-webkit-text-stroke-width: 0.2px;
+	-moz-osx-font-smoothing: grayscale;
+	color: #C60000;
+	cursor:pointer;
+}
+#PageBox #PageBoxContext
+{
+	margin: 0px;
+	padding: 0px;
+	background-color: #FFFFFF;
+	overflow-x:hidden;
+	overflow-y:hidden;
+}
+
+/*
+	消息窗口
+*/
+#MsgBox {
+	border: 10px solid rgba(100,100,100,0.3);
+	margin: 0px;
+	padding: 0px;
+	text-align: left;
+
+}
+#MsgBox #MsgBoxTitle {
+	background-color: #FFFFFF;
+	height: 30px;
+	font-size: 15px;
+	font-family: "黑体";
+	line-height: 30px;
+	text-indent: 10px;
+	border-bottom-width: 1px;
+	border-top-style: none;
+	border-right-style: none;
+	border-bottom-style: solid;
+	border-left-style: none;
+	border-bottom-color: #CCCCCC;
+}
+#MsgBox #MsgBoxTitle #MsgBtnClose
+{
+	float: right;
+	height: 30px;
+	width: 30px;
+	font-family:iconfont !important;
+	font-size:16px;
+	font-style:normal;
+	-webkit-font-smoothing: antialiased;
+	-webkit-text-stroke-width: 0.2px;
+	-moz-osx-font-smoothing: grayscale;
+	color: #C60000;
+	cursor:pointer;
+}
+#MsgBox #MsgBoxContext
+{
+	margin: 0px;
+	padding: 10px;
+	background-color: #FFFFFF;
+	overflow: hidden;
+}
+
+#MsgBox .msgBtnBox
+{
+	background-color: #EAEAEA;
+	width: 100%;
+	text-align: center;
+}
+
+#MsgBox .msgBtnBox .msgbtn {
+	line-height: 30px;
+	text-align: center;
+	display: block;
+	height: 30px;
+	width: 80px;
+	float: right;
+	background-color: #ff5842;
+	font-family: "微软雅黑", "黑体", "Simplified Arabic Fixed";
+	font-weight: bold;
+	color: #FFFFFF;
+	font-size: 16px;
+	border-top-style: none;
+	border-right-style: none;
+	border-bottom-style: none;
+	border-left-style: none;
+	margin-top: 10px;
+	margin-right: 10px;
+}
+#MsgBox .msgBtnBox #msgBtnEnter{
+	background-color: #009966;
+}
+#MsgBox .msgLoading{
+	background-image: url(../Images/load_016.gif);
+	background-repeat: no-repeat;
+	background-position: center center;
+
+}

@@ -1,0 +1,76 @@
+﻿<!DOCTYPE html>
+<head>
+<title>资金明细</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<meta name="format-detection" content="telephone=yes" />
+<meta name="format-detection" content="email=no" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="Keywords"  content="{$org.Org_Keywords}" />
+<meta name="Description" content="{$org.Org_Description}" />
+<script type="text/javascript" src="CoreScripts/jquery.js"></script>
+<script type="text/javascript" src="CoreScripts/Extend.js"></script>
+<script type="text/javascript" src="Scripts/AutoLoyout.js"></script>
+<script type="text/javascript" src="Scripts/Public.js"></script>
+<script type="text/javascript" src="Scripts/date.js"></script>
+<script type="text/javascript" src="Scripts/iscroll.js"></script>
+<script type="text/javascript" src="Scripts/PageBox.js"></script>
+<script type="text/javascript" src="Scripts/MoneyDetails.js"></script>
+<link href="Styles/Default.css" rel="stylesheet" type="text/css" />
+<link href="Styles/Public.css?tick={$tick}" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" href="Styles/iconfont.css"/>
+<link rel="stylesheet" href="Styles/datepicker.css">
+<link href="Styles/moneyico/MoneyIco.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="Styles/MoneyDetails.css">
+</head>
+<body>
+<vt:include id="inc" file="inc/Header.html" />
+<div loyout="row"  class="context">
+  <div  loyout="row" height="70" class="moneyInfo">
+    <div class="moneyTitle">账户余额</div>
+    <div class="moneyNumber">{$:#.Student.st_money}元</div>
+  </div>
+  <!--  <div class="dateSection">
+    <input  id="StartTime" class="kbtn" />
+    -
+    <input  id="EndTime" class="kbtn" />
+  </div>
+  <div id="datePlugin"></div>
+  <script type="text/javascript">
+$(function(){
+	$('#StartTime').date();
+	$('#EndTime').date();
+});
+</script> -->
+  <div  loyout="row"  class="detailsBox">
+    <vt:foreach id="details" from="$#.details" item="d" remark="资金流水">
+      <div class="row" href="MoneyDetail.ashx?id={$:#.d.Ma_ID}">
+        <!--图标 -->
+        <div class="logo">
+          <vt:if var="#.d.Ma_Type" value="1" compare="="><span class="ico moneyico ico1" title="支出">&#xe637;</span>
+            <vt:else />
+            <span class="ico moneyico ico2" title="收入">&#xe66e;</span></vt:if>
+        </div>
+        <!--标题 -->
+        <div class="rowtxt">
+          <div class="text"> 
+            <vt:if var="d.Ma_Type" value="1" compare="=">支出<span class="ico1">-{$:#.d.Ma_Monery}元</span> 
+              <vt:else />
+              转入<span class="ico2">{$:#.d.Ma_Monery}元</span> </vt:if>
+           <span class="time">{$:#.d.Ma_CrtTime format="yyyy-M-d HH:mm"}</span>
+            </div>
+          <div class="intro">
+          <vt:if var="d.Ma_IsSuccess" value="false" compare="=">
+          <span class="alert">（失败）</span>
+          </vt:if>
+          {$:#.d.Ma_Source}</div>
+        </div>
+      </div>
+    </vt:foreach>
+  </div>
+</div>
+<vt:include id="inc" file="inc/footer.html" />
+</body>
+</html>

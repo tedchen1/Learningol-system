@@ -1,0 +1,37 @@
+@charset "utf-8";
+
+.knlTitle {
+	font-family: "微软雅黑", "黑体", "Simplified Arabic Fixed";
+	font-size: 15px;
+	line-height: 20px;
+	height: 20px;
+	float: left;
+	padding-right: 5px;
+	margin-top: 8px;
+	white-space: nowrap;
+	width: auto;
+}
+.title
+{
+	font-size: 18px;
+	font-weight: bold;
+	text-align: center;
+	height: 35px;
+	margin-top: 20px;
+}
+.ltIntro
+{
+}
+
+.ltDetails
+{
+}
+.plAcc
+{
+	margin-top: 20px;
+}
+pre{
+	background-color: #FFFFCC;
+	padding: 5px;
+	border: 1px solid #CCCCCC;
+}

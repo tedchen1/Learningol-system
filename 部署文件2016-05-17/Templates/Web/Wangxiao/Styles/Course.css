@@ -1,0 +1,13 @@
+﻿/*章节列表*/
+.outline{
+	
+}
+.indent{
+	margin-left:20px;
+}
+.outline a, .outline span{
+	margin-left:8px;
+	line-height:30px;
+	color:#333;
+	font-size:14px;
+}

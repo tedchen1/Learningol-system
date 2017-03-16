@@ -1,0 +1,134 @@
+﻿<!DOCTYPE html>
+<head>
+<title>
+<vt:if var="search" value="" compare="!=">检索：{$:#.search}
+  <vt:else />
+  <vt:if var="currCourse.cou_id" value="0" compare=">">
+<vt:if var="gcid" value="0" compare=">">
+考试指南->{$:#.gc.gc_title}
+<vt:else />
+{$:#.currCourse.cou_name}->考试指南
+</vt:if>
+    <vt:else />
+    {$org.org_platformname}</vt:if>
+</vt:if>
+</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<meta name="format-detection" content="telephone=yes" />
+<meta name="format-detection" content="email=no" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="Keywords"  content="{$org.Org_Keywords}" />
+<meta name="Description" content="{$org.Org_Description}" />
+<script type="text/javascript" src="CoreScripts/jquery.js"></script>
+<script type="text/javascript" src="CoreScripts/Extend.js"></script>
+<script type="text/javascript" src="Scripts/AutoLoyout.js"></script>
+<script type="text/javascript" src="Scripts/Public.js"></script>
+<script type="text/javascript" src="Scripts/Guides.js"></script>
+<link href="Styles/Public.css?tick={$tick}" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" href="Styles/iconfont.css"/>
+<link rel="stylesheet" href="Styles/pagerico/iconfont.css">
+<link href="Styles/Guides.css" rel="stylesheet" type="text/css" />
+</head>
+<body backurl="default.ashx">
+<vt:include id="inc" file="inc/Header.html" />
+<div loyout="row"  class="context">
+  <div class="contextbox">
+    <!--搜索区域 -->
+    <div id="searchBox">
+      <div id="searchRow">
+        <form name="form1" method="post" action="">
+          <div class="textbox">
+            <vt:if var="search" value="" compare="!=">
+              <input name="search" type="text" id="search" value="{$:#.search}" default="请输入您要搜索的内容">
+              <vt:else />
+              <input name="search" type="text" id="search" default="请输入您要搜索的内容">
+            </vt:if>
+          </div>
+          <div id="searctBtn">&#xe62f;</div>
+        </form>
+      </div>
+      <div id="searchLine"> </div>
+    </div>
+    <vt:if var="search" value="" compare="=">
+      <!--专业列表 -->
+      <vt:if var="columns.Length" value="0" compare=">">
+        <vt:foreach id="course" from="$#.columns" item="data" remark="课程列表">
+          <div class="row" href="guides.ashx?gcid={$:#.data.gc_id}">
+            <!--图标 -->
+            <div class="sbjLogo">
+              <vt:if var="#.data.cou_LogoSmall" value="" compare="="><span class="ico">&#xe674;</span>
+                <vt:else />
+                <img src="{$:#.data.cou_LogoSmall}"/></vt:if>
+            </div>
+            <!--标题 -->
+            <div class="rowtxt">
+              <div class="name"> {$:#.data.gc_title}</div>
+              <div class="intro">{$:#.data.gc_intro}</div>
+            </div>
+            <!--右侧标识 -->
+            <div class="rightbox">
+              <div class="rightTop"> 指南 </div>
+              <div class="rightDow">
+                <vt:function var="dow" method="isChildren" args="$#.data.gc_id"/>
+                <vt:if var="dow" value="0" compare="=">&#xe602;
+                  <vt:else />
+                  &#xe6c6;</vt:if>
+              </div>
+            </div>
+          </div>
+        </vt:foreach>
+      </vt:if>
+    </vt:if>
+    <!--考试指南的内容列表 -->
+    <vt:if var="guides.Length" value="0" compare=">">
+      <vt:if var="columns.Length" value="0" compare=">">
+        <div class="line"></div>
+      </vt:if>
+      <!--检索的信息 -->
+      <vt:foreach id="guidelist" from="$#.guides" item="data" index="i" size="15" remark="新闻列表">
+        <div class="guideitem"><span class="guIco">&#xe646;</span><a href="guide.ashx?id={$:#.data.gu_id}"> {$:#.data.gu_title}</a></div>
+      </vt:foreach>
+      <!--分页导航 -->
+      <vt:if var="pageAmount.Length" value="1" compare=">">
+        <div id="pagerBar">
+          <div class="pagerFirst pagerBtn"><a href="guides.ashx?gcid={$gcid}">&#xf001a;</a></div>
+          <!--上一页 -->
+          <vt:expression var="pagerPrev" expression="{0}-1" args="$pageIndex" />
+          <vt:if var="#.pagerPrev" value="1" compare="<">
+            <div class="pagerPrev pagerBtn"><a href="#">&#xf0061;</a></div>
+            <vt:else />
+            <div class="pagerPrev pagerBtn"><a href="guides.ashx?index={$:#.pagerPrev}&gcid={$gcid}">&#xf0061;</a></div>
+          </vt:if>
+          <!--分页数字 -->
+          <vt:foreach id="pageAmount" from="$#.pageAmount" item="data" index="i" remark="分页数字">
+            <vt:if var="#.data" value="$pageIndex" compare="=">
+              <div class="pagerIndex pagerBtn pagerCurr"><a href="guides.ashx?index={$:i}&gcid={$gcid}">{$:i}</a></div>
+              <vt:else />
+              <div class="pagerIndex pagerBtn"><a href="guides.ashx?index={$:i}&gcid={$gcid}">{$:i}</a></div>
+            </vt:if>
+          </vt:foreach>
+          <!--下一页 -->
+          <vt:expression var="pagerNext" expression="{0}+1" args="$pageIndex" />
+          <vt:if var="#.pagerNext" value="$pageAmount.Length" compare=">">
+            <div class="pagerNext pagerBtn"><a href="#">&#xf0018;</a></div>
+            <vt:else />
+            <div class="pagerNext pagerBtn"><a href="guides.ashx?index={$:#.pagerNext}&gcid={$gcid}">&#xf0018;</a></div>
+          </vt:if>
+          <div class="pagerLast pagerBtn"><a href="guides.ashx?index={$:pageAmount.length}&gcid={$gcid}">&#xf0063;</a></div>
+        </div>
+      </vt:if>
+    </vt:if>
+    <!--如果没有内容，没有栏目，也没有内容 -->
+    <vt:if var="columns.Length" value="1" compare="<">
+      <vt:if var="guides.Length" value="1" compare="<">
+        <div class="noContext">没有满足条件的考试指南！</div>
+      </vt:if>
+    </vt:if>
+  </div>
+</div>
+<vt:include id="inc" file="inc/footer.html" />
+</body>
+</html>

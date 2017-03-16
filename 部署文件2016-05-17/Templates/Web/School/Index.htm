@@ -1,0 +1,23 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+    <title>测试for标签和expression标签 </title>
+    <meta name="Keywords"  content="{$org.Org_Keywords}" />
+<meta name="Description" content="{$org.Org_Description}" />
+    <link href="../neimeng/Styles/public.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <vt:for from="1" to="9" index="i">
+<vt:for from="1" to="$i" index="j">
+<vt:expression var="r" args="$i" args="$j" expression="{0}*{1}" />{$:i}*{$:j}={$:r}&nbsp;&nbsp;&nbsp;&nbsp;
+</vt:for>
+<br />
+</vt:for>
+    <select>
+        <vt:foreach from="$Subject" item="#.item" index="#.index">
+<option>{$:#.index}、{$:#.item.sbj_name}</option>
+
+</vt:foreach>
+    </select>
+</body>
+</html>

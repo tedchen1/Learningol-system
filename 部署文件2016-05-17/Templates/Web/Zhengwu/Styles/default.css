@@ -1,0 +1,74 @@
+﻿@charset "utf-8";
+
+/*主区域*/
+.newsArea
+{
+	background-image: url(../Images/mainbg.jpg);
+	background-repeat: no-repeat;
+	background-position: right bottom;
+}
+
+.item{
+	margin-bottom:5px;
+}
+#courseBox
+{
+	padding-left:0px;
+
+}
+.hotkecheng-list
+{
+	margin-right: 10px;
+	margin-left: 0px;
+	float:left;
+}
+
+.hotkecheng-list .promote-li
+{
+	width: 230px;
+	margin-bottom: 10px;
+	padding-bottom: 10px;
+	margin-left: 0px;
+	background-color: #FFFFFF;
+	border: #DDDDDD 1px solid;
+	padding-bottom: 25px;
+}
+.clearfix::before, .clearfix::after
+{
+	line-height: 0;
+	display: table;
+	content: "";
+}
+.clearfix::after
+{
+	clear: both;
+}
+
+.hot-left
+{
+	float: left; font-size: 12px; color: #666666;
+}
+.hot-right
+{
+	float: right; font-size: 12px; color: #666666; padding-right: 5px;
+	margin-top:5px;
+}
+
+.count
+{
+	padding-top: 5px; padding-left: 18px; background:url(../images/sl.gif)  0 4px no-repeat;
+
+}
+.ellipsis a{
+	font-size: 14px; color: #666666;
+	display:block;
+	line-height:25px;
+	height:25px;
+	margin-left:5px;
+}
+/*教师列表*/
+.pic{
+	float:left;
+	margin-right:10px;
+	margin-bottom:10px;
+}

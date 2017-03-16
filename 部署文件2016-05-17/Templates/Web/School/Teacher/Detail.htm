@@ -1,0 +1,104 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>教师信息 - {$org.org_platformname}</title>
+<meta name="Keywords"  content="{$org.Org_Keywords}" />
+<meta name="Description" content="{$org.Org_Description}" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="../Styles/public.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="../CoreScripts/jquery.js"></script>
+<script type="text/javascript" src="../CoreScripts/Extend.js"></script>
+<script type="text/javascript" src="Scripts/detail.js"></script>
+<script type="text/javascript" src="../Scripts/Public.js"></script>
+<link href="Styles/detail.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<vt:include id="inc" file="../inc/Header.html" />
+<img class="cssfile" style="display:none" src="../inc/styles/depart.css"></img>
+<vt:include id="inc" file="../inc/Depart.html" />
+<script type="text/javascript" src="../inc/Scripts/Depart.js"></script>
+<div id="Context">
+  <div id="Navi"> <a href="/">首页</a> &gt; <a href="/teacher/list.ashx">教师</a> &gt; {$th.th_name} </div>
+  <!--教师图片等主要信息 -->
+  <div id="teacherTop">
+    <div class="photo"> <img src="{$th.th_photo}"/> </div>
+    <div class="details">
+      <div class="infoFirst">
+        <div class="name">{$:#.th.th_name}</div>
+        <div class="title">{$:#.th.Ths_Name}</div>
+      </div>
+      <div class="intro">{$:#.th.th_intro}</div>
+    </div>
+  </div>
+  <!--课程，履历等 -->
+  <div class="teacherBox">
+    <div class="teacherLeft">
+      <vt:if var="history.length" value="0" compare=">">
+        <!--履历 -->
+        <dl id="history">
+          <dt>
+            <div class="title">教师履历</div>
+          </dt>
+          <vt:foreach id="history" from="$#.history" item="data" index="i" remark="教师履历">
+            <dd>
+              <div class="time">{$:#.data.Thh_StartTime format="yyyy.MM.d"} - {$:#.data.Thh_EndTime format="yyyy.MM.d"}</div>
+              <div class="type">{$:#.data.Thh_Type}</div>
+              <div class="theme">
+                <vt:if var="data.Thh_Type" value="学习" compare="="> {$:#.data.Thh_School}
+                  <vt:else />
+                  {$:#.data.Thh_Compay} </vt:if>
+              </div>
+              <div class="post">
+                <vt:if var="data.Thh_Type" value="学习" compare="="> {$:#.data.Thh_Major}
+                  <vt:else />
+                  {$:#.data.Thh_Post} </vt:if>
+              </div>
+            </dd>
+          </vt:foreach>
+        </dl>
+      </vt:if>
+      <!--当前老师的课程 -->
+      <div class="courseBox">
+        <div class="courseTitle">
+          <div class="title">所讲课程</div>
+        </div>
+        <vt:if var="courses.length" value="0" compare="=">
+          <div class="noCourse">暂时没有课程</div>
+        </vt:if>
+        <div class="courses">
+          <div class="coursesInner">
+            <vt:foreach from="$#.courses" item="c" index="i">
+              <div class="courseItem"> <a href="/course.ashx?id={$:#.c.cou_id}"><img src="{$:#.c.cou_logosmall}" /> </a>
+                <div class="courseName"> <a href="/course.ashx?id={$:#.c.cou_id}">{$:#.c.cou_name} </a></div>
+              </div>
+            </vt:foreach>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="teacherRight">
+    <dl id="history">
+      <dt>
+        <div class="title">相关教师</div>
+      </dt>
+    </dl>
+    <dl class="thlist">
+      <vt:foreach id="teachers" from="$#.teachers" item="data" index="i" count="4" remark="教师信息列表">
+        <dd>  <div class="thImg" style="background-image: url({$:#.data.th_photo})" href="/teacher/Detail.ashx?id={$:#.data.th_id}">&nbsp;</div>
+          <div class="thRight">
+          <div class="thTop">
+              <div class="thName"><a href="/teacher/Detail.ashx?id={$:#.data.th_id}">{$:#.data.th_name}</a></div>
+              <div class="thTitle">{$:#.data.ths_name}</div>
+            </div>
+            <div class="signature">{$:#.data.th_signature}</div>
+          </div>
+      
+        </dd>
+      </vt:foreach>
+    </dl>
+  </div>
+</div>
+</div>
+<vt:include id="inc" file="../inc/footer.html" />
+</body>
+</html>

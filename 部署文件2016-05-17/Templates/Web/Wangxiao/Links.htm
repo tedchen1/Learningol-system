@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>{$org.org_platformname}</title>
+<meta name="Keywords"  content="{$org.Org_Keywords}" />
+<meta name="Description" content="{$org.Org_Description}" />
+<LINK rel="stylesheet" type="text/css" href="css/public.css">
+<link href="Styles/public.css" rel="stylesheet" type="text/css" />
+<LINK rel="stylesheet" type="text/css" href="css/default.css">
+<LINK rel="stylesheet" type="text/css" href="styles/links.css">
+<script type="text/javascript" src="CoreScripts/jquery.js"></script>
+<script type="text/javascript" src="CoreScripts/Extend.js"></script>
+<script type="text/javascript" src="scripts/public.js"></script>
+<SCRIPT type="text/javascript" src="js/courses.js"></SCRIPT>
+<script type="text/javascript" src="Scripts/links.js"></script>
+</head>
+<body>
+<vt:include id="inc" file="inc/Header.html" />
+<div id="bodyTop">&nbsp;</div>
+<div id="Context">
+  <div class="titile">友情链接</div>
+  <vt:if var="#.sorts.Length" value="0" compare="=">
+    <dl class="infoBox">
+      <vt:foreach from="$#.links" item="l" index="j">
+        <dd><a href="{$:l.lk_url}" target="_blank">{$:l.lk_name}</a></dd>
+      </vt:foreach>
+    </dl>
+    <vt:else />
+    <vt:foreach from="$#.sorts" item="sort" index="i">
+      <dl class="infoBox">
+        <dt>{$:sort.ls_name}</dt>
+        <vt:function var="links" method="getLinks" args="$#.sort.ls_id"/>
+        <vt:foreach from="$#.links" item="l" index="j">
+          <dd>
+            <vt:if var="sort.Ls_IsImg" value="true" compare="="> <a href="{$:l.lk_url}" target="_blank"><img src="{$:l.Lk_Logo}" /></a> </vt:if>
+            <vt:if var="sort.Ls_IsText" value="true" compare="="> <a href="{$:l.lk_url}" target="_blank">{$:l.lk_name}</a></vt:if></dd>
+        </vt:foreach>
+      </dl>
+    </vt:foreach>
+  </vt:if>
+  <div class="titile">平台入驻机构</div>
+  <dl class="infoBox">
+    <vt:foreach from="$#.orgs" item="o" index="i">
+    <vt:if var="o.org_platformname" value="" compare="!=">
+      <dd class="orgitem"><a href="http://{$:o.Org_TwoDomain}.{$domain}" target="_blank">{$:o.org_platformname}</a></dd>
+      </vt:if>
+    </vt:foreach>
+  </dl>
+</div>
+<vt:include id="inc" file="inc/footer.html" />
+</body>
+</html>

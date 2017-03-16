@@ -1,0 +1,37 @@
+﻿@charset "utf-8";
+body {
+}
+#bodyTop {
+	background-image: url(../Images/news-banner.jpg);
+	background-repeat: no-repeat;
+	background-position: center 0px;
+	height: 200px;
+	width: 100%;
+}
+.aboutBox {
+	margin-bottom: 20px;
+	min-height: auto;
+	border: 0px solid #DDDDDD;
+}
+.aboutBox .aboutTitle {
+	height: 25px;
+	margin-bottom: 10px;
+	margin-top: 50px;
+}
+.aboutBox .aboutTitle .title {
+	width: 150px;
+	height: 25px;
+	line-height: 25px;
+	font-family: "微软雅黑";
+	font-size: 25px;
+	float: left;
+	margin-left: 0px;
+}
+.aboutBox .info {
+	color: #343434;
+	margin-top: 50px;
+	font-size: 18px;
+	line-height: 28px;
+}.aboutBox .info p{
+	margin-top: 50px;
+}

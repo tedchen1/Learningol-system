@@ -1,0 +1,96 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>{$org.org_platformname}</title>
+<meta name="Keywords"  content="{$org.Org_Keywords}" />
+<meta name="Description" content="{$org.Org_Description}" />
+<link href="Styles/public.css" rel="stylesheet" type="text/css" />
+<link href="Styles/Default.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="CoreScripts/jquery.js"></script>
+<script type="text/javascript" src="CoreScripts/extend.js"></script>
+<script type="text/javascript" src="CoreScripts/Verify.js"></script>
+<script type="text/javascript" src="Scripts/Public.js"></script>
+<script type="text/javascript" src="Scripts/Default.js"></script>
+</head>
+<body>
+<vt:include id="inc" file="inc/Header.html" />
+<div id="mainShow">&nbsp;</div>
+
+
+<vt:include id="inc" file="inc/Depart.html" />
+<div id="Context">
+  <!--第二行 -->
+  <div id="SecondBox">
+    <div class="boxBar">
+      <div class="title"> 热门课程</div>
+      <div class="more"> <a href="../../Courses.ashx">更多课程&gt;&gt;</a></div>
+    </div>
+    <div class="courseList">
+      <div class="courseListInner">
+        <vt:foreach id="courseList" from="$#.courseList" item="data" index="i" count="4" remark="课程">
+          <div class="item" couid="{$:#.data.cou_id}" wd="800" hg="600"> <a href="/course.ashx?id={$:#.data.cou_id}" title="{$:#.data.cou_name}"><img src="{$:#.data.cou_logosmall}" /> </a>
+            <div class="itemMark"></div>
+            <div class="itemInfo"> <a href="/course.ashx?id={$:#.data.cou_id}" title="{$:#.data.cou_name}">{$:#.data.cou_name} </a>
+              <div class="itemDetails">主讲：{$:#.data.th_name}<br />
+               <a href="/course.ashx?id={$:#.data.cou_id}" title="{$:#.data.cou_name}"> {$:#.data.Cou_Intro}</a></div>
+            </div>
+          </div>
+        </vt:foreach>
+      </div>
+    </div>
+  </div>
+  <!-- 第三行 -->
+  <div id="ThirdBox">
+    <div class="ThirdBoxInner">
+      <div id="newsBox" class="box">
+        <div class="boxBar">
+          <div class="title"> 新闻资讯</div>
+          <div class="more"> <a href="/news.ashx">更多&gt;&gt;</a></div>
+        </div>
+        <div class="newslist">
+          <vt:foreach id="newslist" from="$#.newslist" item="data" columns="-1" index="i" count="10" remark="columns为新闻栏目Id">
+            <div class="item" artid="{$:#.data.art_id}">
+              <div class="newsItem"> <a href="../../article.ashx?id={$:#.data.art_id}" title="{$:#.data.art_title}">{$:#.data.art_title}</a> </div>
+              <div class="newsTime">{$:#.data.art_pushTime  format="[MM-dd]"}</div>
+            </div>
+          </vt:foreach>
+        </div>
+      </div>
+      <div id="newsBox" class="box">
+        <div class="boxBar">
+          <div class="title"> 通知公告</div>
+          <div class="more"> <a href="/Notices.ashx">更多&gt;&gt;</a></div>
+        </div>
+        <div class="newslist">
+          <vt:foreach id="notice" from="$#.notice" item="data" index="i" count="10" >
+            <div class="item" noid="{$:#.data.no_id}">
+              <div class="newsItem"><a href="/notice.ashx?id={$:#.data.no_id}" title="{$:#.data.no_ttl}"> {$:#.data.no_ttl}</a> </div>
+              <div class="newsTime">{$:#.data.no_startTime  format="[MM-dd]"}</div>
+            </div>
+          </vt:foreach>
+        </div>
+      </div>
+      <div id="teacherBox" class="box">
+        <div class="boxBar">
+          <div class="title"> 教师风采</div>
+          <div class="more"> <a href="/teacher/list.ashx">更多&gt;&gt;</a></div>
+        </div>
+        <div class="thlist">
+          <div class="thlistInner">
+            <vt:foreach id="teachers" from="$#.teachers" item="data" index="i" count="4" remark="教师信息列表">
+              <div class="itemTeacher" style="background-image: url({$:#.data.th_photo})" href="/teacher/Detail.ashx?id={$:#.data.th_id}">
+                <div class="mark">&nbsp; </div>
+                <div class="thInfo">
+                  <div class="thName">{$:#.data.th_name}</div>
+                </div>
+              </div>
+            </vt:foreach>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<vt:include id="inc" file="inc/footer.html" />
+</body>
+</html>

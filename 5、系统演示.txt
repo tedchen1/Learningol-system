@@ -1,0 +1,8 @@
+演示地址：http://exam.weisha100.cn/
+学员账号：st密码st
+教师账号：th密码th
+管理账号：song密码1
+
+超级管理员
+登录地址 /manage/index.aspx
+账号 admin 密码 1

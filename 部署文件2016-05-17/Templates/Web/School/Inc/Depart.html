@@ -1,0 +1,31 @@
+﻿<div id="departBoxBack" class="departBox" style="display:none"  hover="depart"></div>
+<div id="departBox" class="departBox" style="display:none" hover="depart">
+  <vt:foreach id="departs" from="$#.departs" item="data" index="i" remark="院系列表">
+    <div class="depName" depid="{$:#.data.Dep_ID}"><span class="icondepart">&#xe613;</span> {$:#.data.Dep_CnName}<i>&gt;</i></div>
+  </vt:foreach>
+</div>
+<div id="subjectArea"  hover="depart">
+  <vt:foreach id="departs" from="$#.departs" item="data" index="i" remark="院系列表">
+    <div class="subjectBox" depid="{$:#.data.Dep_ID}" style="display:none">
+      <vt:function var="sbjs" method="getSubjects" args="$#.data.Dep_ID"/>
+      <vt:if var="sbjs.Length" value="0" compare="=">
+      <div class="noSubject">当前院系下没有专业</div>
+        <vt:else />
+        <vt:foreach from="$sbjs" item="m" index="i">
+        <div class="sbjItem"  href="/Courses.ashx?sbj={$:#.m.Sbj_ID}">
+          <div class="sbjName"><span class="icondepart">&#xe801;</span> {$:#.m.Sbj_Name}</div>
+           <div class="sbjIntro">
+           <vt:if var="m.Sbj_Intro" value="" compare="=">
+           没有介绍
+           <vt:else />
+           {$:#.m.Sbj_Intro}
+           </vt:if>
+           </div>
+           </div>
+        </vt:foreach>
+      </vt:if>
+    </div>
+  </vt:foreach>
+</div>
+<img class="cssfile" style="display:none" src="inc/styles/depart.css"/>
+<script type="text/javascript" src="inc/Scripts/Depart.js"></script>

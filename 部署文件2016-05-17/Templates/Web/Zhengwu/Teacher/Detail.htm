@@ -1,0 +1,158 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>教师信息 - {$org.org_platformname}</title>
+<meta name="Keywords"  content="{$org.Org_Keywords}" />
+<meta name="Description" content="{$org.Org_Description}" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="../Styles/public.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="../CoreScripts/jquery.js"></script>
+<script type="text/javascript" src="../CoreScripts/Extend.js"></script>
+<script type="text/javascript" src="../Scripts/AutoLoyout.js"></script>
+<script type="text/javascript" src="Scripts/detail.js"></script>
+<script type="text/javascript" src="../Scripts/Public.js"></script>
+<link href="Styles/detail.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<vt:include id="inc" file="../inc/Header.html" />
+<div loyout="row" >
+  <div loyout="column" width="230">
+    <div class="boxContainer" loyout="row">
+      <div loyout="row" height="35" class="top">
+        <div loyout="column" width="10" class="topLeft"> </div>
+        <div loyout="column" width="auto" class="topMiddle boxTitle"><span class="titIco">&gt;</span><span class="titText"> 教师</span> &nbsp;<span class="titIco">&gt;</span> <span class="titText"> {$th.th_name} </span></div>
+        <div loyout="column" width="18" class="topRight"> </div>
+      </div>
+      <div loyout="row" class="body">
+        <div loyout="column" width="10" class="bodyLeft"> </div>
+        <div loyout="column" width="auto" class="bodyCenter">
+          <div class="boxContext"> 
+            <!--/*内容区域*/-->
+            <div class="stPhoto">
+              <vt:if var="th.th_photo" value="" compare="="> <img src="../images/nophoto.jpg"  style="width:150px; height:200px"/>
+                <vt:else />
+                <img src="{$th.th_photo}"  style="width:150px; height:200px"/> </vt:if>
+            </div>
+            <div class="stName"> {$th.th_name} </div>
+            <div class="stInfo">
+             <vt:if var="th.th_signature" value="" compare="="> （没有签名）
+                      <vt:else />
+            {$:#.th.th_signature}</vt:if></div>
+          </div>
+        </div>
+        <div loyout="column" width="18" class="bodyRight"> </div>
+      </div>
+      <div loyout="row" height="15" class="foot">
+        <div loyout="column" width="10" class="footLeft"> </div>
+        <div loyout="column" width="auto" class="footMiddle"> </div>
+        <div loyout="column" width="18" class="footRight"> </div>
+      </div>
+    </div>
+  </div>
+  <!--左侧教师信息结束-->
+  <div loyout="column" >
+    <div class="boxContainer" loyout="row">
+      <div loyout="row" height="35" class="top">
+        <div loyout="column" width="10" class="topLeft"> </div>
+        <div loyout="column" width="auto" class="topMiddle boxTitle"><span class="titIco">&gt;</span><span class="titText"> 教师简介</span></div>
+        <div loyout="column" width="18" class="topRight"> </div>
+      </div>
+      <div loyout="row" class="body">
+        <div loyout="column" width="10" class="bodyLeft"> </div>
+        <div loyout="column" width="auto" class="bodyCenter">
+          <div class="boxContext"> 
+            <!--/*内容区域*/-->
+            <div class="thIntro">{$:#.th.th_intro}</div>
+          </div>
+        </div>
+        <div loyout="column" width="18" class="bodyRight"> </div>
+      </div>
+      <div loyout="row" height="15" class="foot">
+        <div loyout="column" width="10" class="footLeft"> </div>
+        <div loyout="column" width="auto" class="footMiddle"> </div>
+        <div loyout="column" width="18" class="footRight"> </div>
+      </div>
+    </div>
+    <!--盒子结束-->
+    
+    <!--教师履历-->
+    <vt:if var="history.length" value="0" compare=">"> 
+    <div class="boxContainer" loyout="row">
+      <div loyout="row" height="35" class="top">
+        <div loyout="column" width="10" class="topLeft"> </div>
+        <div loyout="column" width="auto" class="topMiddle boxTitle"><span class="titIco">&gt;</span><span class="titText"> 教师履历</span></div>
+        <div loyout="column" width="18" class="topRight"> </div>
+      </div>
+      <div loyout="row" class="body">
+        <div loyout="column" width="10" class="bodyLeft"> </div>
+        <div loyout="column" width="auto" class="bodyCenter">
+          <div class="boxContext"> 
+            <!--/*内容区域*/-->
+            <dl id="history">
+              <vt:foreach id="history" from="$#.history" item="data" index="i" remark="教师履历">
+                <dd>
+                  <div class="time">{$:#.data.Thh_StartTime format="yyyy.MM.d"} - {$:#.data.Thh_EndTime format="yyyy.MM.d"}</div>
+                  <div class="type">{$:#.data.Thh_Type}</div>
+                  <div class="theme">
+                    <vt:if var="data.Thh_Type" value="学习" compare="="> {$:#.data.Thh_School}
+                      <vt:else />
+                      {$:#.data.Thh_Compay} </vt:if>
+                  </div>
+                  <div class="post">
+                    <vt:if var="data.Thh_Type" value="学习" compare="="> {$:#.data.Thh_Major}
+                      <vt:else />
+                      {$:#.data.Thh_Post} </vt:if>
+                  </div>
+                </dd>
+              </vt:foreach>
+            </dl>
+          </div>
+        </div>
+        <div loyout="column" width="18" class="bodyRight"> </div>
+      </div>
+      <div loyout="row" height="15" class="foot">
+        <div loyout="column" width="10" class="footLeft"> </div>
+        <div loyout="column" width="auto" class="footMiddle"> </div>
+        <div loyout="column" width="18" class="footRight"> </div>
+      </div>
+    </div>
+    </vt:if>
+    <!--盒子结束-->
+    <div class="boxContainer" loyout="row" height="210">
+      <div loyout="row" height="35" class="top">
+        <div loyout="column" width="10" class="topLeft"> </div>
+        <div loyout="column" width="auto" class="topMiddle boxTitle"><span class="titIco">&gt;</span><span class="titText"> 相关课程</span></div>
+        <div loyout="column" width="18" class="topRight"> </div>
+      </div>
+      <div loyout="row" class="body">
+        <div loyout="column" width="10" class="bodyLeft"> </div>
+        <div loyout="column" width="auto" class="bodyCenter">
+          <div class="boxContext"> 
+            <!--/*内容区域*/-->
+            <vt:if var="courses.length" value="0" compare="=">
+              <div class="noCourse">暂时没有课程</div>
+              <vt:else />
+              <div class="courses">
+                <div class="coursesInner">
+                  <vt:foreach from="$#.courses" item="c" index="i">
+                    <div class="courseItem"> <a href="/course.ashx?id={$:#.c.cou_id}"><img src="{$:#.c.cou_logosmall}" /> </a>
+                      <div class="courseName"> <a href="/course.ashx?id={$:#.c.cou_id}">{$:#.c.cou_name} </a></div>
+                    </div>
+                  </vt:foreach>
+                </div>
+              </div>
+            </vt:if>
+          </div>
+        </div>
+        <div loyout="column" width="18" class="bodyRight"> </div>
+      </div>
+      <div loyout="row" height="15" class="foot">
+        <div loyout="column" width="10" class="footLeft"> </div>
+        <div loyout="column" width="auto" class="footMiddle"> </div>
+        <div loyout="column" width="18" class="footRight"> </div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

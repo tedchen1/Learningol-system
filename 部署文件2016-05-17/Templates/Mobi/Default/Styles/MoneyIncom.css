@@ -1,0 +1,194 @@
+@charset "utf-8";
+.titleBox {
+	height: 30px;
+	width: 100%;
+}
+.titleBox .titItem {
+	text-align: center;
+	float: left;
+	width: 50%;
+	font-size: 16px;
+	line-height: 40px;
+	border-bottom-width: 4px;
+	border-top-style: none;
+	border-right-style: none;
+	border-bottom-style: solid;
+	border-left-style: none;
+	border-bottom-color: #339900;
+}
+.alert {
+	color: #FF0000;
+}
+
+.titleBox .titItemCurr {
+	background-color: #339900;
+	color: #FFFFFF !important;
+	display: block;
+}
+.titleBox .titItemCurr a{
+	color: #FFFFFF !important;
+}
+
+.textbox {
+	font-size: 16px;
+	line-height: 30px;
+	height: 30px;
+	border: 1px solid #CCCCCC;
+	text-indent: 10px;
+	opacity:0.8;
+	filter:alpha(opacity=80);
+	color: #333333;
+	width: 80%;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+.infoRow {
+	line-height: 40px;
+	width: 100%;
+	height: 40px;
+	font-family: "黑体";
+	font-size: 16px;
+	text-align: center;
+}
+.infoRow .RowRight {
+	text-align: right;
+	float: left;
+	width: 100px;
+}
+.infoRow .RowLeft {
+	float: left;
+	width: 40%;
+}
+.payInterFaceTit {
+	font-size: 14px;
+	line-height: 30px;
+	background-color: #E6E6E6;
+	height: 30px;
+	margin-top: 10px;
+	text-indent: 10px;
+	color: #5EBB00;
+}
+
+#btnSubmit {
+	line-height: 40px;
+	text-align: center;
+	height: 40px;
+	width: 40%;
+	border-top-style: none;
+	border-right-style: none;
+	border-bottom-style: none;
+	border-left-style: none;
+	float: left;
+	background-color: #339900;
+	font-family: "微软雅黑", "黑体", "Simplified Arabic Fixed";
+	font-weight: bold;
+	color: #FFFFFF;
+	font-size: 16px;
+	margin-left: 5%;
+}
+.payInterface {
+	margin-top: 10px;
+}
+.payInterface .pi {
+	font-size: 18px;
+	line-height: 40px;
+	height: 40px;
+	cursor:pointer;
+	margin-bottom: 10px;
+}
+.payInterface .piSelect {
+	border: 2px solid #5EBB00;
+	background-image: url(../Images/bigIco2.jpg);
+	background-position: right bottom;
+	background-repeat: no-repeat;
+}
+
+.payInterface .pi .ico {
+	float: left;
+	height: 30px;
+	width: 30px;
+	margin-right: 20px;
+	margin-top: 2px;
+	margin-left: 2px;
+}
+.noPay {
+	margin-top: 60px;
+	text-align: center;
+}
+
+
+.btnChangePw {
+	line-height: 40px;
+	text-align: center;
+	display: block;
+	height: 40px;
+	width: 40%;
+	float: right;
+	margin-right: 5%;
+	background-color: #ff5842;
+	font-family: "微软雅黑", "黑体", "Simplified Arabic Fixed";
+	font-weight: bold;
+	color: #FFFFFF;
+	font-size: 16px;
+	border-top-style: none;
+	border-right-style: none;
+	border-bottom-style: none;
+	border-left-style: none;
+}
+
+.tbMoney {
+	font-size: 16px;
+	line-height: 30px;
+	height: 30px;
+	border: 1px solid #CCCCCC;
+	text-indent: 10px;
+	opacity:0.8;
+	filter:alpha(opacity=80);
+	color: #333333;
+	width: 100px;
+}
+
+.inputInmoney {
+	float: left;
+}
+.btnInMoney {
+	float: left;
+	width: 140px;
+	background-color: #FFFF66;
+	font-size: 18px;
+	line-height: 30px;
+	text-align: center;
+	height: 30px;
+	cursor:pointer;
+}
+.btnInMoney  span{
+	font-size: 20px;
+	margin-right: 10px;
+	color: #FF9900;
+}
+#formPay .inMoneyRow {
+	width: 100%;
+	display: table;
+}
+.mrRow .mrTitle {
+	text-align: right;
+	vertical-align: 25%;
+	float: left;
+	width: 100px;
+	line-height: 30px;
+	height: 30px;
+}
+.mrRow {
+	margin-top: 10px;
+	height: 30px;
+}
+.mrVirfy img {
+	height: 30px;
+	width: 80px;
+}
+.mrInput {
+	display: table;
+	float: left;
+	width: auto;
+}

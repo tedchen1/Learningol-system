@@ -1,0 +1,55 @@
+﻿
+$(function () {
+    _initAjax();
+    $(".morebox").click(function () {
+        var isClick = $(this).attr("isClick") != "true" ? false : true;
+        if (!isClick) {
+            $(this).attr("isClick", true);
+            _initAjax();
+        }
+    });
+});
+
+function _initAjax() {
+    var urlPath = "/ajax/Teachers.ashx?timestamp=" + new Date().getTime();
+    var size = ($(".context").height() - 30) / 120;
+    var index = Number($(".contextbox").attr("index")) + 1;
+    $.ajax({
+        type: "GET", url: urlPath, dataType: "text",
+        data: { size: Math.floor(size)+1, index: index },
+        //开始，进行预载
+        beforeSend: function (XMLHttpRequest, textStatus) {
+            //Mask.Loading();
+        },
+        //加载出错
+        error: function (XMLHttpRequest, textStatus, errorThrown) {
+            //alert("错误：" + textStatus);
+        },
+        //加载成功！
+        success: function (data) {
+            var json = eval("(" + data + ")");
+            setLoyout(json);
+        }
+    });
+}
+function setLoyout(json) {
+    var box = $(".contextbox");
+    //记录总数
+    box.attr("sum", json.sum).attr("index",json.index);
+    //对象数组
+    var arr = json.object;
+    var tm = "";
+    for (var i = 0; i < arr.length; i++) {
+        tm += "<dd>";
+        tm += "<a href='Teacher" + arr[i].Th_ID + ".htm'><img src='" + arr[i].Th_Photo + "'/></a>";
+        tm += "<div class='couRight'>";
+        tm += "<a href='Teacher" + arr[i].Th_ID + ".htm'><span class='iconfont'>&#xe6c6;</span> " + arr[i].Th_Name + "</a>";
+        tm += "<div>" + arr[i].Ths_Name + "</div>";
+        tm += "</div>";
+        tm += "</dd>";
+    }
+    box.append(tm);
+    var more = $(".morebox");
+    box.find("dd").size() >= json.sum ? more.hide() : more.show();
+    more.attr("isClick", false);
+}

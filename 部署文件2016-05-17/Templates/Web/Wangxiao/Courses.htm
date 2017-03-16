@@ -1,0 +1,97 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
+<!-- saved from url=(0025)http://exam.weisha100.cn/ -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<HTML 
+xmlns="http://www.w3.org/1999/xhtml">
+<HEAD>
+<TITLE>课程中心-{$org.org_platformname}</TITLE>
+<META content="text/html; charset=utf-8" http-equiv="Content-Type">
+<meta name="Keywords"  content="{$org.Org_Keywords}" />
+<meta name="Description" content="{$org.Org_Description}" />
+<LINK rel="stylesheet" type="text/css" href="css/public.css">
+<link href="Styles/public.css" rel="stylesheet" type="text/css" />
+<LINK rel="stylesheet" type="text/css" href="css/default.css">
+<LINK rel="stylesheet" type="text/css" href="css/courses.css">
+<script type="text/javascript" src="CoreScripts/jquery.js"></script>
+<script type="text/javascript" src="CoreScripts/Extend.js"></script>
+<SCRIPT type="text/javascript" src="js/courses.js"></SCRIPT>
+<SCRIPT type="text/javascript" src="Scripts/public.js"></SCRIPT>
+<META name="GENERATOR" content="MSHTML 9.00.8112.16723">
+</HEAD>
+<BODY>
+<vt:include id="inc" file="inc/header.html" />
+<DIV id="top_xian_bg"></DIV>
+<!--第一行 -->
+<DIV id="bodyTop">&nbsp;</DIV>
+<DIV id="Context">
+  <!--第二行 -->
+  <DIV id="courseList">
+    <DIV class="boxBar">
+      <DIV class="title"> 全部课程<span>></span></DIV>
+    </DIV>
+    <div class="category_v1">
+      <!--选择区域 -->
+      <div id="selectArea">
+        <div class="selectBar" id="SelectedBar">
+          <div class="selectLeft">已经选条件：</div>
+          <div class="selectRight" id="Selected"></div>
+        </div>
+        <div id="subject" class="selectBar">
+          <div class="selectLeft">按专业：</div>
+          <div class="selectRight">
+            <vt:foreach id="subject" from="$#.subject" item="data" index="i" size="36"  remark="专业">
+              <div class="subjectItem"><a href="#" sbjid="{$:#.data.sbj_id}">{$:#.data.sbj_name} </a> </div>
+            </vt:foreach>
+          </div>
+        </div>
+      </div>
+      <!-- 选择区结束 -->
+    </div>
+    <div class="hotkecheng">
+      <vt:if var="course.Length" value="0" compare="!=">
+        <vt:foreach id="course" from="$#.course" item="data" index="i" size="32" remark="课程列表">
+          <div class="hotkecheng-list ">
+            <div class="promote-li"> <a href="/course.ashx?id={$:#.data.cou_id}"> <img width="230" height="130" src="{$:#.data.cou_logosmall}" /> </a>
+              <div class="ellipsis jiaoshi"> <a href="/course.ashx?id={$:#.data.cou_id}">{$:#.data.cou_name}</a> </div>
+              <div class="font-size-12 "> <span class="hot-left count">{$:#.data.cou_viewNum}</span> <span class="hot-right">{$:#.data.th_name}/{$:#.data.sbj_name}</span> </div>
+            </div>
+          </div>
+        </vt:foreach>
+        <vt:else/>
+        <div id="noContext">您当前的选择没有课程信息！</div>
+      </vt:if>
+    </div>
+  </DIV>
+</DIV>
+<!--分页导航 -->
+<vt:if var="pageAmount.Length" value="1" compare=">">
+  <div id="pagerBar">
+    <div class="pagerFirst pagerBtn"><a href="/courses.ashx?sbj={$sbjid}">首页</a></div>
+    <!--上一页 -->
+    <vt:expression var="pagerPrev" expression="{0}-1" args="$pageIndex" />
+    <vt:if var="#.pagerPrev" value="1" compare="<">
+      <div class="pagerPrev pagerBtn"><a href="#">上一页</a></div>
+      <vt:else />
+      <div class="pagerPrev pagerBtn"><a href="/courses.ashx?index={$:#.pagerPrev}&sbj={$sbjid}">上一页</a></div>
+    </vt:if>
+    <!--分页数字 -->
+    <vt:foreach id="pageAmount" from="$#.pageAmount" item="data" index="i" remark="分页数字">
+      <vt:if var="#.data" value="$pageIndex" compare="=">
+        <div class="pagerIndex pagerBtn pagerCurr"><a href="/courses.ashx?index={$:i}&sbj={$sbjid}">{$:i}</a></div>
+        <vt:else />
+        <div class="pagerIndex pagerBtn"><a href="/courses.ashx?index={$:i}&sbj={$sbjid}">{$:i}</a></div>
+      </vt:if>
+    </vt:foreach>
+    <!--下一页 -->
+    <vt:expression var="pagerNext" expression="{0}+1" args="$pageIndex" />
+    <vt:if var="#.pagerNext" value="$pageAmount.Length" compare=">">
+      <div class="pagerNext pagerBtn"><a href="#">下一页</a></div>
+      <vt:else />
+      <div class="pagerNext pagerBtn"><a href="/courses.ashx?index={$:#.pagerNext}&sbj={$sbjid}">下一页</a></div>
+    </vt:if>
+    <div class="pagerLast pagerBtn"><a href="/courses.ashx?index={$:pageAmount.length}&sbj={$sbjid}">末页</a></div>
+  </div>
+</vt:if>
+<vt:include id="inc" file="inc/footer.html" />
+</BODY>
+</HTML>

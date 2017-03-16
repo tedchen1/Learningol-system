@@ -1,0 +1,47 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>通知 - {$:#.org.org_platformname}</title>
+<meta name="Keywords"  content="{$org.Org_Keywords}" />
+<meta name="Description" content="{$org.Org_Description}" />
+<link href="Styles/public.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="CoreScripts/jquery.js"></script>
+<script type="text/javascript" src="CoreScripts/Extend.js"></script>
+<script type="text/javascript" src="Scripts/notice.js"></script>
+<script type="text/javascript" src="Scripts/Public.js"></script>
+<LINK rel="stylesheet" type="text/css" href="css/public.css">
+<LINK rel="stylesheet" type="text/css" href="css/default.css">
+<link href="Styles/notice.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<vt:include id="inc" file="inc/Header.html" />
+<div id="bodyTop">&nbsp;</div>
+<div id="Context">
+ <div id="artArea">
+    <div id="articleNavi"> <a href="/">首页</a> &gt; <a href="/notices.ashx">通知公告</a> &gt; 正文 </div>
+    <div id="artBox">
+      <div class="artTitle">{$notice.No_Ttl}</div>
+      <div class="artAttrBar"> <span class="artTime">{$notice.no_StartTime  format="yyyy-M-dd hh:m:s"}</span></span> <!--<span class="artSharp">分享 </span>  --></div>
+     
+      <!--正文 -->
+      <div id="artContext">{$notice.No_Context} </div>
+     
+    </div>
+    <div class="artNavi">
+      <div class="artPrev">
+        <!--上一条新闻 -->
+        <vt:if var="prev.no_id" value="1" compare="<"> 上则通知：无
+          <vt:else />
+          上则通知：<a href="/notice.ashx?id={$prev.no_id}">{$prev.No_Ttl}</a> </vt:if>
+      </div>
+      <div class="artNext">
+        <vt:if var="next.no_id" value="1" compare="<"> 下则通知：无
+          <vt:else />
+          下则通知：<a href="/notice.ashx?id={$next.no_id}">{$next.No_Ttl}</a> </vt:if>
+      </div>
+    </div>
+  </div>
+</div>
+<vt:include id="inc" file="inc/footer.html" />
+</body>
+</html>

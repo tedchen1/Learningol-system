@@ -1,0 +1,38 @@
+﻿@charset "utf-8";
+body {
+}
+.item
+{
+	float: left;
+	height: 235px;
+	width: 200px;
+	margin-top: 5px;
+	margin-right: 5px;
+}
+.item img
+{
+	margin: 5px;
+	height: 123px;
+	width: 200px;
+	cursor:pointer;
+}
+.item .itemName{
+	line-height: 20px;
+	white-space: nowrap;
+	height: 20px;
+	overflow: hidden;
+}
+/*取消课程学习的按钮样式*/
+.item a.selected{
+
+	color: #FF0000;
+}
+/*添加课程学习的按钮样式*/
+.item a.noselect{
+	color: #0033FF;
+}
+.itemBtn a{
+	line-height: 25px;
+	white-space: nowrap;
+	height: 25px;
+}

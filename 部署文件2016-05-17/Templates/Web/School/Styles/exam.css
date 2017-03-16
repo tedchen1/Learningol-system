@@ -1,0 +1,213 @@
+@charset "utf-8";
+#mainShow {
+	background-image: url(../Images/3.jpg);
+	background-repeat: no-repeat;
+	background-position: center 0px;
+	height: 300px;
+	width: 100%;
+}
+.allExamTitle {
+	font-size: 22px;
+	line-height: 35px;
+	font-weight: bold;
+	height: 35px;
+	font-family: "黑体";
+	margin-top: 20px;
+	color: #0387d9;
+}
+
+dl, dd {
+	margin: 0px;
+	padding: 0px;
+}
+dl.list {
+	margin-bottom: 20px;
+}
+.onContext{
+	font-size: 25px;
+	line-height: 150px;
+	text-align: center;
+	height: 150px;
+	width: 100%;
+	margin-top: 30px;
+	margin-bottom: 30px;
+	font-family: "黑体", "微软雅黑";
+	color: #0387d9;
+}
+.themeItem {
+	border: 1px solid #CCCCCC;
+	margin-bottom: 40px;
+}
+.themeItem .titleBar {
+	line-height: 40px;
+	height: 40px;
+	margin-right: 10px;
+	margin-bottom: 5px;
+	margin-left: 10px;
+}
+
+.themeItem .titleBar .tax {
+	line-height: 20px;
+	float: left;
+	height: 20px;
+	width: 20px;
+	margin-right: 10px;
+	text-align: center;
+	color: #FFFFFF;
+	background-color: #666666;
+	margin-top: 10px;
+}
+.themeItem .titleBar .tax img {
+}
+.themeItem .titleBar .title {
+	font-size: 16px;
+	line-height: 40px;
+	color: #333333;
+	font-weight: bold;
+}
+.themeItem .intro, .themeItem .intro * {
+	font-size: 14px;
+	line-height: 25px;
+	margin-left: 10px;
+	text-indent: 0px;
+}
+
+.themeItem .group {
+	font-size: 14px;
+	line-height: 25px;
+	font-weight: bold;
+	height: 25px;
+	margin-right: 10px;
+	margin-bottom: 5px;
+	margin-left: 10px;
+}
+.themeItem .examList {
+
+}
+/*我的考试*/
+#myExam .title {
+	width: 300px;
+}
+#myExam .name {
+	width: 200px;
+}
+#myExam .subject {
+	width: 100px;
+}
+#myExam .total {
+	width: 60px;
+}
+#myExam .date {
+	width: 120px;
+}
+#myExam .span {
+	width: 80px;
+}
+#myExam .btn {
+	width: 110px;	
+}
+#myExam .btn .button {
+	font-size: 13px;
+	line-height: 20px;
+	color: #0387d9;
+	background-color: #FFFFCC;
+	text-align: center;
+	height: 20px;
+	width: 90px;
+	margin-top: 3px;
+	border: 1px solid #FF9900;
+	margin-left: 10px;
+	display: block;
+	cursor:pointer;
+}
+#myExam .btn .button:hover{
+	background-color: #FFCC99;
+}
+
+/*
+考试场次的界面处理
+*/
+.themeItem .itemBar {
+	font-size: 14px;
+	line-height: 30px;
+	font-weight: bold;
+	color: #0387d9;
+	margin-left: 40px;
+	display: none;
+}
+.itemHeader {
+	line-height: 25px;
+	height: 25px;
+	background-color: #CCCCCC;
+	width: 100%;
+}
+.itemHeader div{
+	float: left;
+	font-size: 14px;
+	line-height: 25px;
+	font-weight: bold;
+	text-align: center;
+	border-left-width: 1px;
+	border-top-style: none;
+	border-right-style: none;
+	border-bottom-style: none;
+	border-left-style: solid;
+	border-left-color: #FFFFFF;
+	height: 25px;
+	white-space: nowrap;
+}
+.itemRow {
+	line-height: 30px;
+	height: 30px;
+	width: 100%;
+}
+.itemRow:hover{
+	background-color: #E1E1E1;
+}
+.itemRow div{
+	float: left;
+	font-size: 14px;
+	line-height: 30px;
+	text-align: center;
+	border-left-width: 1px;
+	border-top-style: none;
+	border-right-style: none;
+	border-bottom-style: none;
+	border-left-style: solid;
+	border-left-color: #FFFFFF;
+	height: 30px;
+	white-space: nowrap;
+}
+#allExam .name {
+	width: 300px;
+}
+#allExam .subject {
+	width: 200px;
+}
+#allExam .total {
+	width: 80px;
+}
+#allExam .date {
+	width: 120px;
+}
+#allExam .span {
+	width: 80px;
+}
+#allExam .btn .button {
+	font-size: 13px;
+	line-height: 20px;
+	color: #0387d9;
+	background-color: #FFFFCC;
+	text-align: center;
+	height: 20px;
+	width: 100px;
+	margin-top: 3px;
+	border: 1px solid #FF9900;
+	margin-right: 20px;
+	margin-left: 40px;
+	display: block;
+	cursor:pointer;
+}
+#allExam .btn .button:hover{
+	background-color: #FFCC99;
+}

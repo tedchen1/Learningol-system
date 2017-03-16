@@ -1,0 +1,204 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+    <title>测试《{$pager.Tp_Name}》 - {$org.org_platformname}</title>
+    <meta name="Keywords"  content="{$org.Org_Keywords}" />
+    <meta name="Description" content="{$org.Org_Description}" />
+    <script language="javascript" type="text/javascript">
+		//当前服务器端时间
+		var ServerTime=new Date("{$Time}");
+		//当前客户端时间
+		var ClientTime=new Date();
+		var sbjid={$pager.sbj_Id};
+		var subjectName="{$pager.Tp_Name}";
+		//试卷ID
+		var testPagerID={$pager.Tp_Id};
+		var subjectName="{$pager.Tp_Name}";
+		//唯一ID
+		var uid="{$uid}";
+		//考生ID
+		var stID={$Student.st_Id};
+		var stName="{$Student.st_name}";
+    </script>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link href="Styles/Public.css" rel="stylesheet" type="text/css" />
+    <link href="Styles/TestScene.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="CoreScripts/jquery.js"></script>
+    <script type="text/javascript" src="CoreScripts/MessageBox.js"></script>
+    <script type="text/javascript" src="CoreScripts/Extend.js"></script>
+    <script type="text/javascript" src="Scripts/Public.js"></script>
+    <script type="text/javascript" src="CoreScripts/PageBox.js"></script>
+    <script type="text/javascript" src="CoreScripts/easydrag.js"></script>
+    <script type="text/javascript" src="Scripts/TestScene.js"></script>
+    <LINK rel="stylesheet" type="text/css" href="styles/public.css">
+    <link rel="stylesheet" type="text/css" href="Styles/MessageBox.css"/>
+    <link href="Styles/PageBox.css" rel="stylesheet" type="text/css" />
+    <link href="Styles/Jme.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+<vt:include id="inc" file="inc/Header.html" />
+ <vt:include id="inc" file="inc/Depart.html" />
+<script>
+    document.body.onselectstart = document.body.oncontextmenu = function () { return false; };
+    document.body.onpaste = document.body.oncopy = function () { return false; };
+</script>
+<div id="bodyTop">&nbsp;</div>
+<div id="Context">
+      <div id="examHeader">
+    <fieldset id="examInfo">
+          <legend>考试信息</legend>
+          <div class="infoBox">
+        <div class="stPhoto">
+              <div class="stName">{$Student.st_Name} </div>
+              <vt:if var="Student.st_Photo" value="" compare="="> <img src="images/noPhoto.jpg" width="100" height="133"/>
+            <vt:else />
+            <img width="90" height="120" id="empBoxPhoto" src="{$stpath}{$Student.st_Photo}" /> </vt:if>
+            </div>
+        <div class="empName">
+              <table cellspacing="0" cellpadding="0" width="100%" border="0">
+            <tr>
+                  <td width="60" class="right"> 试卷：</td>
+                  <td>{$pager.tp_Name} </td>
+                </tr>
+            <tr>
+                  <td class="right"> 学科： </td>
+                  <td>{$pager.Sbj_Name}<span id="sbjid" style="display: none"> {$pager.Sbj_ID}</span></td>
+                </tr>
+            <tr>
+                <tr>
+                  <td class="right"> 课程： </td>
+                  <td>{$pager.cou_Name}<span id="couid" style="display: none"> {$pager.Cou_ID}</span></td>
+                </tr>
+                <tr>
+                <tr>
+                  <td class="right"> 总分： </td>
+                  <td>{$pager.Tp_total}分</td>
+                </tr>
+          </table>
+            </div>
+      </div>
+        </fieldset>
+    <fieldset id="showBox">
+          <legend>提示信息</legend>
+          <table cellspacing="0" cellpadding="0" width="100%" border="0">
+        <tr>
+              <td width="60" class="left"> 完成：</td>
+              <td><span id="CompleteNumber">0</span> 道题 </td>
+            </tr>
+        <tr>
+              <td class="left"> 总共： </td>
+              <td><span id="QuesCount"> {$pager.Tp_Count } </span>道题 </td>
+            </tr>
+        <tr>
+              <td class="left"> 限时： </td>
+              <td><span id="timeSpan"> {$pager.Tp_Span} </span>分钟 </td>
+            </tr>
+        <tr>
+              <td class="left"> 时间： </td>
+              <td><span id="currTime"></span></td>
+            </tr>
+      </table>
+        </fieldset>
+    <fieldset id="timeBox">
+          <legend>剩余时间</legend>
+          
+          <!-- <div class="timeTitle"> 剩余时间</div>-->
+          <div class="timeArea"> <span class="mm">0</span>:<span class="ss">0</span></div>
+        </fieldset>
+  </div>
+     
+      <div id="TestArea"> 
+    <!--试题展示区-->
+    <div id="quesArea">
+          <vt:foreach id="ques" from="$#.ques" item="q" index="i" remark="试题">
+        <vt:function var="IsCollect" method="IsCollect" args="$#.q.qus_id"/>
+        <div class="quesItem" qid="{$:#.q.qus_id}" index="{$:i}" IsCollect="{$:#.IsCollect}" type="{$:#.q.qus_type}" style="display:none">
+              <div class="quesBox">
+            <vt:function var="type" method="getQuesType" args="$#.q.qus_type"/>
+            <div class="quesInfo">
+                  <div class="info">[{$:i}/{$ques.Count}] [<span class="type">{$:type}题</span>]（<span class="num">{$:#.q.qus_number}</span>分）</div>
+                  <div class="infoLeft"> 
+                <!--收藏与报错 -->
+                <vt:if var="IsCollect" value="true" compare="="> <span class="examico btnFav IsCollect">&#xe662;</span>
+                      <vt:else/>
+                      <span class="examico btnFav">&#xe661;</span> </vt:if>
+                <span class="examico btnError">&#xe704;</span> </div>
+                </div>
+            <!--试题的题干 -->
+            <div class="quesTitle"> {$:#.q.qus_title} </div>
+            <!--试题答案选项 -->
+            <div class="quesAnswerBox">
+                  <vt:if var="q.qus_type" value="1" compare="="> 
+                <!--单选题 -->
+                <vt:function var="items" method="AnswerItems" args="$#.q.qus_uid"/>
+                <vt:foreach from="$#.items" item="ans" index="j">
+                      <vt:function var="tax" method="GetOrder" args="$j"/>
+                      <div class="answer"  correct="{$:ans.Ans_IsCorrect}" ansid="{$:ans.Ans_id}"><span class="iconfont type">&#xf00c6;</span>{$:tax}、{$:ans.Ans_Context} </div>
+                    </vt:foreach>
+              </vt:if>
+                  <vt:if var="q.qus_type" value="2" compare="="> 
+                <!--多选题 -->
+                <vt:function var="items" method="AnswerItems" args="$#.q.qus_uid"/>
+                <vt:foreach from="$#.items" item="ans" index="j">
+                      <vt:function var="tax" method="GetOrder" args="$j"/>
+                      <div class="answer"  correct="{$:ans.Ans_IsCorrect}" ansid="{$:ans.Ans_id}"><span class="iconfont type">&#xe603;</span>{$:tax}、{$:ans.Ans_Context} </div>
+                    </vt:foreach>
+              </vt:if>
+                  <vt:if var="q.qus_type" value="3" compare="="> 
+                <!--判断题 -->
+                <vt:function var="answer" method="GetAnswer" args="$#.q"/>
+                <vt:if var="answer" value="正确" compare="=">
+                      <div class="answer" correct="true" ansid="0"><span class="iconfont type">&#xe621;</span>A、&nbsp;正确</div>
+                      <div class="answer" correct="false" ansid="1"><span class="iconfont type">&#xe621;</span>B、&nbsp;错误</div>
+                      <vt:else/>
+                      <div class="answer" correct="false" ansid="0"><span class="iconfont type">&#xe621;</span>A、&nbsp;正确</div>
+                      <div class="answer" correct="true" ansid="1"><span class="iconfont type">&#xe621;</span>B、&nbsp;错误</div>
+                    </vt:if>
+              </vt:if>
+                  <vt:if var="q.qus_type" value="4" compare="=">
+                <div class="answer">
+                      <div><span class="iconfont type1">&#xe657;</span> 回答：</div>
+                      <textarea name="" class="textbox4"></textarea>
+                    </div>
+              </vt:if>
+                  <vt:if var="q.qus_type" value="5" compare="="> 
+                <!--填空题 -->
+                <vt:function var="items" method="AnswerItems" args="$#.q.qus_uid"/>
+                <vt:foreach from="$#.items" item="ans" index="j">
+                      <vt:function var="tax" method="GetOrder" args="$j"/>
+                      <div class="answer" correct="{$:ans.Ans_Context}" ><span class="iconfont type1">&#xe657;</span>{$:tax}、
+                    <input name=""  class="textbox5" type="text"/>
+                  </div>
+                    </vt:foreach>
+              </vt:if>
+                </div>
+          </div>
+            </div>
+      </vt:foreach>
+        </div>
+    <!--试题卡-->
+    <div id="cardBox">
+          <div id="cardBoxTitle"> 答题卡</div>
+          <div id="cardBoxInner">
+         
+          </div>
+        </div>
+  </div>
+   <!--上下按钮控制区-->
+      
+      <div id="controlBox">
+    <div id="btnPrev" class="btn"> 
+          <!--上一题--> 
+          &nbsp;</div>
+    <div id="btnNext" class="btn"> 
+          <!--下一题--> 
+          &nbsp;</div>
+    <!--<div id="btnEnterNext" class="btn"> 
+          
+          &nbsp;</div>-->
+    <div id="btnSubmint"> <img src="images/submit.gif" width="260" height="45"/> &nbsp;</div>
+  </div>
+    </div>
+<vt:include id="inc" file="inc/footer.html" />
+</body>
+</html>

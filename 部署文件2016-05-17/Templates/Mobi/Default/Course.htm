@@ -1,0 +1,82 @@
+﻿<!doctype html>
+<head>
+<title>《{$course.cou_name}》</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<meta name="format-detection" content="telephone=yes" />
+<meta name="format-detection" content="email=no" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="Keywords"  content="{$org.Org_Keywords}" />
+<meta name="Description" content="{$org.Org_Description}" />
+<link href="Styles/Public.css?tick={$tick}" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="CoreScripts/jquery.js"></script>
+<script type="text/javascript" src="CoreScripts/Extend.js"></script>
+<script type="text/javascript" src="Scripts/Public.js"></script>
+<script type="text/javascript" src="Scripts/AutoLoyout.js"></script>
+<script type="text/javascript" src="Scripts/Course.js"></script>
+<link href="Styles/Course.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<vt:include id="inc" file="inc/Header.html" />
+<div loyout="row"  class="context"> 
+<div class="contextbox">
+  <div id="couHead">
+    <div class="photo"><img src="{$course.Cou_LogoSmall}"/></div>
+    <div class="headRight">
+      <div class="couIntro"> {$course.cou_intro} </div>
+      <div class="couTeacer">主讲老师： {$course.th_name} </div>
+      <div class="couNum"> 关注次数：{$course.cou_viewNum} </div>
+      <div class="couBtn">
+        <vt:if var="Student.st_id" value="0" compare=">">
+          <vt:if var="isStudy" value="True" compare="="> <a href="#study" title="选修该课程">开始学习</a>
+            <vt:else/>
+            <a href="student/selectCourse.ashx?id={$course.cou_id}" title="选修该课程">选修该课程</a> </vt:if>
+          <vt:else/>
+          <a href="student/index.ashx" title="请选登录">登录学习</a> </vt:if>
+      </div>
+    </div>
+  </div>
+  <div id="details">
+    <div id="LeftBox">
+      <div class="boxBar">
+        <div class="title">课程目录<a name="study" id="study">&nbsp;</a></div>
+      </div>
+      <div class="itemList">
+        <vt:function var="top" method="getOutlineTop" args=""/>
+        <vt:foreach id="Outline" from="$#.top" item="data" index="i" remark="课程章节">
+          <div class="item1">
+            <div class="itemName">第 {$:i} 章 &nbsp; {$:#.data.ol_name} </div>
+            <vt:if var="isStudy" value="True" compare="="> <a class="study" href="outline.ashx?id={$:#.data.ol_id}">学习</a> </vt:if>
+          </div>
+          <vt:function var="two" method="getOutlineTwo" args="$#.data.ol_id"/>
+          <vt:foreach from="$#.two" item="m2" index="j">
+            <div class="item2">
+              <div class="itemName">第 {$:j} 节 &nbsp; {$:#.m2.ol_name} </div>
+              <vt:if var="isStudy" value="True" compare="="> <a class="study" href="outline.ashx?id={$:#.m2.ol_id}">学习</a> </vt:if>
+            </div>
+          </vt:foreach>
+        </vt:foreach>
+      </div>
+      <div class="boxBar">
+        <div class="title">主讲老师</div>
+      </div>
+      <div id="teacher">
+      <a href="teacher.ashx?id={$:#.th.th_id}"><img src="{$th.th_photo}"/></a>
+       
+        <div class="thRight">
+          <div class="thTop">
+            <div class="thName">{$th.th_name}</div>
+            <div class="thTitle">高级讲师</div>
+          </div>
+          <div class="signature">{$th.th_signature}</div>
+        </div>
+      </div>
+    </div>
+    </div>
+  </div>
+</div>
+<vt:include id="inc" file="inc/footer.html" />
+</body>
+</html>

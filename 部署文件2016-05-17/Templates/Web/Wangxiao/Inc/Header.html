@@ -1,0 +1,60 @@
+﻿<div class="header">
+  <div class="wrapper clearfix">
+    <vt:if var="org.org_logo" value="" compare="!=">
+      <h1> <a href="/"><img src="{$orgPath}{$org.org_logo}" class="logo" /></a> </h1>
+    </vt:if>
+    <ul class="htnav">
+      <li class="curr"> <a href="/">首页</a> </li>
+      <li> <a href="/Courses.ashx">课程</a> </li>
+      <li> <a href="/teacher/List.ashx">教师</a> </li>
+   <!--   <li> <a href="/knowledges.ashx">知识库</a> </li>-->
+      <li> <a href="/Training.ashx">练习</a> </li>
+      <li> <a href="/test.ashx">测试</a> </li>
+      <li> <a href="/exam.ashx">考试</a> </li>
+      <li class="menu phone"  type="phone"><a href="/mobile/default.ashx" ><span class="iconphone" style="font-size:20px">&#xe610;</span>手机</a></li>
+    </ul>
+    <div class="shouke">
+      <vt:if var="Teacher.th_id" value="0" compare=">"> <a href="/Teacher/panel.ashx">
+        <vt:if var="Teacher.th_name" value="" compare="=">（暂无姓名）
+          <vt:else />
+          {$Teacher.th_name} </vt:if>
+        </a>
+        <vt:else/>
+        <a href="/Teacher/index.ashx">我想授课</a> </vt:if>
+    </div>
+    <div class="student">
+      <vt:if var="Student.st_id" value="0" compare=">"> <a href="/student/panel.ashx">
+        <vt:if var="Student.st_name" value="" compare="=">（暂无姓名）
+          <vt:else />
+          {$Student.st_name} </vt:if>
+        </a>
+        <vt:else/>
+        <a href="/student/index.ashx">我要学习</a> </vt:if>
+    </div>
+  </div>
+</div>
+ <div id="qrcode" type="phone" style="display:none"><img src="{$orgpath}qr_{$org.Org_TwoDomain}.png"/><div>手机扫描二维码</div></div>
+ 
+ <script type="text/javascript">
+$(function () {
+    mobileEvent();
+
+});
+//手机版二维码
+function mobileEvent() {
+    $("*[type=phone]").hover(function () {
+        var btn=$(".phone");
+        var off = $(".phone").offset();
+        var qr = $("#qrcode");
+        qr.css({left:off.left+btn.width()-qr.width(),top:off.top+btn.height()});
+        qr.show();
+        window.phoneHover=true;
+    },function () {
+        window.phoneHover=false;
+        window.setTimeout(function(){
+            if(!window.phoneHover)
+                $("#qrcode").hide();
+        },100)
+    });
+}
+</script>

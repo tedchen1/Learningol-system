@@ -1,0 +1,78 @@
+﻿<!DOCTYPE html>
+<head>
+<title>
+<vt:if var="currCourse.cou_id" value="0" compare=">">课程：{$:#.currCourse.cou_name}
+  <vt:else />
+  {$org.org_platformname}</vt:if>
+</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<meta name="format-detection" content="telephone=yes" />
+<meta name="format-detection" content="email=no" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="Keywords"  content="{$org.Org_Keywords}" />
+<meta name="Description" content="{$org.Org_Description}" />
+<script type="text/javascript" src="CoreScripts/jquery.js"></script>
+<script type="text/javascript" src="CoreScripts/Extend.js"></script>
+<script type="text/javascript" src="Scripts/AutoLoyout.js"></script>
+<script type="text/javascript" src="Scripts/public.js"></script>
+<script type="text/javascript" src="Scripts/default.js"></script>
+<link href="Styles/Public.css?tick={$tick}" rel="stylesheet" type="text/css" />
+<link href="Styles/Default.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" href="Styles/iconfont.css"/>
+</head>
+<body>
+<vt:include  file="inc/header.html" />
+<div loyout="row" class="context">
+  <div loyout="row" class="space"></div>
+  <vt:if var="currCourse.cou_id" value="1" compare="<">
+  <div loyout="row" class="showtxt" height="40" >您还没有选择学习科目。<br/>
+  请点击右上角选择！</div>
+  </vt:if>
+  <div  loyout="row" height="313"  class="infolist">
+    <div class="listBox">
+      <dl>
+        <dt><a href="Outline.ashx"><img src="Images/icon01.gif"></a></dt>
+        <dd>章节练习</dd>
+      </dl>
+      <dl>
+        <dt><a href="TestPaper.ashx"><img src="Images/icon02.gif"></a></dt>
+        <dd><span>模拟考场</span></dd>
+      </dl>
+      <dl>
+        <dt><a href="Guides.ashx"><img src="Images/icon03.gif"></a></dt>
+        <dd><span>考试指南</span></dd>
+      </dl>
+      <dl>
+        <dt><a href="ErrorQuesList.ashx"><img src="Images/icon04.gif"></a></dt>
+        <dd><span>错题重做</span></dd>
+      </dl>
+      <dl>
+        <dt> <a href="notes.ashx"><img src="Images/icon05.gif"></a></dt>
+        <dd><span>我的笔记</span></dd>
+      </dl>
+      <dl>
+        <dt> <a href="Collects.ashx"><img src="Images/icon10.gif"></a></dt>
+        <dd><span>我的收藏</span></dd>
+      </dl>
+      <dl>
+        <dt> <a href="Statistics.ashx"><img src="Images/icon07.gif"></a></dt>
+        <dd><span>统计分析</span></dd>
+      </dl>
+     
+      <dl>
+        <dt> <a href="Knowledges.ashx"><img src="Images/icon06.gif"></a></dt>
+        <dd><span>知识库</span></dd>
+      </dl> <dl>
+        <dt> <a href="Service.ashx"><img src="Images/icon08.gif"></a></dt>
+        <dd><span>联系客服</span></dd>
+      </dl>
+    </div>
+  </div>
+  <div loyout="row"></div>
+</div>
+<vt:include  file="inc/footer.html" />
+</body>
+</html>

@@ -1,0 +1,129 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>学员登录与注册 - {$org.org_platformname}</title>
+<meta name="Keywords"  content="{$org.Org_Keywords}" />
+<meta name="Description" content="{$org.Org_Description}" />
+<script type="text/javascript" src="../CoreScripts/jquery.js"></script>
+<script type="text/javascript" src="../CoreScripts/Extend.js"></script>
+<script type="text/javascript" src="../Scripts/public.js"></script>
+<script type="text/javascript" src="Scripts/index.js"></script>
+<link href="../styles/public.css" rel="stylesheet" type="text/css" />
+<link href="../css/public.css" rel="stylesheet" type="text/css" />
+<link href="../css/PageBox.css" rel="stylesheet" type="text/css" />
+<link href="Styles/index.css" rel="stylesheet" type="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script type="text/javascript" src="../CoreScripts/Verify.js"></script>
+<body>
+<vt:include id="inc" file="../inc/header.html" />
+<div id="bodyTop">
+  <div id="bodyTopContext">
+    <div id="loginBoxBack" style="display:none">&nbsp; </div>
+    <div id="loginBox">
+      <div class="loginBar">
+        <div class="loginTitle" tag="login"> 学员登录 </div>
+         <vt:if var="IsRegStudent" value="false" compare="=">
+        <div class="loginTitle" tag="register"> 学员注册 </div>
+        </vt:if>
+      </div>
+      <div class="loginBody">
+        <div class="loginArea" tag="login">
+          <vt:if var="Student.st_id" value="0" compare=">">
+            <div class="isLoginBox">
+              <div class="loginRow">尊敬的：{$:#.Student.st_name} 您好！ </div>
+              <div class="loginRow"> <a href="/Student/panel.ashx" class="btnInManage">进入管理</a> <a href="/Student/logout.ashx" class="btnLogout">退出登录</a></div>
+            </div>
+            <vt:else/>
+            <form id="student" name="student" method="post" action="/Student/login.ashx">
+              <div class="loginRow">
+                <div class="loginRowRight">手机号：</div>
+                <div class="loginRowLeft">
+                  <input name="tbAcc" type="text"  class="textbox width" nullable="false"  group="login" />
+                </div>
+              </div>
+              <div class="loginRow">
+                <div class="loginRowRight">密 码：</div>
+                <div class="loginRowLeft">
+                  <input name="tbPw" type="password"  class="textbox width" nullable="false"  group="login" />
+                </div>
+              </div>
+              <div class="loginRow">
+                <div class="loginRowRight"> 验证码：</div>
+                <div class="loginRowLeft">
+                <input name="from" type="hidden" value="{$from}" />
+                  <input name="tbCode" type="text" size="8"  class="textbox verify" nullable="false"   lenlimit="4-4" datatype="number"   group="login" />
+                  <img src="/Utility/codeimg.aspx?name=studentvcode" class="verifyCode"/> </div>
+              </div>
+              <div class="loginRow">
+                <label>
+                <input type="checkbox" name="cbSign"/>
+                <input name="signnum" type="hidden" value="30" />
+                一月内免登录 </label>
+                &nbsp;&nbsp; <a href="#">忘记密码</a> </div>
+              <div class="loginRow btnBar">
+                <input type="submit" name="btnSubmit" id="btnSubmit" value="登&nbsp;&nbsp;录"   verify="true"  group="login" class="btnLogin"/>
+                <a href="#" class="aRegister">注&nbsp;&nbsp;册</a> </div>
+            </form>
+          </vt:if>
+        </div>
+        <div class="loginArea" tag="register">
+          <form id="teacher" name="teacher" method="post" action="/Student/Register.ashx">
+            <div class="loginRow">
+              <div class="loginRowRight">手机号：</div>
+              <div class="loginRowLeft">
+                <input name="tbAcc" type="text"  class="textbox width"   nullable="false"   datatype="mobile"  group="reg" >
+              </div>
+            </div>
+            <div class="loginRow">
+              <div class="loginRowRight"> 密&nbsp;&nbsp;码：</div>
+              <div class="loginRowLeft">
+                <input name="tbPw" type="password"  class="textbox width" nullable="false" lenlimit="6-12"  group="reg" />
+              </div>
+            </div>
+            <div class="loginRow">
+              <div class="loginRowRight"> 确认密码：</div>
+              <div class="loginRowLeft">
+                <input name="tbPwd" type="password"  class="textbox width" nullable="false"  group="reg" sametarget="tbPw"/>
+              </div>
+            </div>
+            <div class="loginRow">
+              <div class="loginRowRight">验证码：</div>
+              <div class="loginRowLeft">
+              <input name="from" type="hidden" value="{$from}" />
+                <input name="tbCode" type="text" size="8"  class="textbox verify" nullable="false"   lenlimit="4-4" datatype="number"    group="reg" />
+                <img src="/Utility/codeimg.aspx?name=registercode" class="verifyCode"/></div>
+            </div>
+            
+            <div class="loginRow btnBar">
+              <input type="submit" name="btnSubmit" id="btnSubmit" value="注&nbsp;&nbsp;册"   verify="true"  group="reg"  class="btnRegister"/>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div>
+
+    <div class="boxBar">
+      <div class="title"> 热门课程 <span class="en">Course</span></div>
+      <div class="more"><!--<em class="icoMore">&nbsp;</em>  --><a href="/Courses.ashx">更多>></a></div>
+    </div>
+    <div class="courseList">
+    <div class="courseListInner">
+      <vt:foreach id="courseList" from="$#.courseList" item="data" index="i" count="8" remark="热门课程">
+        <div class="hotkecheng-list ">
+          <div class="promote-li"> <a href="/course.ashx?id={$:#.data.cou_id}"> <img width="230" height="130" src="{$:#.data.cou_logosmall}" /> </a>
+            <div class="ellipsis jiaoshi"> <a href="/course.ashx?id={$:#.data.cou_id}">{$:#.data.cou_name}</a> </div>
+            <div class="font-size-12 "> <span class="hot-left count">{$:#.data.cou_viewNum}</span> <span class="hot-right">{$:#.data.th_name}/{$:#.data.sbj_name}</span> </div>
+          </div>
+        </div>
+      </vt:foreach>
+    </div>
+  </div>
+ 
+
+ </div>
+<vt:include id="inc" file="../inc/footer.html" />
+</body>
+</html>

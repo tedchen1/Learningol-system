@@ -1,0 +1,108 @@
+﻿<!doctype html>
+<head>
+<title>充值</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<meta name="format-detection" content="telephone=yes" />
+<meta name="format-detection" content="email=no" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="Keywords"  content="{$org.Org_Keywords}" />
+<meta name="Description" content="{$org.Org_Description}" />
+<link href="Styles/Public.css?tick={$tick}" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="CoreScripts/jquery.js"></script>
+<script type="text/javascript" src="CoreScripts/Extend.js"></script>
+<script type="text/javascript" src="Scripts/AutoLoyout.js"></script>
+<script type="text/javascript" src="CoreScripts/Extend.js"></script>
+<script type="text/javascript" src="CoreScripts/Verify.js"></script>
+<script type="text/javascript" src="Scripts/Public.js"></script>
+<script type="text/javascript" src="Scripts/MessageBox.js"></script>
+<script type="text/javascript" src="Scripts/MoneyIncom.js"></script>
+<link href="Styles/moneyico/MoneyIco.css" rel="stylesheet" type="text/css">
+<link href="Styles/MoneyIncom.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<vt:include id="inc" file="inc/Header.html" />
+<div class="titleBox" loyout="row" height="44" >
+  <div class="titleBox" loyout="row" height="40" >
+    <vt:if var="type" value="1" compare="="> <a class="titItem titItemCurr" loyout="column" tag="code" href="MoneyIncom.ashx?type=1">充值码充值</a> <a class="titItem" loyout="column" tag="online" href="MoneyIncom.ashx?type=2">在线支付</a> </vt:if>
+    <vt:if var="type" value="2" compare="="> <a class="titItem" loyout="column" tag="code" href="MoneyIncom.ashx?type=1">充值码充值</a> <a class="titItem titItemCurr" loyout="column" tag="online" href="MoneyIncom.ashx?type=2">在线支付</a> </vt:if>
+  </div>
+</div>
+<div loyout="row"  class="context">
+  <div class="contextbox">
+    <vt:if var="type" value="1" compare="=">
+      <div class="infoBox" tag="code">
+        <form id="student" name="student" method="post">
+          <div class="acc">当前学员：{$Student.st_name}({$Student.st_accname})</div>
+          <div class="infoRow"></div>
+          <div class="infoRow"> 请输入充值码： </div>
+          <div class="infoRow">
+            <input name="tbCode" value="" type="text"  class="textbox width" nullable="false"  group="code" />
+          </div>
+          <div class="infoRow">
+            <input name="type" type="hidden" value="1">
+          </div>
+          <div class="infoRow">
+            <vt:if var="alert" value="" compare="!="> <span class="alert">{$moneyCode}<br/>
+              {$alert}</span> </vt:if>
+            <!-- 充值成功 -->
+            <vt:if var="success" value="1" compare="="> <span class="success">成功充值{$code.Rc_Price}元</span> </vt:if>
+          </div>
+          <div class="infoRow">&nbsp;</div>
+          <div class="infoRow">&nbsp;</div>
+          <div class="infoRow">
+            <input type="submit" name="btnSubmit" id="btnSubmit" value="确&nbsp;&nbsp;定"  verify="true"  group="code" class="btnEdit"/>
+            <a href="selfInfo.ashx" class="btnChangePw">返&nbsp;&nbsp;回</a></div>
+        </form>
+      </div>
+    </vt:if>
+    <!-- 支付接口 -->
+    <vt:if var="type" value="2" compare="=">
+      <div class="acc">当前学员： {$Student.st_name}({$Student.st_accname})</div>
+      <vt:if var="pis.Length" value="1" compare="<">
+        <div class="noPay alert"> 当前系统没有开通在线支付接口 </div>
+        <vt:else />
+        <form id="formPay" action="/pay/PayEntry.ashx" method="post">
+          <input name="paiid" type="hidden" id="paiid" value="">
+          <div class="inMoneyRow">
+            <div class="inMoneyRowLeft">
+              <div class="mrRow">
+                <div class="mrTitle">充值金额：</div>
+                <div class="mrInput">
+                  <input name="money" value="" type="text"  class="tbMoney" style="width:140px;" datatype="uint2" nullable="false"  group="money" />
+                </div>
+              </div>
+              <div class="mrRow">
+                <div class="mrTitle"> 验证码：</div>
+                <div class="mrInput">
+                  <input name="vpaycode" value="" type="text"  class="tbMoney"  style="width:55px;" maxlength="4" lenlimit="4-4" datatype="number"  nullable="false"  group="money" />
+                </div>
+                <div class="mrVirfy"> <img src="/Utility/codeimg.aspx?name=vpaycode" class="verifyCode"/> </div>
+              </div>
+            </div>
+          </div>
+          <div class="inMoneyRow"><div class="mrRow">
+              <div class="mrTitle">&nbsp;</div>
+              <input name="btnInMoney" type="submit" verify="true" group="money" type="submit" value="提交" style="display:none">
+            <div class="btnInMoney" ><span class="moneyico">&#xe83c;</span>充值</div></div>
+          </div>
+        </form>
+        <!--<div class="infoRow"> </div> -->
+        <div class="payInterFaceTit"> 选择支付平台</div>
+        <div class="payInterface">
+          <vt:foreach id="pis" from="$#.pis" item="data" remark="支付接口">
+            <div class="pi" select="false" pattern="{$:#.data.Pai_Pattern}" paiid="{$:#.data.Pai_ID}" >
+              <div class="ico"><img src="/pay/images/{$:#.data.Pai_Pattern}.png"/></div>
+              <div class="piName">{$:#.data.Pai_Name}</div>
+            </div>
+          </vt:foreach>
+        </div>
+      </vt:if>
+    </vt:if>
+  </div>
+</div>
+<vt:include id="inc" file="inc/footer.html" />
+</body>
+</html>

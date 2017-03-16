@@ -1,0 +1,78 @@
+﻿<!doctype html>
+<head>
+<title>
+  <vt:if var="guide.gu_id" value="0" compare=">">{$:#.guide.Gu_Title}
+    <vt:else />
+    考试指南</vt:if>
+</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<meta name="format-detection" content="telephone=yes" />
+<meta name="format-detection" content="email=no" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="Keywords"  content="{$org.Org_Keywords}" />
+<meta name="Description" content="{$org.Org_Description}" />
+<link href="Styles/Public.css?tick={$tick}" rel="stylesheet" type="text/css" />
+<link href="Styles/guide.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" href="Styles/iconfont.css"/>
+<script type="text/javascript" src="CoreScripts/jquery.js"></script>
+<script type="text/javascript" src="CoreScripts/Extend.js"></script>
+<script type="text/javascript" src="Scripts/Extend.js"></script>
+<script type="text/javascript" src="Scripts/AutoLoyout.js"></script>
+<script type="text/javascript" src="Scripts/Public.js"></script>
+</head>
+<body>
+<vt:include id="inc" file="inc/Header.html" />
+<div class="context" loyout="row"  >
+  <div class="contextbox">
+    <div id="artArea">
+      <div id="artBox">
+      <div class="artTitle">{$:#.guide.Gu_Title}</div>
+      <div class="artAttrBar"> <span class="artTime">{$:#.guide.gu_crtTime  format="yyyy-M-dd hh:m:s"}</span> <span class="artflux">浏览{$guide.Gu_number}次 </span>
+        <!--<span class="artSharp">分享
+       </span>  -->
+      </div>
+      
+        <!--正文 -->
+        <div id="artContext">{$guide.gu_Details} </div>
+        <!--附件 -->
+        <vt:if var="artAcc.length" value="0" compare=">">
+          <dl id="artAcc">
+            <dt>相关附件：</dt>
+            <vt:foreach id="artAcc" from="$#.artAcc" item="data" index="i" remark="新闻的附件">
+              <dd class="accItem"> <span class="filename">{$:i}、<a href="{$:data.As_FileName}" target="_blank">{$:data.As_Name}</a></span> <span class="filesize">{$:data.As_Size}</span> </dd>
+            </vt:foreach>
+            <script type="text/javascript">
+$(function() {
+	  $(".filesize").each(function(){
+		var n=Number($(this).text());
+		var tm=$().getSizeUnit(n);
+		$(this).text(tm);
+	});
+});
+</script>
+          </dl>
+        </vt:if>
+      </div>
+      
+      <div class="artNavi">
+        <div class="artPrev">
+          <!--上一条新闻 -->
+          <vt:if var="artPrev.Gu_id" value="1" compare="<"> 上则指南：无
+            <vt:else />
+            上则指南：<a href="guide.ashx?id={$artPrev.Gu_id}">{$artPrev.Gu_Title}</a> </vt:if>
+        </div>
+        <div class="artNext">
+          <vt:if var="artNext.Gu_id" value="1" compare="<"> 下则指南：无
+            <vt:else />
+            下则指南：<a href="guide.ashx?id={$artNext.Gu_id}">{$artNext.Gu_Title}</a> </vt:if>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<vt:include id="inc" file="inc/footer.html" />
+</body>
+</html>

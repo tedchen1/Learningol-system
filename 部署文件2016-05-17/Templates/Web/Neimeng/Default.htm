@@ -1,0 +1,125 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>{$org.org_platformname}</title>
+<meta name="Keywords"  content="{$org.Org_Keywords}" />
+<meta name="Description" content="{$org.Org_Description}" />
+<link href="Styles/public.css" rel="stylesheet" type="text/css" />
+<link href="Styles/Default.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="CoreScripts/jquery.js"></script>
+<script type="text/javascript" src="CoreScripts/extend.js"></script>
+<script type="text/javascript" src="CoreScripts/Verify.js"></script>
+<script type="text/javascript" src="Scripts/Public.js"></script>
+<script type="text/javascript" src="Scripts/Default.js"></script>
+</head>
+<body>
+<vt:include id="inc" file="inc/Header.html" />
+<!--第一行 -->
+<div id="FirstBox">
+  <div id="showBox" trueWidth="980">
+    <script type="text/javascript" id="myFocusjs" src="myFocus/js/myfocus-1.2.4.full.js"></script>
+    <div id="boxID" style="visibility:hidden">
+      <!--焦点图盒子-->
+      <div class="loading"><span>请稍候...</span></div>
+      <!--载入画面(可删除)-->
+      <ul class="pic">
+        <!--内容列表-->
+        <li><a href="#"><img src="myFocus/2.jpg" thumb="" alt="" text="" /></a></li>
+        <li><a href="#"><img src="myFocus/1.jpg" thumb="" alt="" text="" /></a></li>
+        <li><a href="#"><img src="myFocus/3.jpg" thumb="" alt="" text="" /></a></li>
+        <li><a href="#"><img src="myFocus/4.jpg" thumb="" alt="" text="" /></a></li>
+      </ul>
+    </div>
+    <script type="text/javascript">
+myFocus.set({
+    id:'boxID',//焦点图盒子ID
+    pattern:'mF_expo2010',//风格应用的名称
+    time:6,//切换时间间隔(秒)
+    trigger:'click',//触发切换模式:'click'(点击)/'mouseover'(悬停)
+    width:1920,//设置图片区域宽度(像素)
+    height:480,//设置图片区域高度(像素)
+    txtHeight:'0'//文字层高度设置(像素),'default'为默认高度，0为隐藏
+});
+</script>
+    <script type="text/javascript" src="myFocus/js/extend.js"></script>
+  </div>
+  <!--登录框 -->
+ <!-- <vt:include id="inc" file="inc/login.html" />-->
+</div>
+<div id="Context">
+  <!--第二行 -->
+  <div id="SecondBox">
+    <div class="boxBar">
+      <div class="title"> 热门课程</div>
+      <div class="more"><em class="icoMore">&nbsp;</em> <a href="/Courses.ashx">更多课程</a></div>
+    </div>
+    <div class="courseList">
+      <div class="courseListInner">
+        <vt:foreach id="courseList" from="$#.courseList" item="data" index="i" count="4" remark="pagedata变量只接收当前页的数据列表集合">
+          <div class="item" couid="{$:#.data.cou_id}" wd="800" hg="600"> <a href="/course.ashx?id={$:#.data.cou_id}" title="{$:#.data.cou_name}"><img src="{$:#.data.cou_logosmall}" /> </a>
+           <div class="itemMark"></div>
+            <div class="itemInfo">
+               <a href="/course.ashx?id={$:#.data.cou_id}" title="{$:#.data.cou_name}">{$:#.data.cou_name}</a>
+              <div class="itemDetails">主讲：{$:#.data.th_name}<br />
+{$:#.data.Cou_Intro}</div>
+            </div>
+          </div>
+        </vt:foreach>
+      </div>
+    </div>
+  </div>
+  <!-- 第三行 -->
+  <div id="ThirdBox">
+    <div class="ThirdBoxInner">
+      <div id="newsBox" class="box">
+        <div class="boxBar">
+          <div class="title"> 新闻资讯</div>
+          <div class="more"> <a href="/news.ashx">更多&gt;&gt;</a></div>
+        </div>
+        <div class="newslist">
+          <vt:foreach id="newslist" from="$#.newslist" item="data" columns="-1" index="i" count="10" remark="columns为新闻栏目Id">
+            <div class="item" artid="{$:#.data.art_id}">
+              <div class="newsItem"> <a href="../../article.ashx?id={$:#.data.art_id}" title="{$:#.data.art_title}">{$:#.data.art_title}</a> </div>
+              <div class="newsTime">{$:#.data.art_pushTime  format="[MM-dd]"}</div>
+            </div>
+          </vt:foreach>
+        </div>
+      </div>
+      <div id="newsBox" class="box">
+        <div class="boxBar">
+          <div class="title"> 通知公告</div>
+          <div class="more"> <a href="/Notices.ashx">更多&gt;&gt;</a></div>
+        </div>
+        <div class="newslist">
+          <vt:foreach id="notice" from="$#.notice" item="data" index="i" count="10" remark="通知公告">
+            <div class="item" noid="{$:#.data.no_id}">
+              <div class="newsItem"><a href="/notice.ashx?id={$:#.data.no_id}" title="{$:#.data.no_ttl}"> {$:#.data.no_ttl}</a> </div>
+              <div class="newsTime">{$:#.data.no_startTime  format="[MM-dd]"}</div>
+            </div>
+          </vt:foreach>
+        </div>
+      </div>
+      <div id="teacherBox" class="box">
+        <div class="boxBar">
+          <div class="title"> 教师风采</div>
+          <div class="more"> <a href="/teacher/list.ashx">更多&gt;&gt;</a></div>
+        </div>
+        <div class="thlist">
+          <div class="thlistInner">
+            <vt:foreach id="teachers" from="$#.teachers" item="data" index="i" count="4" remark="教师信息列表">
+              <div class="itemTeacher" style="background-image: url({$:#.data.th_photo})" href="/teacher/Detail.ashx?id={$:#.data.th_id}">
+                <div class="mark">&nbsp; </div>
+                <div class="thInfo">
+                  <div class="thName">{$:#.data.th_name}</div>
+                </div>
+              </div>
+            </vt:foreach>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<vt:include id="inc" file="inc/footer.html" />
+</body>
+</html>

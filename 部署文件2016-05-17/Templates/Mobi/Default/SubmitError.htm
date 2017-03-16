@@ -1,0 +1,69 @@
+﻿<!doctype html>
+<head>
+<title>提交错误试题</title>
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<meta name="format-detection" content="telephone=yes" />
+<meta name="format-detection" content="email=no" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="Keywords"  content="{$org.Org_Keywords}" />
+<meta name="Description" content="{$org.Org_Description}" />
+<link href="Styles/Public.css?tick={$tick}" rel="stylesheet" type="text/css" />
+<link href="Styles/SubmitError.css" rel="stylesheet" type="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script type="text/javascript" src="CoreScripts/jquery.js"></script>
+<script type="text/javascript" src="CoreScripts/Extend.js"></script>
+<script type="text/javascript" src="Scripts/AutoLoyout.js"></script>
+<script type="text/javascript" src="CoreScripts/Verify.js"></script>
+</head>
+<body>
+<vt:if var="isSuccess" value="true" compare="=">
+  <script type="text/javascript">
+
+parent.PageBox.Close();
+</script>
+  <vt:else/>
+<form  loyout="row" id="SubmitError" name="SubmitError" method="post">
+  <div loyout="row" height="10"> </div>
+  <div loyout="row" height="165">
+    <label>
+    <input type="checkbox" name="err1" value="试题图片不显示" >
+    试题图片不显示 </label>
+    <label>
+    <input type="checkbox" name="err1"  value="解题思路与题干不符" >
+    解题思路与题干不符 </label>
+    <label>
+    <input type="checkbox" name="err1" value="试题不在考试大纲范围" >
+    试题不在考试大纲范围 </label>
+    <label>
+    <input type="checkbox" name="err1"  value="解题思路与答案矛盾"  >
+    解题思路与答案矛盾 </label>
+    <label>
+    <input type="checkbox" name="err1"  value="试题不属于本学科" >
+    试题不属于本学科 </label>
+    <label>
+    <input type="checkbox" name="err1" value="解题思路有错别字"  >
+    解题思路有错别字 </label>
+    <label>
+    <input type="checkbox" name="err1"  value="试题有错别字" >
+    试题有错别字 </label>
+    <label>
+    <input type="checkbox" name="err1"  value="试题与其他试题有重复" >
+    试题与其他试题有重复 </label>
+  </div>
+  <div loyout="row" height="20" class="txt"> &nbsp;&nbsp;&nbsp;&nbsp;错误附加说明：</div>
+   
+    <div loyout="row">
+    <div loyout="column" width="10"></div>
+    <textarea name="tbErrInfo" loyout="column"  class="textbox"  ></textarea>
+     <div loyout="column" width="10"></div>
+  </div>
+   <div loyout="row" height="10"> </div>
+  <div loyout="row" height="40">
+    <input type="submit" name="btnSubmit" id="btnSubmit" value="确&nbsp;&nbsp;定"  verify="true"  group="login" class="btnLogin"/>
+  </div>
+</form>
+</vt:if>
+</body>
+</html>

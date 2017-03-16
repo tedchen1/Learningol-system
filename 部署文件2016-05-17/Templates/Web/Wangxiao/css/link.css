@@ -1,0 +1,46 @@
+﻿@charset "utf-8";
+body {
+	background-color: #EEEEEE;
+}
+
+#Context2 {
+	margin: 0px auto; width: 1024px; text-align: left; display: table;
+}
+
+.linkBox {
+	margin-bottom: 70px;
+	min-height: auto;
+	border: 0px solid #DDDDDD;
+}
+.linkBox .linkTitle {
+	height: 25px;
+	margin-bottom: 10px;
+	margin-top: 60px;
+}
+.linkBox .linkTitle .title {
+	width: 150px;
+	height: 25px;
+	line-height: 25px;
+	font-family: "微软雅黑";
+	font-size: 25px;
+	float: left;
+	margin-left: 23px;
+}
+.linkBox .info {
+	width: 980px;
+	height: 348px;
+	background-image: url(../images/link-bg.jpg);
+	margin-top: 40px;
+	background-repeat: no-repeat;
+	background-position: 0px -12px;
+}.linkBox .info p{
+	width: 280px;
+	color: #343434;
+	padding-top: 41px;
+	margin-left: 70px;
+	font-size: 14px;
+	line-height: 33px;
+	text-align:left;
+	display:block; 
+	float:left;
+	}

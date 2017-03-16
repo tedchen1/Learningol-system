@@ -1,0 +1,146 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
+<!-- saved from url=(0025)http://exam.weisha100.cn/ -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<HTML 
+xmlns="http://www.w3.org/1999/xhtml">
+<HEAD>
+<TITLE>{$Course.cou_name}-{$org.org_platformname}</TITLE>
+<META content="text/html; charset=utf-8" http-equiv="Content-Type">
+<meta name="Keywords"  content="{$org.Org_Keywords}" />
+<meta name="Description" content="{$org.Org_Description}" />
+<script type="text/javascript" src="CoreScripts/jquery.js"></script>
+<script type="text/javascript" src="CoreScripts/Extend.js"></script>
+<script type="text/javascript" src="CoreScripts/Base64.js"></script>
+<script type="text/javascript" src="CoreScripts/MessageBox.js"></script>
+<script type="text/javascript" src="scripts/public.js"></script>
+<!--播放器的引用-->
+<script type="text/javascript" src="/Utility/Ckplayer/js/offlights.js"></script>
+<script type="text/javascript" src="/Utility/Ckplayer/ckplayer/ckplayer.js" charset="utf-8"></script>
+<META name="GENERATOR" content="MSHTML 9.00.8112.16723">
+<LINK rel="stylesheet" type="text/css" href="css/public.css">
+<link href="Styles/public.css" rel="stylesheet" type="text/css" />
+<LINK rel="stylesheet" type="text/css" href="css/default.css">
+<LINK rel="stylesheet" type="text/css" href="css/video.css">
+<LINK rel="stylesheet" type="text/css" href="styles/outline.css">
+<link rel="stylesheet" type="text/css" href="Styles/MessageBox.css"/>
+<link href="Styles/Jme.css" rel="stylesheet" type="text/css" />
+</HEAD>
+<BODY>
+<vt:include id="inc" file="inc/Header.html" />
+<DIV id="top_xian_bg"></DIV>
+<DIV id="bodyTop">&nbsp;</DIV>
+<DIV id="Context-body-new">
+  <DIV id="Context">
+    <DIV id="Navi"><A href="/courses.ashx">全部课程</A> <span>&gt;</span>{$Course.sbj_name} <span>&gt;</span> <a href="course.ashx?id={$Course.cou_id}">《{$Course.cou_name} 》</a></DIV>
+    <div class="kechengli_video">
+      <div class="bvli_left f2">
+        <div class="bvlli_video">
+          <vt:if var="video.As_FileName" value="" compare="!="> 
+            <!--如果存在视频文件，则播放-->
+            <div id="videobox" style="width:720px; height:550px; margin-left:10px;position:relative;z-index: 100;"></div>
+            <!--播放器的各种信息-->
+            <div id="playerInfo"> 视频时长： <span id="totalTime">0</span> 播放进度： <span id="playTime">0</span> 学习时间： <span id="studyTime">0</span>秒
+              <vt:if var="studyLog" value="" compare="!="> <span class="historyInfo">上次学习到<span id="historyTime">{$historyPlay}</span>，点击此处接上次进度学习</span> </vt:if>
+            </div>
+            <script type="text/javascript">
+        
+		//视频地址
+        var videoPath="{$video.As_FileName}";
+		//课程ID,章节ID
+		var couid='{$outline.cou_id}';
+		var olid='{$outline.ol_id}';
+
+        </script>
+        <!--视频播放事件-->
+        <div id="events" style="display:none">
+          <vt:foreach from="$events" item="event" index="i">
+            <div class="eventItem" eventid="{$event.Oe_ID}" type="{$event.Oe_EventType}" winWidth="{$event.Oe_Width}" winHeight="{$event.Oe_Height}" point="{$event.Oe_TriggerPoint}">
+              <div class="eventTitle" title="此为视频播放事件的窗口标题"> {$event.Oe_Title} </div>
+              <!--如果是“提醒”-->
+              <vt:if var="event.Oe_EventType" value="1" compare="=">
+                <div class="eventContext"> {$event.Oe_Context} </div>
+              </vt:if>
+              <!--如果是“知识展示”-->
+              <vt:if var="event.Oe_EventType" value="2" compare="=">
+                <div class="eventContext"> {$event.Oe_Context} </div>
+              </vt:if>
+              <!--如果是“课堂提问”-->
+              <vt:if var="event.Oe_EventType" value="3" compare="=">
+                <div class="eventContext"> {$event.Oe_Context} </div>
+                <vt:function var="ques" method="getEventQues" args="$#.event.Oe_ID"/>
+                <div class="quesBox">
+                  <vt:foreach from="$ques" item="answer" index="i">
+                    <vt:if var="answer.item" value="" compare="!=">
+                     <vt:function var="tax" method="GetOrder" args="$i"/>
+                      <div class="ansItem" iscorrect="{$:answer.iscorrect}">{$:tax}、{$:answer.item}</div>
+                    </vt:if>
+                  </vt:foreach>
+                </div>
+                <div class="quesAns"></div>
+              </vt:if>
+              <!--如果是“实时反馈”-->
+              <vt:if var="event.Oe_EventType" value="4" compare="=">
+                <div class="eventContext"> {$event.Oe_Context} </div>
+                <vt:function var="ques" method="getEventFeedback" args="$#.event.Oe_ID"/>
+                <div class="quesBox">
+                  <vt:foreach from="$ques" item="answer" index="i">
+                    <vt:if var="answer.item" value="" compare="!=">
+                     <vt:function var="tax" method="GetOrder" args="$i"/>
+                      <div class="ansItem" point="{$:answer.point}">{$:tax}、{$:answer.item}（跳转到:{$:answer.point}秒）</div>
+                    </vt:if>
+                  </vt:foreach>
+                </div>
+                <div class="quesAns"></div>
+              </vt:if>
+            </div>
+          </vt:foreach>
+        </div>
+            <vt:else/>
+            <DIV class="kechengBox">
+              <DIV class="courseBox">
+                <DIV class="courseTitle">
+                  <DIV class="title">课程内容</DIV>
+                </DIV>
+                <DIV class="info">　{$outline.ol_intro}</DIV>
+                <vt:if var="acces.Length" value="0" compare=">">
+                  <div class="oltitle"> 附件下载 </div>
+                  <div id="access">
+                    <vt:foreach from="$#.acces" item="acc" index="j"> <a class="accItem" target="_blank" href="{$acc.As_FileName}">{$:j}、{$acc.As_Name} </a> </vt:foreach>
+                  </div>
+                </vt:if>
+              </DIV>
+            </DIV>
+          </vt:if>
+        </div>
+      </div>
+      <div class="bvli_right fl">
+        <div class="bvrli_title">
+          <p class="vlf28"> 课程信息 </p>
+        </div>
+        <div class="kcmlListtop"> {$olTree} </div>
+      </div>
+    </div>
+  </div>
+</div>
+<DIV id="Context">
+  <vt:if var="video.As_FileName" value="" compare="!=">
+    <DIV class="kechengBox">
+      <DIV class="courseBox">
+        <DIV class="courseTitle">
+          <DIV class="title">课程内容</DIV>
+        </DIV>
+        <DIV class="info">　{$outline.ol_intro}</DIV>
+        <vt:if var="acces.Length" value="0" compare=">">
+          <div class="oltitle"> 附件下载 </div>
+          <div id="access">
+            <vt:foreach from="$#.acces" item="acc" index="j"> <a class="accItem" target="_blank" href="{$acc.As_FileName}">{$:j}、{$acc.As_Name} </a> </vt:foreach>
+          </div>
+        </vt:if>
+      </DIV>
+    </DIV>
+  </vt:if>
+</DIV>
+<vt:include id="inc" file="inc/footer.html" />
+<script type="text/javascript" src="Scripts/Outline.js"></script>
+</BODY>
+</HTML>

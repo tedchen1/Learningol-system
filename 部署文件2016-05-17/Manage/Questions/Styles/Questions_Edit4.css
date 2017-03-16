@@ -1,0 +1,21 @@
+﻿.quesLeft
+{
+	float: left;
+	width: 580px;
+}
+.quesRight
+{
+	float: left;
+	width: 355px;
+	margin-left: 10px;
+}
+
+.answerBox
+{
+	margin-top: 10px;
+}
+.answerNum
+{
+	height:25px;
+	line-height: 25px;
+}

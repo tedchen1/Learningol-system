@@ -1,0 +1,66 @@
+﻿<div id="loginLoyout">
+        <div id="loginArea">
+            <div id="loginCenter">
+                <div id="loginBox">
+                <div id="loginTitle">
+                 <div id="loginClose">
+                <img src="{$TempPath}Images/winClose.gif"/>
+                </div>
+                </div>
+                    <iframe allowtransparency="true" path="/student/index.ashx?state=box" frameborder="0" scrolling="no">
+                    </iframe>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--登录界面结束-->
+
+<div loyout="row" height="130px">
+  <div loyout="column">
+    <div id="top" loyout="row" height="78px">
+      <div class="header_left" loyout="column"> <a href="/"><img src="{$orgPath}{$org.org_logo}" class="logo" /></a> </div>
+      <div loyout="column" width="250">
+        <div class="student">
+          <vt:if var="Student.st_id" value="0" compare=">"> <a href="/student/panel.ashx">
+            <vt:if var="Student.st_name" value="" compare="=">（暂无姓名）
+              <vt:else />
+              {$Student.st_name} </vt:if>
+            </a>
+            <vt:else/>
+            <a href="/student/index.ashx" class="studentLogin">我要学习</a> </vt:if>
+        </div>
+        <div class="shouke">
+          <vt:if var="Teacher.th_id" value="0" compare=">"> <a href="/Teacher/panel.ashx">
+            <vt:if var="Teacher.th_name" value="" compare="=">（暂无姓名）
+              <vt:else />
+              {$Teacher.th_name} </vt:if>
+            </a>
+            <vt:else/>
+            <a href="/Teacher/index.ashx">我想授课</a> </vt:if>
+        </div>
+      </div>
+      <div class="header_right" loyout="column" width="240">
+        <div class="timePanel"> 
+          <!--显示时间 -->
+          <div id="time"> </div>
+          <div id="timeLine"> &nbsp;</div>
+          <div id="week"> </div>
+          <div id="yeerday"> </div>
+        </div>
+      </div>
+    </div>
+    <div id="mainMenu" loyout="row" height="52">
+      <div class="rootItem" type="home"><a href="/" type="home"> <img src="{$TempPath}images/repair/index_a.gif" width="99" height="48" ></a></div>
+      <div class="rootItem"><a href="/news.ashx"> 新闻资讯</a></div>
+      <div class="rootItem"><a href="/Courses.ashx"> 课程中心</a></div>
+      <div class="rootItem"><a href="/teacher/List.ashx"> 教师风采</a></div>
+      <div class="rootItem"><a href="/Training.ashx"> 试题练习</a></div>
+      <div class="rootItem"><a href="/test.ashx"> 模拟测试</a></div>
+      <div class="rootItem"><a href="/exam.ashx"> 在线考试</a></div>
+       <div class="rootItem"><a href="/admin/index.ashx"> 系统管理</a></div>
+       <div class="rootItem"><a href="/links.ashx"> 合作单位</a></div>
+    </div>
+  </div>
+  <div loyout="column" width="8"> &nbsp; </div>
+</div>

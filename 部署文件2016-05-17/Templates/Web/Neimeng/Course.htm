@@ -1,0 +1,134 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>选课中心 - {$:#.org.org_platformname}</title>
+<meta name="Keywords"  content="{$org.Org_Keywords}" />
+<meta name="Description" content="{$org.Org_Description}" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="Styles/public.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="CoreScripts/jquery.js"></script>
+<script type="text/javascript" src="CoreScripts/MessageBox.js"></script>
+<script type="text/javascript" src="CoreScripts/Tree.js"></script>
+    <script type="text/javascript" src="CoreScripts/Node.js"></script>
+<script type="text/javascript" src="CoreScripts/Extend.js"></script>
+<script type="text/javascript" src="Scripts/Course.js"></script>
+<script type="text/javascript" src="Scripts/Public.js"></script>
+<link href="Styles/Course.css" rel="stylesheet" type="text/css" />
+<link href="Styles/PageBox.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" type="text/css" href="Styles/MessageBox.css"/>
+<link href="Styles/Jme.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<vt:include id="inc" file="inc/Header.html" />
+<div id="Context">
+  <div id="Navi"> <a href="/">首页</a> &gt; <a href="/courses.ashx">课程中心</a> &gt; 课程：《{$Course.cou_name} 》</div>
+  <div id="couHead">
+    <div class="photo"><img src="{$course.cou_logo}"/></div>
+    <div class="headRight">
+      <div class="couName"> {$course.cou_name} </div>
+      <div class="bvr_con">
+        <p> 主讲教师：{$course.th_name}
+          <vt:if var="course.th_name" value="" compare="!="> ({$th.ths_name}) </vt:if>
+        </p>
+        <p> 关注次数：{$course.cou_viewNum} </p>
+        <!--<p> 课程时长：00：30：20 </p> -->
+        <p> 上传日期：{$course.cou_crttime} </p>
+        <!-- <p> 内容类型：视频、文档、随堂测验、富文本、讨论 </p> -->
+        <p> 课程分类：{$Course.sbj_name}</p>
+      </div>
+      <div class="couBtn">
+        <vt:if var="Student.st_id" value="0" compare=">">
+          <vt:if var="isStudy" value="True" compare="="> <a href="outline.ashx?couid={$course.cou_id}"  title="选修该课程">开始学习</a>
+            <vt:else/>
+            <a href="student/selectCourse.ashx?id={$course.cou_id}"  isPass="{$Student.st_isPass}"  state="noSelected" title="选修该课程">选修该课程</a> </vt:if>
+          <vt:else/>
+          <a href="student/index.ashx" title="请选登录">登录学习</a> </vt:if>
+      </div>
+    </div>
+  </div>
+  <div id="details">
+    <div id="LeftBox">
+      <div class="boxBar">
+        <div class="title">课程简介<a name="study" id="study">&nbsp;</a></div>
+      </div>
+      <div class="info"> {$course.cou_intro}</div>
+      <vt:if var="course.Cou_Target" value="" compare="!=">
+      <DIV class="courseBox">
+        <DIV class="boxBar">
+          <DIV class="title">学习目标</DIV>
+        </DIV>
+        <DIV class="info">{$course.Cou_Target}</DIV>
+      </DIV>
+        </vt:if>
+        <div class="courseBox">
+                    <div class="boxBar">
+                        <div class="title">
+                            知识库</div>
+                    </div>
+                    <div class="info">
+                        <div id="knlArea">
+                            <div id="knlleft">
+                                <!--<div class="sortTitle">知识库分类</div> -->
+                                <div id="leftInnert">
+                                    {$tree}</div>
+                            </div>
+                            <div id="knlright">
+                                <iframe id="knlframe" targetfile="/KnowledgesList.ashx?couid={$course.cou_id}" src="/KnowledgesList.ashx?couid={$course.cou_id}"
+                                    width="98%" height="450" marginwidth="0" marginheight="0" scrolling="auto" frameborder="0">
+                                </iframe>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="courseBox">
+                    <div class="boxBar">
+                        <div class="title">
+                            在线交流</div>
+                    </div>
+                    <div class="info">
+                        <iframe id="MessageBoardIframe" src="MessageBoards.ashx?couid={$:#.course.cou_id}"
+                            width="98%" marginwidth="0" marginheight="0" scrolling="auto" frameborder="0"
+                            onload="iFrameHeight()"></iframe>
+                        <script type="text/javascript" language="javascript">
+
+                            function iFrameHeight() {
+                                var ifm = document.getElementById("MessageBoardIframe");
+                                var subWeb = document.frames ? document.frames["MessageBoardIframe"].document : ifm.contentDocument;
+                                if (ifm != null && subWeb != null) {
+                                    ifm.height = subWeb.body.scrollHeight;
+                                }
+                            }
+
+                        </script>
+                    </div>
+                </div>
+    </div>
+    <div id="RightBox">
+      <div class="boxBar">
+        <div class="title">课程目录<a name="study" id="study">&nbsp;</a></div>
+      </div>
+      <div class="itemList">
+        
+        {$olTree}
+      </div>
+      <div class="boxBar">
+        <div class="title">主讲老师</div>
+      </div>
+      <div id="teacher">
+        <div class="thImg" style="background-image: url({$th.th_photo})" href="/teacher/Detail.ashx?id={$:#.data.th_id}">&nbsp;</div>
+        <div class="thRight">
+          <div class="thTop">
+            <div class="thName">{$th.th_name}</div>
+            <div class="thTitle">
+              <vt:if var="course.th_name" value="" compare="!="> ({$th.ths_name}) </vt:if>
+            </div>
+          </div>
+          <div class="signature">{$th.th_signature}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<vt:include id="inc" file="inc/footer.html" />
+</body>
+</html>

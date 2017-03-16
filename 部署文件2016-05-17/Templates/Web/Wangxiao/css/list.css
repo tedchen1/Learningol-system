@@ -1,0 +1,124 @@
+﻿@charset "utf-8";
+body {
+	background-color: #F7F7F7;
+}
+#bodyTop {
+	background-position: center 0px; width: 100%; height: 256px; background-image: url("../Images/teacher-banner.jpg"); background-repeat: no-repeat;
+}
+#list {
+	display: table;
+}
+#Context {
+	display: table;
+}
+#teacherTitle {
+	height: 40px; color: #000000; line-height: 35px; font-family: "微软雅黑"; font-size: 18px; font-weight: bold; margin-top: 15px; 
+}
+#teacherTitle span{
+	color: #F19806;	text-transform: uppercase;	padding-left: 10px;	font-size: 18px;font-weight:bold;
+}
+#list .item {
+	border-style: none none solid; height: 204px; margin-top: 15px;  
+	border:1px solid #D8D8D8;width: 980px;background-color: #ffffff;
+}
+#list .item .info {
+	width: 550px; height: 204px; margin-right: 10px; float: left;
+}
+.info .photo {
+	border:1px solid #D8D8D8; width: 126px; height: 159px; float: left;    margin:20px;
+}
+.info .photo img {
+	margin-top: 2px; margin-left: 2px;
+}
+.info .infoRight {
+	width: 150px; height: 160px; float: right; margin-top: 20px;
+}
+.info .infoRight .infoFirst {
+	height: 30px; line-height: 30px;
+}
+.infoFirst .name {
+	width: auto; height: 30px; color: #000000; line-height: 30px; font-family: "微软雅黑"; font-size: 18px; margin-right: 20px; float: left; font-weight:bold;
+}
+.infoFirst .title {
+	width: 100px; height: 25px; color: #333333; line-height: 25px; font-size: 14px; margin-top: 2px; float: left;
+}
+.infoRight .intro {
+	width: 130px; height: 95px; line-height: 23px; overflow: hidden; font-size: 14px; margin-top: 5px;margin-bottom: 10px; text-overflow: ellipsis;
+}
+.infoRight .btn {
+	width: 75px; height: 25px; text-align: left; color: #FF9E01; line-height: 25px;  font-family: "微软雅黑"; font-size: 14px;
+}
+.infoRight .btn a {
+	width: 75px; height: 25px; text-align: left; color:#FF9E01; line-height: 25px; font-family: "微软雅黑"; font-size: 14px; display: block; 
+}
+#list .item .courseBox {
+	width: 636px; height: 200px; float: right;
+}
+.courseTitle {
+	height: 30px; color: #000000; line-height: 30px; font-size: 16px;font-family: "微软雅黑"; margin-top:20px;
+}
+.courseItem {
+	width: 90px; height: 90px; margin-right: 25px; float: left;
+}
+.courseBox .courses {
+	display: table;
+}
+.courseBox .noCourse {
+	color: rgb(153, 153, 153); text-align:center; font-size: 16px; margin-top:45px;
+}
+.courseItem img {
+	width: 100px; height: 62px;
+}
+.courseItem .courseName {
+	height: 25px; line-height: 25px; overflow: hidden; white-space: nowrap;
+}
+.courseItem .courseName a {
+	color: rgb(102, 102, 102);
+}
+#Context #pagerBar {
+	margin-top: 20px;
+}
+
+.sykecheng
+{
+	width: 100%;
+	margin-top: 0px;
+	margin-right: auto;
+	margin-bottom: 0px;
+	margin-left: -10px;
+}
+.sykecheng-list
+{
+	margin-left: 10px;
+	margin-right: 0px;
+	float:left;
+}
+
+.sykecheng-list .promote-li
+{
+	width: 200px;
+	margin-bottom: 0px;
+	padding-bottom: 10px;
+	margin-left: 0px;
+	background-color: #FFFFFF;
+	border: #DDDDDD 0px solid;
+	padding-bottom: 0px;
+}
+.sykecheng-title
+{
+	margin-top: 5px;
+	margin-bottom: 0px;
+	padding-left: 5px;
+	line-height: 24px;
+	color: #333;
+	font-size: 12px;
+
+}
+.sykecheng-title a
+{
+	color: #333333;
+}
+.sykecheng-title a hover
+{
+	color: #333333;
+}

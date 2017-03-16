@@ -1,0 +1,47 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>{$knl.kn_title} - {$org.org_platformname}</title>
+<meta name="Keywords"  content="{$org.Org_Keywords}" />
+<meta name="Description" content="{$org.Org_Description}" />
+<SCRIPT type="text/javascript" src="CoreScripts/jquery.js"></SCRIPT>
+<script type="text/javascript" src="CoreScripts/Extend.js"></script>
+<script type="text/javascript" src="Scripts/AutoLoyout.js"></script>
+<SCRIPT type="text/javascript" src="Scripts/public.js"></SCRIPT>
+<link href="Styles/public.css" rel="stylesheet" type="text/css" />
+<link href="Styles/Knowledge.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<vt:include id="inc" file="inc/Header.html" />
+<div loyout="row">
+  <div class="boxContainer" loyout="row">
+    <div loyout="row" height="35" class="top">
+      <div loyout="column" width="10" class="topLeft"> </div>
+      <div loyout="column" width="100" class="topMiddle boxTitle"><span class="titIco">&gt;</span><span class="titText"> 知识库 ：</span></div>
+      <div loyout="column" width="auto" class="topMiddle selectBar">
+        <div class="knlTitle">《{$knl.kn_title}》</div>
+      </div>
+      <div loyout="column" width="18" class="topRight"> </div>
+    </div>
+    <div loyout="row" class="body">
+      <div loyout="column" width="10" class="bodyLeft"> </div>
+      <div loyout="column" width="auto" class="bodyCenter">
+        <div class="boxContext"> 
+          <!--/*内容区域*/-->
+          <div id="Context">
+            <div class="title"> {$knl.kn_title} </div>
+            <div class="details"> {$knl.kn_details} </div>
+          </div>
+        </div>
+      </div>
+      <div loyout="column" width="18" class="bodyRight"> </div>
+    </div>
+    <div loyout="row" height="15" class="foot">
+      <div loyout="column" width="10" class="footLeft"> </div>
+      <div loyout="column" width="auto" class="footMiddle"> </div>
+      <div loyout="column" width="18" class="footRight"> </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

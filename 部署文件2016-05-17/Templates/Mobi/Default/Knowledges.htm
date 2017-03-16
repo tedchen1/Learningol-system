@@ -1,0 +1,109 @@
+﻿<!DOCTYPE html>
+<head>
+<title>
+<vt:if var="search" value="" compare="!=">检索：{$:#.search}
+  <vt:else />
+  <vt:if var="parent.kns_id" value="0" compare=">">知识库->{$:#.parent.kns_name}
+    <vt:else />
+    知识库</vt:if>
+</vt:if>
+</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<meta name="format-detection" content="telephone=yes" />
+<meta name="format-detection" content="email=no" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="Keywords"  content="{$org.Org_Keywords}" />
+<meta name="Description" content="{$org.Org_Description}" />
+<script type="text/javascript" src="CoreScripts/jquery.js"></script>
+<script type="text/javascript" src="CoreScripts/Extend.js"></script>
+<script type="text/javascript" src="Scripts/AutoLoyout.js"></script>
+<script type="text/javascript" src="Scripts/Public.js"></script>
+<script type="text/javascript" src="Scripts/Courses.js"></script>
+<link href="Styles/Public.css?tick={$tick}" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" href="Styles/iconfont.css"/>
+<link href="Styles/Knowledges.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<vt:include id="inc" file="inc/Header.html" />
+<div loyout="row"  class="context">
+  <div class="contextbox">
+    <!--搜索区域 -->
+    <div id="searchBox">
+      <div id="searchRow">
+        <form name="form1" method="post" action="">
+          <div class="textbox">
+            <vt:if var="search" value="" compare="!=">
+              <input name="search" type="text" id="search" value="{$:#.search}" default="请输入您要搜索的内容">
+              <vt:else />
+              <input name="search" type="text" id="search" default="请输入您要搜索的内容">
+            </vt:if>
+          </div>
+          <div id="searctBtn">&#xe62f;</div>
+        </form>
+      </div>
+      <div id="searchLine"> </div>
+    </div>
+    <!--分类列表 -->
+    <vt:if var="kns.Length" value="0" compare=">">
+      <vt:foreach id="course" from="$#.kns" item="data" remark="知识库分类列表">
+        <div class="row" href="Knowledges.ashx?pid={$:#.data.Kns_ID}">
+          <!--图标 -->
+          <div class="sbjLogo">
+            <vt:if var="#.data.Kns_LogoSmall" value="" compare="="><span class="ico">&#xe636;</span>
+              <vt:else />
+              <img src="{$:#.data.Kns_LogoSmall}"/></vt:if>
+          </div>
+          <!--标题 -->
+          <div class="rowtxt">
+            <div class="name"> {$:#.data.Kns_Name}</div>
+            <div class="intro">{$:#.data.Kns_Intro}</div>
+          </div>
+          <!--右侧标识 -->
+          <div class="rightbox">
+            <div class="rightTop"> 分类 </div>
+            <div class="rightDow">
+              <vt:function var="dow" method="isChildren" args="$#.data.cou_id"/>
+              <vt:if var="dow" value="0" compare="=">&#xe602;
+                <vt:else />
+                &#xe6c6;</vt:if>
+            </div>
+          </div>
+        </div>
+      </vt:foreach>
+    </vt:if>
+    <!--知识列表 -->
+    <vt:if var="kn.Length" value="0" compare=">">
+      <vt:if var="search" value="" compare="=">  <div class="knTitle">当前分类下的知识</div> </vt:if>
+      <vt:foreach id="course" from="$#.kn" item="data" remark="知识库内容列表">
+        <div class="row" href="Knowledge.ashx?id={$:#.data.Kn_ID}">
+          <!--图标 -->
+          <div class="sbjLogo">
+            <vt:if var="#.data.Kn_LogoSmall" value="" compare="="><span class="ico">&#xe6fd;</span>
+              <vt:else />
+              <img src="{$:#.data.Kn_LogoSmall}"/></vt:if>
+          </div>
+          <!--标题 -->
+          <div class="rowtxt">
+            <div class="name"> {$:#.data.Kn_Title}</div>
+            <div class="intro">{$:#.data.Kn_Descr}</div>
+          </div>
+          <!--右侧标识 -->
+          <div class="rightbox">
+            <div class="rightTop"> 知识 </div>
+            <div class="rightDow"> &#xe605; </div>
+          </div>
+        </div>
+      </vt:foreach>
+    </vt:if>
+    <!--没有满足条件的内容 -->
+    <vt:if var="kns.Length" value="0" compare="=">
+      <vt:if var="kn.Length" value="0" compare="="> <div class="noContext">没有满足条件的内容！</div>  </vt:if>
+    </vt:if>
+  </div>
+</div>
+<vt:include id="inc" file="inc/footer.html" />
+</body>
+</html>

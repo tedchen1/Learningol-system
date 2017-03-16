@@ -1,0 +1,74 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>pagerico</title>
+    <link rel="stylesheet" href="demo.css">
+    <link rel="stylesheet" href="pagerico.css">
+</head>
+<body>
+    <div class="main">
+        <h1>pagerico 图标</h1>
+        <ul class="icon_lists clear">
+            
+                <li>
+                <i class="icon pagerico">&#xf0018;</i>
+                    <div class="name">分页 下一页</div>
+                    <div class="code">&amp;#xf0018;</div>
+                    <div class="fontclass">.fenyexiayiye</div>
+                </li>
+            
+                <li>
+                <i class="icon pagerico">&#xf0061;</i>
+                    <div class="name">分页 上一页</div>
+                    <div class="code">&amp;#xf0061;</div>
+                    <div class="fontclass">.fenyeshangyiye</div>
+                </li>
+            
+                <li>
+                <i class="icon pagerico">&#xf001a;</i>
+                    <div class="name">分页 最前页</div>
+                    <div class="code">&amp;#xf001a;</div>
+                    <div class="fontclass">.fenyezuiqianye</div>
+                </li>
+            
+                <li>
+                <i class="icon pagerico">&#xf0063;</i>
+                    <div class="name">分页 最后页</div>
+                    <div class="code">&amp;#xf0063;</div>
+                    <div class="fontclass">.fenyezuihouye</div>
+                </li>
+            
+        </ul>
+
+
+        <div class="helps">
+            第一步：使用font-face声明字体
+            <pre>
+@font-face {font-family: 'pagerico';
+    src: url('pagerico.eot'); /* IE9*/
+    src: url('pagerico.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('pagerico.woff') format('woff'), /* chrome、firefox */
+    url('pagerico.ttf') format('truetype'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+    url('pagerico.svg#pagerico') format('svg'); /* iOS 4.1- */
+}
+</pre>
+第二步：定义使用pagerico的样式
+            <pre>
+.pagerico{
+    font-family:"pagerico" !important;
+    font-size:16px;font-style:normal;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-stroke-width: 0.2px;
+    -moz-osx-font-smoothing: grayscale;}
+</pre>
+第三步：挑选相应图标并获取字体编码，应用于页面
+<pre>
+&lt;i class="pagerico"&gt;&amp;#x33;&lt;/i&gt;
+</pre>
+        </div>
+
+    </div>
+</body>
+</html>

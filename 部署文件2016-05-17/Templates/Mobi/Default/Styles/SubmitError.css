@@ -1,0 +1,35 @@
+﻿@charset "utf-8";
+#btnSubmit {
+	line-height: 30px;
+	text-align: center;
+	height: 30px;
+	width: 120px;
+	border-top-style: none;
+	border-right-style: none;
+	border-bottom-style: none;
+	border-left-style: none;
+	float: right;
+	background-color: #339900;
+	font-family: "微软雅黑", "黑体", "Simplified Arabic Fixed";
+	font-weight: bold;
+	color: #FFFFFF;
+	font-size: 16px;
+	margin-right: 10px;
+}
+.textbox {
+	width: 80%;
+	border: 1px solid #999999;
+	height: 120px;
+}
+#SubmitError .txt {
+	font-family: "黑体";
+	font-size: 14px;
+	line-height: 20px;
+}
+
+#SubmitError label {
+	display: block;
+	margin-left: 10px;
+	line-height: 20px;
+	height: 20px;
+}

@@ -1,0 +1,148 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>学生操作管理 - {$org.org_platformname}</title>
+<meta name="Keywords"  content="{$org.Org_Keywords}" />
+<meta name="Description" content="{$org.Org_Description}" />
+<script type="text/javascript" src="../CoreScripts/jquery.js"></script>
+<script type="text/javascript" src="../CoreScripts/PageBox.js"></script>
+<script type="text/javascript" src="../CoreScripts/easydrag.js"></script>
+<script type="text/javascript" src="../Scripts/AutoLoyout.js"></script>
+<script type="text/javascript" src="../CoreScripts/Extend.js"></script>
+<script type="text/javascript" src="../Scripts/AutoLoyout.js"></script>
+<script type="text/javascript" src="../CoreScripts/PageExt.js"></script>
+<script type="text/javascript" src="../Scripts/Public.js"></script>
+<script type="text/javascript" src="Scripts/panel.js"></script>
+<link href="../Styles/public.css" rel="stylesheet" type="text/css" />
+<link href="../Styles/PageBox.css" rel="stylesheet" type="text/css" />
+<link href="Styles/Panel.css" rel="stylesheet" type="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+</head>
+<body>
+<vt:include id="inc" file="../inc/header.html" />
+<div loyout="row">
+  <div loyout="column" width="228">
+    <div class="boxContainer" loyout="row">
+      <div loyout="row" height="35" class="top">
+        <div loyout="column" width="10" class="topLeft"> </div>
+        <div loyout="column" width="auto" class="topMiddle boxTitle"><span class="titIco">&gt;</span><span class="titText"> 学员中心</span></div>
+        <div loyout="column" width="18" class="topRight"> </div>
+      </div>
+      <div loyout="row" class="body">
+        <div loyout="column" width="10" class="bodyLeft"> </div>
+        <div loyout="column" width="auto" class="bodyCenter" style="background-color:#FFF">
+          <div class="boxContext"> 
+            <!--/*内容区域*/-->
+            <div id="menuBox">
+              <vt:function var="mmtop" method="getMenuTop" args="$#.org.org_id"/>
+              <vt:foreach from="$mmtop" item="m" index="i">
+                <div class="mmtop" title="{$:m.MM_Intro}" tax="{$:i}"> 
+                  <!--图标 -->
+                  <vt:if var="m.mm_icox" value="0" compare=">">
+                    <div class="ico" style="background-position: -{$:m.mm_icox}px -{$:m.mm_icoy}px"></div>
+                    <vt:else />
+                    <div class="ico"></div>
+                  </vt:if>
+                  <div class="topTxt">{$:m.mm_name}</div>
+                  <div class="rightIco">&nbsp;</div>
+                </div>
+                <vt:function var="mmtwo" method="getMenuTwo" args="$#.m.mm_id"/>
+                <div class="twoBox" style="display:none">
+                  <vt:foreach from="$#.mmtwo" item="m2" index="j">
+                    <div class="mmtwo" mmtype="{$:m2.mm_type}" title="{$:m2.MM_Intro}" tax="{$:i}.{$:j}"> 
+                      <!--图标 -->
+                      <vt:if var="m2.mm_icox" value="0" compare=">">
+                        <div class="ico" style="background-position: -{$:m2.mm_icox}px -{$:m2.mm_icoy}px"></div>
+                        <vt:else />
+                        <div class="ico"></div>
+                      </vt:if>
+                      <a href="{$:m2.MM_Link}" mmid="{$:m2.MM_ID}" isBold="{$:m2.mm_isbold}"> &nbsp;{$:m2.mm_name}</a> </div>
+                  </vt:foreach>
+                </div>
+              </vt:foreach>
+            </div>
+          </div>
+        </div>
+        <div loyout="column" width="18" class="bodyRight"> </div>
+      </div>
+      <div loyout="row" height="15" class="foot">
+        <div loyout="column" width="10" class="footLeft"> </div>
+        <div loyout="column" width="auto" class="footMiddle"> </div>
+        <div loyout="column" width="18" class="footRight"> </div>
+      </div>
+    </div>
+  </div>
+  <!--左侧结束，开始中间部分-->
+  <div loyout="column">
+    <div class="boxContainer" loyout="row">
+      <div loyout="row" height="35" class="top">
+        <div loyout="column" width="10" class="topLeft"> </div>
+        <div loyout="column" width="auto" class="topMiddle boxTitle"> <span class="titIco">&gt;</span><span class="titText"> 当前操作：</span><a id="menuPath" href="/student/Startpage.ashx">启始页</a>
+          <!--<div class="more"> <a href="/student/logout.ashx">退出</a></div>-->
+        </div>
+         <div class="topMiddle versionBox" loyout="column" width="80" title="当前学员未通过审核" ><vt:if var="CurrUser.st_isPass" value="false" compare="="> 未经审核</vt:if></div>
+        <div class="topMiddle loginout" loyout="column" width="80" > <a href="/student/logout.ashx"><span class="iconfont">&#xe637;</span> 退出</a></div>
+        <div loyout="column" width="18" class="topRight"> </div>
+      </div>
+      <div loyout="row" class="body">
+        <div loyout="column" width="10" class="bodyLeft"> </div>
+        <div loyout="column" width="auto" class="bodyCenter"> 
+          <!--/*内容区域*/-->
+          <div loyout="column" width="10"> </div>
+          <div loyout="column">
+            <div loyout="row" height="10"></div>
+            <div loyout="row" height="5" class="line"> </div>
+            <div loyout="row">
+              <iframe loyout="column" width="100%" height="auto" src="Startpage.ashx" name="adminPage" id="adminPage" class="frame"	marginwidth="0"  marginheight="0"
+   align="top" scrolling="auto" frameborder="0" allowtransparency="true"></iframe>
+            </div>
+            <div loyout="row" height="10"></div>
+          </div>
+          <div loyout="column" width="10"> </div>
+        </div>
+        <div loyout="column" width="18" class="bodyRight"> </div>
+      </div>
+      <div loyout="row" height="15" class="foot">
+        <div loyout="column" width="10" class="footLeft"> </div>
+        <div loyout="column" width="auto" class="footMiddle"> </div>
+        <div loyout="column" width="18" class="footRight"> </div>
+      </div>
+    </div>
+  </div>
+  <!--中间结束-->
+  <div loyout="column" width="230">
+    <div class="boxContainer" loyout="row">
+      <div loyout="row" height="35" class="top">
+        <div loyout="column" width="10" class="topLeft"> </div>
+        <div loyout="column" width="auto" class="topMiddle boxTitle"><span class="titIco">&gt;</span><span class="titText"> 个人信息</span></div>
+        <div loyout="column" width="18" class="topRight"> </div>
+      </div>
+      <div loyout="row" class="body">
+        <div loyout="column" width="10" class="bodyLeft"> </div>
+        <div loyout="column" width="auto" class="bodyCenter">
+          <div class="boxContext"> 
+            <!--/*内容区域*/-->
+            <div class="stPhoto">
+              <vt:if var="CurrUser.st_photo" value="" compare="="> <img src="../images/nophoto.jpg"  style="width:150px; height:200px"/>
+                <vt:else />
+                <img src="{$stpath}{$CurrUser.st_photo}"  style="width:150px; height:200px"/> </vt:if>
+            </div>
+            <div class="stName"> <vt:if var="CurrUser.st_name" value="" compare="=">（暂无姓名） <vt:else />{$CurrUser.st_name} </vt:if></div>
+            <div class="stInfo"> 账号：{$CurrUser.St_AccName} <br/>
+              电话：{$CurrUser.St_PhoneMobi} <br/>
+              分组：{$CurrUser.Sts_Name} <br/>
+            </div>
+          </div>
+        </div>
+        <div loyout="column" width="18" class="bodyRight"> </div>
+      </div>
+      <div loyout="row" height="15" class="foot">
+        <div loyout="column" width="10" class="footLeft"> </div>
+        <div loyout="column" width="auto" class="footMiddle"> </div>
+        <div loyout="column" width="18" class="footRight"> </div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

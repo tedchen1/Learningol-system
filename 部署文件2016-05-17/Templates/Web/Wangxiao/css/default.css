@@ -1,0 +1,386 @@
+﻿@charset "utf-8";
+#FirstBox {
+	height: 480px;
+}
+#FirstBox #showBox {
+	height: 480px; overflow: hidden; position: absolute;
+}
+#FirstBox #showBox #boxID {
+	
+}
+#loginBox {
+	border: 1px solid rgb(204, 204, 204); width: 300px; height: 300px;
+}
+#loginBoxBack {
+	width: 300px; height: 300px; filter: alpha(opacity=60); opacity: 0.6; background-color: rgb(255, 255, 255);
+}
+#loginBox .width {
+	width: 180px;
+}
+.loginRow label {
+	margin-right: 50px; margin-left: 20px;
+}
+#loginBox .loginBar {
+	height: 50px;
+}
+#loginBox .loginBar .loginTitle {
+	width: 100px; text-align: center; color: rgb(255, 255, 255); line-height: 50px; letter-spacing: 0.15em; font-family: "微软雅黑", "黑体", "Simplified Arabic Fixed"; font-size: 16px; float: left; filter: alpha(opacity=60); cursor: pointer; opacity: 0.6; background-color: rgb(102, 102, 102);
+}
+.loginTitleCurr {
+	width: 100px; text-align: center; color: rgb(255, 102, 0); line-height: 50px; letter-spacing: 0.15em; font-family: "微软雅黑", "黑体", "Simplified Arabic Fixed"; font-size: 16px; float: left; filter: alpha(opacity=100); cursor: pointer; opacity: 1;
+}
+.loginArea form {
+	margin: 10px;
+}
+#loginBox .textbox {
+	border: 1px solid rgb(204, 204, 204); height: 30px; line-height: 30px; text-indent: 10px; font-size: 16px; float: left; filter: alpha(opacity=80); opacity: 0.8;
+}
+.loginRow {
+	width: 100%; height: 40px; line-height: 40px;
+}
+.loginRow .loginRowRight {
+	width: 80px; text-align: right; font-size: 15px; float: left;
+}
+.loginRow .loginRowLeft {
+	width: 200px; float: left;
+}
+.verify {
+	width: 102px; float: left;
+}
+.verifyCode {
+	width: 72px; height: 32px; margin-top: 0px; margin-left: 5px; float: left; cursor: pointer;
+}
+.btnBar {
+	margin-top: 10px;
+}
+.btnLogin {
+	width: 120px; height: 30px; text-align: center; color: rgb(255, 255, 255); line-height: 30px; font-family: "微软雅黑", "黑体", "Simplified Arabic Fixed"; font-size: 16px; font-weight: bold; margin-left: 10px; float: left; background-color: rgb(0, 116, 203);
+}
+.btnRegister {
+	width: 120px; height: 30px; text-align: center; color: rgb(255, 255, 255); line-height: 30px; font-family: "微软雅黑", "黑体", "Simplified Arabic Fixed"; font-size: 16px; font-weight: bold; margin-left: 20px; float: left; display: block; background-color: rgb(255, 88, 66);
+}
+.btnInManage {
+	width: 120px; height: 30px; text-align: center; color: rgb(255, 255, 255); line-height: 30px; font-family: "微软雅黑", "黑体", "Simplified Arabic Fixed"; font-size: 16px; font-weight: bold; margin-left: 10px; float: left; background-color: rgb(0, 116, 203);
+}
+.btnLogout {
+	width: 120px; height: 30px; text-align: center; color: rgb(255, 255, 255); line-height: 30px; font-family: "微软雅黑", "黑体", "Simplified Arabic Fixed"; font-size: 16px; font-weight: bold; margin-left: 20px; float: left; display: block; background-color: rgb(102, 102, 102);
+}
+.loginArea {
+	padding-top: 10px;
+}
+.loginArea .isLoginBox {
+	margin: 20px 10px; font-size: 14px;
+}
+.loginArea .isLoginBox .loginRow {
+	text-align: center;
+}
+#SecondBox {
+	height: 240px; margin-top: 0px;
+}
+#SecondBox .boxBar {
+	height: 80px; margin-bottom: 20px;
+}
+#SecondBox .boxBar .more {
+	height: 30px; line-height: 30px; margin-top: 40px; float: right; 
+}
+#SecondBox .boxBar .more em {
+	margin-top: 6px; margin-right: 0px; float: left;
+}
+#SecondBox .boxBar .more a {
+	color: #333333; text-indent: 40px; font-family: "微软雅黑"; font-size: 15px; 
+}
+#SecondBox .title {
+	height: 35px; color: #333333; line-height: 35px; padding-bottom: 12px; font-family: "微软雅黑"; font-size: 25px; margin-top: 34px; float: left; 
+}
+#SecondBox .title span
+{
+	color: #F19806;	text-transform: uppercase;	padding-left: 10px;	font-size: 12px;font-weight:bold;
+}
+#SecondBox .courseList {
+	width: 980px; overflow: hidden;
+}
+
+#courseList {
+	height: auto; margin-top: 0px;
+}
+#courseList .boxBar {
+	height: 80px; margin-bottom: 20px;
+}
+#courseList .boxBar .more {
+	height: 30px; line-height: 30px; margin-top: 40px; float: right; 
+}
+#courseList .boxBar .more em {
+	margin-top: 6px; margin-right: 0px; float: left;
+}
+#courseList .boxBar .more a {
+	color: #333333; text-indent: 40px; font-family: "微软雅黑"; font-size: 15px; 
+}
+#courseList .title {
+	height: 35px; color: #333333; line-height: 35px; padding-bottom: 12px; font-family: "微软雅黑"; font-size: 25px; margin-top: 34px; float: left; 
+}
+#courseList .title span
+{
+	color: #F19806;	text-transform: uppercase;	padding-left: 10px;	font-size: 25px;font-weight:bold;
+}
+#courseList .courseList {
+	width: 980px; overflow: hidden;
+}
+
+#ThirdBox {
+	width: 100%; height: 454px; margin-top: 30px; background:url(../images/new_bg.jpg) repeat-x;
+}
+#ThirdBox .boxBar {
+	width: 980px; margin-bottom: 20px; margin:0px auto;
+}
+#ThirdBox .boxBar .more {
+	height: 30px; line-height: 30px; margin-top: 40px; margin-bottom: 37px;  float: right; 
+}
+#ThirdBox .boxBar .more em {
+	margin-top: 6px; margin-right: 0px; float: left;
+}
+#ThirdBox .boxBar .more a {
+	color: #333333; text-indent: 40px; font-family: "微软雅黑"; font-size: 15px; 
+}
+#ThirdBox .title {
+	height: 35px; color: #333333; line-height: 35px; padding-bottom: 12px; font-family: "微软雅黑"; font-size: 25px; margin-top: 34px; float: left; 
+}
+#ThirdBox .title span
+{
+	color: #F19806;	text-transform: uppercase;	padding-left: 10px;	font-size: 12px;font-weight:bold;
+}
+#ThirdBox .boxBar .left {
+	width:391px; height:280px; margin-top:100px; margin-left:-196px; float: left; background-color:#FFFFFF;
+}
+#ThirdBox .boxBar .left img{
+	width:391px; height:280px; border:0px;
+}
+#ThirdBox .boxBar .right{
+	width:566px; height:280px;margin-top:100px;margin-left:-156px; margin-right:-66px;  float: right; padding-left:20px;
+	border-bottom:#EEEEEE 1px solid; background-color:#FFFFFF;
+}
+#ThirdBox .boxBar .right .top {
+	width:566px; height:100px;float: right; padding-left:20px;padding-top:20px;
+	border-bottom:#EEEEEE 1px solid; background-color:#FFFFFF; margin-bottom:15px;
+}
+#ThirdBox .boxBar .right .top p{
+	height: 30px; line-height: 30px; color: #000000;  font-family: "微软雅黑"; font-size: 25px; font-weight:bold; text-align:left; text-overflow: ellipsis;overflow: hidden;white-space: nowrap;
+}
+#ThirdBox .boxBar .right .top p a{
+	color: #000000;  font-family: "微软雅黑"; font-size: 25px; font-weight:bold;
+}
+#ThirdBox .boxBar .right .top p span{
+	line-height: 22px; color: #666666;  font-family: "微软雅黑"; font-size: 12px; width:766px; font-weight: normal;  display:block; margin-top:8px;margin-bottom:20px;
+}
+#ThirdBox .boxBar .right ul{
+	width:576px; margin-left:0px; margin-top:20px;display:block;
+}
+#ThirdBox .boxBar .right ul li{
+	 width:276px; line-height: 32px; color: #000000;  font-family: "微软雅黑"; font-size: 15px; float: left; margin-right:10px;
+}
+#ThirdBox .boxBar .right ul li a{
+	width:200px; height:32px; color: #000000;  font-family: "微软雅黑";display:block;text-overflow: ellipsis;overflow: hidden;white-space: nowrap; float:left;
+}
+
+#ThirdBox .boxBar .right ul li span{
+	 width:68px; line-height: 32px; color: #666666;  font-family: "微软雅黑"; font-size: 15px; float: right; 
+}
+#fourBox {
+	width: 100%; height: 118px; margin-top: 0px; background-color: #ffffff;
+}
+#fourBox .boxBar {
+	width: 980px; margin-bottom: 20px; margin:0px auto;
+}
+#fourBox .boxBar .more {
+	height: 30px; line-height: 30px; margin-top: 40px; margin-bottom: 37px;  float: right; 
+}
+#fourBox .boxBar .more em {
+	margin-top: 6px; margin-right: 0px; float: left;
+}
+#fourBox .boxBar .more a {
+	color: #333333; text-indent: 40px; font-family: "微软雅黑"; font-size: 15px; 
+}
+#fourBox .title {
+	height: 35px; color: #333333; line-height: 35px; padding-bottom: 12px; font-family: "微软雅黑"; font-size: 25px; margin-top: 34px; float: left; 
+}
+#fourBox .title span
+{
+	color: #F19806;	text-transform: uppercase;	padding-left: 10px;	font-size: 12px;font-weight:bold;
+}
+.rollBox{width:980px;overflow:hidden;margin:0 auto; margin-bottom: 60px; background-color: #ffffff;}
+.rollBox .LeftBotton{height:52px;width:20px;background:url(../images/button.gif) no-repeat 11px 0;overflow:hidden;float:left;display:inline;margin:105px 0 0 0;cursor:pointer;}
+.rollBox .RightBotton{height:52px;width:20px;background:url(../images/button.gif) no-repeat -9px 0;overflow:hidden;float:left;display:inline;margin:105px 0 0 0;cursor:pointer;}
+.rollBox .Cont{width:940px;overflow:hidden;float:left;}
+.rollBox .ScrCont{width:10000000px;}
+.rollBox .Cont .pic{width:235px;float:left;text-align:center;}
+.rollBox .Cont .pic img{padding:0px;background:#fff;border:0px solid #ccc;display:block;margin:0 auto;border-radius:117px}
+.rollBox .Cont .pic p{line-height:26px;color:#999999;}
+.rollBox .Cont .pic p span{line-height:22px;color:#999999; font-size:12px;}
+.rollBox .Cont a:link,.rollBox .Cont a:visited{color:#999999;text-decoration:none;}
+.rollBox .Cont a:hover{color:#f00;text-decoration:underline;}
+.rollBox #List1,.rollBox #List2{float:left;}
+
+#fiveBox {
+	width: 100%; height: 532px; margin-top: 0px; background:url(../images/ks_bg.jpg) repeat-x;
+}
+#fiveBox .boxBar {
+	width: 980px; margin-bottom: 20px; margin:0px auto;
+}
+#fiveBox .boxBar .left {
+	width:623px; margin-top:37px; float: left;
+}
+#fiveBox .boxBar .left img{
+	border:0px;
+}
+#fiveBox .boxBar .right {
+	width:357px; margin-top:62px; float: right;
+}
+#fiveBox .boxBar .right p{
+	height: 30px; line-height: 30px; color: #343434;  font-family: "微软雅黑"; font-size: 32px; font-weight:bold; text-align:center; 
+}
+#fiveBox .boxBar .right p span{
+	line-height: 40px; color: #666666;  font-family: "微软雅黑"; font-size: 19px; text-align:center; width:357px; font-weight: normal;  display:block; margin-top:20px;margin-bottom:10px;
+}
+#fiveBox .boxBar .right img{
+	border:0px;
+}
+
+
+#sixBox {
+	width: 100%; height:316px; margin-top: 0px; background-color: #ffffff;
+}
+#sixBox .boxBar {
+	width: 980px; margin-bottom: 20px; margin:0px auto;
+}
+#sixBox .boxBar .more {
+	height: 30px; line-height: 30px; margin-top: 40px; margin-bottom: 37px;  float: right; 
+}
+#sixBox .boxBar .more em {
+	margin-top: 6px; margin-right: 0px; float: left;
+}
+#sixBox .boxBar .more a {
+	color: #333333; text-indent: 40px; font-family: "微软雅黑"; font-size: 15px; 
+}
+#sixBox .title {
+	height: 35px; color: #333333; line-height: 35px; padding-bottom: 12px; font-family: "微软雅黑"; font-size: 25px; margin-top: 34px; float: left; 
+}
+#sixBox .title span
+{
+	color: #F19806;	text-transform: uppercase;	padding-left: 10px;	font-size: 12px;font-weight:bold;
+}
+#sixBox .partner-list
+{
+	width:980px; margin:0px auto;
+
+}
+#sixBox .partner-list ul
+{
+	width:992px; margin-top: 105px; margin-left:-12px;
+
+}
+
+#sixBox .partner-list li
+{
+     width:146px; margin-left:19px; margin-bottom:12px;  float:left;list-style-type: none;
+
+}
+#sixBox .partner-list li span
+{
+     width:146px; text-align:center; line-height:30px; height:30px;  font-weight:bold; color:#333333;display:block;
+
+}
+
+#sixBox .partner-list img
+{
+	width:146px;height:146px; border:#DDDDDD 0px solid;
+}
+
+#sevenBox {
+	width: 100%; height:308px; margin-top: 0px; background-color: #ffffff;
+}
+#sevenBox .boxBar {
+	width: 980px; margin-bottom: 20px; margin:0px auto;
+}
+#sevenBox .boxBar .more {
+	height: 30px; line-height: 30px; margin-top: 40px; margin-bottom: 37px;  float: right; 
+}
+#sevenBox .boxBar .more em {
+	margin-top: 6px; margin-right: 0px; float: left;
+}
+#sevenBox .boxBar .more a {
+	color: #333333; text-indent: 40px; font-family: "微软雅黑"; font-size: 15px; 
+}
+#sevenBox .title {
+	height: 35px; color: #333333; line-height: 35px; padding-bottom: 12px; font-family: "微软雅黑"; font-size: 25px; margin-top: 34px; float: left; 
+}
+#sevenBox .title span
+{
+	color: #F19806;	text-transform: uppercase;	padding-left: 10px;	font-size: 12px;font-weight:bold;
+}
+
+#sevenBox .partner-list
+{
+	width:980px; margin:0px auto;
+
+}
+#sevenBox .partner-list ul
+{
+	width:992px; margin-top: 105px; margin-left:-12px;
+
+}
+
+#sevenBox .partner-list li
+{
+     width:234px; margin-left:12px; margin-bottom:12px; border:#DDDDDD 1px solid;  float:left;list-style-type: none;
+
+}
+#sevenBox .partner-list li a
+{
+     list-style-type: none;
+
+}
+#sevenBox .partner-list img
+{
+	width:234px;height:68px; 
+}
+#newsBox .item {
+	width: 234px; height: 35px; display: table;
+}
+#newsBox .item img {
+	float: left;
+}
+#newsBox .item .newsItem {
+	background-position: 0px 8px; width: 250px; height: 22px; line-height: 22px; text-indent: 15px; overflow: hidden; margin-left: 5px; float: left; white-space: nowrap; text-overflow: ellipsis; background-image: url("../Images/icon3.png"); background-repeat: no-repeat;
+}
+#ThirdBox .newsTime {
+	color: rgb(153, 153, 153); float: right;
+}
+#newsBox .item .newsItem a {
+	color: rgb(51, 51, 51); font-size: 14px;
+}
+#newsBox .item .newsItem a:hover {
+	font-size: 14px; text-decoration: underline;
+}
+#teacherBox .thlist {
+	width: 310px; overflow: hidden;
+}
+.thlist .thlistInner {
+	width: 350px;
+}
+.itemTeacher {
+	width: 150px; height: 150px; margin-top: 1px; margin-right: 1px; float: left; display: table; background-repeat: no-repeat;
+}
+.itemTeacherOver {
+	
+}
+.itemth {
+	padding: 10px; text-align: center;
+}
+.itemTeacher .mark {
+	width: 150px; height: 150px; display: none; filter: alpha(opacity=40); position: absolute; z-index: 1; opacity: 0.4; background-color: rgb(0, 0, 0);
+}
+.itemTeacher .thInfo {
+	width: 150px; height: 150px; text-align: center; display: none; position: absolute; z-index: 2;
+}
+.thInfo .thName {
+	height: 25px; color: rgb(255, 255, 255); line-height: 25px; margin-top: 5px; background-color: rgb(51, 51, 51);
+}

@@ -1,0 +1,18 @@
+﻿
+<div id="header"  loyout="row" height="50">
+  <div loyout="column" width="50" class="btnBack"> <img src="Images/btnBack.jpg" style="height:25px; margin-top:15px;"/></div>
+  <div loyout="column" width="6"> <img src="Images/line.jpg" style="height:22px; margin-top:15px"></div>
+  <div loyout="column" class="text"> {$org.org_platformname} </div>
+  <div loyout="column" width="6"> <img src="Images/line.jpg" style="height:22px; margin-top:15px"></div>
+  <div loyout="column" width="50" id="btnMenu" class="iconfont">&#xe619; </div>
+</div>
+<!--右上角的菜单 -->
+<div id="menuBox" style="display:none">
+  <!--<div class="menuBoxItem"><a href="Subject.ashx"><span class="ico">&#x343a;</span>切换课程</a></div>-->
+  <div class="menuBoxItem"><a href="SelfCourse.ashx"><span class="ico">&#xe674;</span>我的课程</a></div>
+  <div class="line">&nbsp;</div>
+  <div class="menuBoxItem"><a href="Subject.ashx"><span class="ico">&#xe601;</span>切换课程</a></div>
+  <!--<vt:foreach id="course" from="$#.subjectTop" item="data" index="j" remark="顶级专业分类">
+    <div class="menuBoxItem"><a href="Subject.ashx?id={$:#.data.sbj_id}"><span class="ico">&#xe601;</span>{$:#.data.sbj_name}</a></div>
+  </vt:foreach>-->
+</div>

@@ -1,0 +1,47 @@
+﻿<!doctype html>
+<head>
+<title>错题回顾</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<meta name="format-detection" content="telephone=yes" />
+<meta name="format-detection" content="email=no" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="Keywords"  content="{$org.Org_Keywords}" />
+<meta name="Description" content="{$org.Org_Description}" />
+<script type="text/javascript" src="CoreScripts/jquery.js"></script>
+<script type="text/javascript" src="CoreScripts/Extend.js"></script>
+<script type="text/javascript" src="Scripts/AutoLoyout.js"></script>
+<script type="text/javascript" src="Scripts/Public.js"></script>
+<script type="text/javascript" src="Scripts/PageBox.js"></script>
+<script type="text/javascript" src="Scripts/ErrorQuesList.js"></script>
+<link href="Styles/Public.css?tick={$tick}" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" href="Styles/iconfont.css"/>
+<link href="Styles/ErrorQuesList.css" rel="stylesheet" type="text/css" />
+</head>
+<body backurl="default.ashx">
+<vt:include id="inc" file="inc/Header.html" />
+<div loyout="row"  class="context">
+  <div class="contextbox">
+   <vt:if var="ques.Length" value="0" compare=">">
+    <vt:foreach id="notes" from="$#.ques" item="q" index="i" remark="笔记">
+      <div class="item">
+        <div class="titleBox" btn="view" qid="{$:#.q.qus_id}"> {$:i}、 {$:#.q.qus_title} </div>
+        
+        <div class="foot">
+      <!--    <div class="time">{$:#.q.Stc_crtTime format="yyyy-M-dd HH:ss"} </div> -->
+           <div class="btn btnStudy"><a href="ErrorQuesTraining.ashx?qid={$:#.q.qus_id}"><span>&#xe6c6;</span> 进入答题</a></div>
+          <div class="btn"><a href="ErrorQuesList.ashx?action=delete&id={$:#.q.qus_id}" class="delete"><span>&#xe63d;</span> 删除</a></div>
+         
+        </div>
+      </div>
+    </vt:foreach>
+    <vt:else/>
+    <div class="noInfo">您还没答错的试题</div>
+    </vt:if>
+  </div>
+</div>
+<vt:include id="inc" file="inc/footer.html" />
+</body>
+</html>

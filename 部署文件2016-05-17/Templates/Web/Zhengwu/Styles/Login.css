@@ -1,0 +1,64 @@
+﻿body
+{
+	margin:0px;
+	color:white;
+	font-size:12px;
+}
+body,div,p
+{
+	font-size:12px;
+}
+/*登录输入内容的区域*/
+#InputPanel
+{
+	display:table;
+}
+/*输入内容*/
+#InputBox
+{
+	width:180px;
+	float:left;
+}
+#InputBox .row
+{
+	display:table;
+}
+#InputBox .row .txt
+{
+	width:50px;
+	float:left;
+	line-height:22px;
+	height:22px;
+}
+#InputBox .row .input
+{
+	float:left;
+	line-height:22px;
+	height:22px;
+}
+#InputBox .row .input .textbox
+{
+	margin-top:0px;
+	height:15px;
+	background-color:#0d2e3e;
+	color:white;
+}
+/*按钮区*/
+#InputBtn
+{
+	float:left;
+	width:67px;
+	height:64px;
+}
+
+#codeImg
+{
+	margin-top:2px;
+}
+/*提示*/
+#ShowPanel
+{
+	margin-left:50px;
+	font-size:13px;
+	margin-top:5px;
+}

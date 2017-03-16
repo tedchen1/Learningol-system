@@ -1,0 +1,94 @@
+﻿<!doctype html>
+<head>
+<title>找回密码</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<meta name="format-detection" content="telephone=yes" />
+<meta name="format-detection" content="email=no" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="Keywords"  content="{$org.Org_Keywords}" />
+<meta name="Description" content="{$org.Org_Description}" />
+<link href="Styles/Public.css?tick={$tick}" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="CoreScripts/jquery.js"></script>
+<script type="text/javascript" src="CoreScripts/Extend.js"></script>
+<script type="text/javascript" src="Scripts/AutoLoyout.js"></script>
+<script type="text/javascript" src="CoreScripts/Verify.js"></script>
+<script type="text/javascript" src="Scripts/Public.js"></script>
+<script type="text/javascript" src="Scripts/SelfPwFind.js"></script>
+<link href="Styles/SelfPwFind.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<vt:include id="inc" file="inc/Header.html" />
+<div loyout="row"  class="context">
+  <div class="contextbox">
+    <div class="infoBox">
+      <form id="student" name="student" method="post">
+        <vt:if var="step" value="1" compare="=">
+          <div class="topBar">
+            <div class="infoRow">请输录您的登录账号 </div>
+          </div>
+          <div class="infoRow">
+            <div class="RowRight">账&nbsp;&nbsp;号：</div>
+            <div class="RowLeft">
+              <input name="tbAcc" type="number"  class="textbox width" nullable="false"  group="login" />
+            </div>
+          </div>
+        </vt:if>
+        <vt:if var="step" value="2" compare="=">
+        <div class="infoRow">
+          <div class="RowRight">账&nbsp;&nbsp;号：</div>
+          <div class="RowLeft"> {$:#.st.st_accname}
+          <input name="tbAcc" type="hidden" value="{$:#.st.st_accname}" />
+           </div>
+        </div>
+          <div class="infoRow">
+            <div class="RowRight">安全问题：</div>
+            <div class="RowLeft">{$st.St_Qus} </div>
+          </div>
+          <div class="infoRow">
+            <div class="RowRight">答案：</div>
+            <div class="RowLeft">
+              <input name="tbAnswer" value="" type="text"  class="textbox width" nullable="false"  group="login" />
+            </div>
+          </div>
+          </vt:if>
+           <vt:if var="step" value="3" compare="=">
+           <div class="infoRow">
+          <div class="RowRight">账&nbsp;&nbsp;号：</div>
+          <div class="RowLeft"> {$:#.st.st_accname}
+          <input name="tbAcc" type="hidden" value="{$:#.st.st_accname}" />
+           </div>
+        </div>
+          <div class="infoRow">
+            <div class="RowRight">新密码：</div>
+            <div class="RowLeft">
+              <input name="tbNewPw" type="password"  class="textbox width" lenlimit="6-12" nullable="false"  group="login" />
+            </div>
+          </div>
+          <div class="infoRow">
+            <div class="RowRight">密码确认：</div>
+            <div class="RowLeft">
+              <input name="tbPw2" type="password"  class="textbox width" nullable="false"  group="login" sametarget="tbNewPw"/>
+            </div>
+          </div>
+          <div class="infoRow">
+              <div class="RowRight"> 验证码：</div>
+              <div class="RowLeft">
+                <input name="from" type="hidden" value="{$from}" />
+                <input name="tbCode" type="number"  class="textbox verify" size="8" nullable="false" lenlimit="4-4" datatype="number"   group="login" />
+                <img src="/Utility/codeimg.aspx?name=stpwcode" class="verifyCode"/> </div>
+            </div>
+        </vt:if>
+        <div class="infoRow"></div>
+        <div class="infoRow">
+          <input type="submit" name="btnSubmit" id="btnSubmit" value="确&nbsp;&nbsp;定"  verify="true"  group="login" class="btnEdit"/>
+          <a href="Entry.ashx" class="btnChangePw">返&nbsp;&nbsp;回</a></div>
+      </form>
+    </div>
+  </div>
+</div>
+<vt:include id="inc" file="inc/footer.html" />
+</body>
+</html>

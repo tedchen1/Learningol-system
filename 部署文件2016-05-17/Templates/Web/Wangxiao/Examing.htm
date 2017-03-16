@@ -1,0 +1,123 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>考试：《{$exam.exam_name}》 -- {$org.org_platformname}</title>
+<meta name="Keywords" content="{$org.Org_Keywords}" />
+<meta name="Description" content="{$org.Org_Description}" />
+<link href="Styles/public.css" rel="stylesheet" type="text/css" />
+<link href="Styles/examing.css" rel="stylesheet" type="text/css" />
+<link href="css/public.css" rel="stylesheet" type="text/css" />
+<link href="Styles/Jme.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="CoreScripts/jquery.js"></script>
+<script type="text/javascript" src="CoreScripts/Extend.js"></script>
+<script type="text/javascript" src="scripts/public.js"></script>
+<script type="text/javascript" src="CoreScripts/ajaxfileupload.js"></script>
+<script type="text/javascript" src="CoreScripts/FloatBox.js"></script>
+<script type="text/javascript" src="Scripts/Mask.js"></script>
+<script language="javascript" type="text/javascript">
+//当前服务器端时间
+var ServerTime=new Date("{$servertime}");
+//当前客户端时间
+var ClientTime=new Date();
+//试卷ID,学科id
+var testPagerID={$pager.Tp_Id};
+var subjectID={$pager.sbj_id};
+var subjectName="{$pager.sbj_name}";
+//考试时长
+var examSpan={$exam.Exam_Span};
+//是否开始，是否结束
+var isStart={$isStart};
+var isOver={$isOver};
+//考试ID
+var examID={$exam.exam_id};;
+//唯一ID,考试主题
+var uid="{$uid}";
+var theme="{$theme.Exam_Title}";
+//考生ID，姓名，性别，分类Id,身份证号
+var stid={$student.st_id};
+var stname="{$student.st_name}";
+var stsex="{$student.St_Sex}";
+var stsid="{$student.Sts_ID}";
+var stcardid="{$student.St_IDCardNumber}";
+    </script>
+</head>
+<body>
+<script>
+    document.body.onselectstart = document.body.oncontextmenu = function () { return false; };
+    document.body.onpaste = document.body.oncopy = function () { return false; };
+</script>
+<vt:include id="inc" file="inc/Header.html" />
+<div id="Context">
+  <div id="themeBox">
+    <div class="theme"> {$theme.Exam_Title} </div>
+    <div class="themesub"> 第{$exam.exam_tax}场 - 《{$exam.Exam_name}》 </div>
+    <div class="examInfo"> 本卷所属学科《{$exam.sbj_name}》，共{$pager.Tp_Count}小题，，考试限定{$exam.Exam_Span}分钟，总分 {$exam.Exam_Total}分，{$exam.Exam_PassScore}分及格。</div>
+  </div>
+  <vt:if var="isAllow" value="false" compare="=">
+  <div id="examSubmitBox"><div class="title">  您不需要参加此次考试</div>
+   <div class="text"> 当前考试所设定的参考人员范围中，并不包括您在内。</div></div>
+  <vt:else/>
+  <vt:if var="isOver" value="true" compare="=">
+  <!--考试已经结束 -->
+  <div id="examOverBox">
+    <div class="title"> 当前考试已经结束！</div>
+    <div class="time">开始时间：{$exam.Exam_Date  format="yyyy-MM-dd HH:mm:ss"}</div>
+    <div class="time">结束时间：{$overTime  format="yyyy-MM-dd HH:mm:ss"} </div>
+  </div>
+  <vt:else/>
+  <vt:if var="isSubmit" value="true" compare="=">
+  <!--您已经交过卷 -->
+  <div id="examSubmitBox">
+    <div class="title"> 本场考试您已经交过卷了！</div>
+    <div class="text"> <a href="examing.ashx?id={$exam.exam_id}&again=1">重新考试！</div>
+  </div>
+  <vt:else/>
+  <script type="text/javascript" src="Scripts/examing.js"></script>
+  <!-- 试题选项卡 -->
+  <div id="pagerTitle">
+    <div class="type">填空题</div>
+    <div class="type">单选题</div>
+    <div class="type">多选题</div>
+    <div class="type">判断题</div>
+    <div class="type">简答题</div>
+  </div>
+  <!--考试试卷答题区域 -->
+  <div id="pagerArea">
+    <div id="distanceTime">
+      <div class="timeTitle"> 考试还未开始，请等待……</div>
+      <div class="currTime">当前时间：<span id="currTime"></span> &nbsp;&nbsp;&nbsp;&nbsp; 还差 <span class="mm">0</span>分<span class="ss">0</span>秒 </div>
+      <div class="timeArea"></div>
+    </div>
+  </div>
+  <!--答题信息的显示区域 -->
+  <div id="pagerCard">
+    <div class="topBox">
+      <div class="startTime">开始时间：<span id="startTime">{$exam.Exam_Date  format="yyyy-MM-dd HH:mm:ss"} </span> </div>
+      <div id="residueTime"> <span class="mm">0</span>:<span class="ss">0</span> </div>
+    </div>
+    <div id="pagerSubmitBox"> </div>
+    <!--答题卡 -->
+    <div class="quesCard">
+      <div class="cardTit">
+        <div class="txt">答题卡</div>
+        <div class="number">完成<span id="CompleteNumber">0</span>道 / 共{$pager.Tp_Count}道</div>
+      </div>
+      <div id="cardBox"></div>
+    </div>
+    </vt:if>
+    </vt:if>
+    </vt:if>
+  </div>
+</div>
+<vt:include id="inc" file="inc/footer.html" />
+<div id="screenMask"> </div>
+<div id="loading">
+  <div id="loadingTitle"> 正在加载试题…… </div>
+  <img src="Images/load_024.gif" /> </div>
+<div id="submitBox">
+  <div id="submitTitle"> 考试结束</div>
+  <img src="Images/load_016.gif" />
+  <div id="submitTitle"> 正在提交答题信息…… </div>
+</div>
+</body>
+</html>

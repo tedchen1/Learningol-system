@@ -1,0 +1,120 @@
+﻿body
+{
+}
+a{
+	text-decoration: none;
+}
+a:hover
+{
+	text-decoration: underline;
+}
+/*显示内容的块*/
+.box
+{
+	border-top-style: none;
+	border-right-style: none;
+	border-bottom-style: none;
+	border-left-style: none;
+	width: 300px;
+	float: left;
+	margin-left: 10px;
+	margin-bottom: 10px;
+}
+/*内容盒合的标题*/
+.boxBar
+{
+	font-weight: bold;
+	color: #000000;
+	border-bottom-width: 1px;
+	border-top-style: none;
+	border-right-style: none;
+	border-bottom-style: solid;
+	border-left-style: none;
+	border-bottom-color: #999999;
+	text-indent: 10px;
+	white-space: nowrap;
+}
+.boxBar a
+{
+	color: #000000;
+	text-decoration: none;
+}
+.boxBar a:hover
+{
+	color: #000000;
+	text-decoration: none;
+}
+/*盒子的内容*/
+.boxContent
+{
+	border: 1px solid #CCCCCC;
+	margin-top: 5px;
+	height: 135px;
+	padding: 5px;
+}
+ol
+{
+	margin: 0px;
+	padding: 0px;
+}
+ol li
+{
+	margin: 0px;
+	padding: 0px;
+	list-style-position: inside;
+	line-height: 20px;
+	height: 20px;
+	list-style-type: decimal;
+}
+td {
+	
+	line-height: 22px;
+	height: 22px;
+}
+/*行的样式*/
+.row
+{
+	white-space: nowrap;
+	text-overflow:ellipsis;
+	overflow:hidden;
+	
+}
+/*工作项的列表*/
+.workItem
+{
+	float: left;
+	width: 45%;
+}
+/*系统信息*/
+#sysInfo
+{
+	width: 400px;
+}
+/*服务器信息*/
+#serverInfo
+{
+	width: 400px;
+}
+#serverInfo .boxContent
+{
+	height: auto;
+}#appBox .boxContent
+{
+	height: 240px;
+}
+#appBox .boxContent p
+{
+	text-align: center;
+	margin: 0px;
+	padding: 0px;
+}
+/*二维码*/
+#qrcode .boxContent
+{
+	display: table;
+	width: 390px;
+}
+#qrcode td
+{
+	line-height: 25px;
+}

@@ -1,0 +1,21 @@
+@charset "utf-8";
+.photo{
+	text-align: center;
+}
+.courseTitle {
+	margin-top: 20px;
+}
+.courseItem img {
+	height: 63px;
+	width: 28%;
+	float: left;
+}
+.courseItem {
+	height: 80px;
+	width: 100%;
+}
+
+.courseName {
+	float: right;
+	width: 68%;
+}

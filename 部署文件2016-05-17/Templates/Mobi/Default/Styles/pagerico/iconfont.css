@@ -1,0 +1,21 @@
+
+@font-face {font-family: "pagerico";
+  src: url('pagerico.eot'); /* IE9*/
+  src: url('pagerico.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('pagerico.woff') format('woff'), /* chrome、firefox */
+  url('pagerico.ttf') format('truetype'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+  url('pagerico.svg#pagerico') format('svg'); /* iOS 4.1- */
+}
+
+.pagerico {
+  font-family:"pagerico" !important;
+  font-size:16px;
+  font-style:normal;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-stroke-width: 0.2px;
+  -moz-osx-font-smoothing: grayscale;
+}
+.icon-fenyexiayiye:before { content: "\f0018"; }
+.icon-fenyeshangyiye:before { content: "\f0061"; }
+.icon-fenyezuiqianye:before { content: "\f001a"; }
+.icon-fenyezuihouye:before { content: "\f0063"; }

@@ -1,0 +1,77 @@
+@charset "utf-8";
+#access{
+	margin:10px;
+	margin-left:20px;
+}
+.oltitle{
+	margin-left:20px;
+}
+/*章节列表*/
+.outline{
+	color:#fff;
+}
+.indent{
+	margin-left:15px;
+}
+.outline a{
+	margin-left:8px;
+	line-height:30px;
+	color:#fff;
+	font-size:14px;
+}
+#playerInfo
+{
+    margin:10px;
+}
+.historyInfo
+{
+	margin-left:20px;
+	cursor:pointer;
+	color:#9FF;
+}
+.current, .current a, .current span{
+	font-weight: bold;
+	color: #FF9900;
+}
+.navi{
+	font-family: "微软雅黑", "黑体", "Simplified Arabic Fixed";
+	font-size: 15px;
+	line-height: 20px;
+	height: 20px;
+	float: right;
+	padding-right: 5px;
+	padding-left: 8px;
+	margin-top: 8px;
+	white-space: nowrap;
+	width: auto;
+}
+.navi a{
+	font-size: 15px;
+	line-height: 20px;
+}
+
+/* 视频事件中的试题窗口*/
+#MsgBoxContext .eventContext{
+	font-size:14px;
+	height:22px;
+	margin-bottom:10px;
+	color:#000;
+}
+#MsgBoxContext .quesBox{
+	margin-left:14px;
+	color:#000;
+}
+#MsgBoxContext .quesBox .ansItem{
+	font-size:14px;
+	height:22px;
+	cursor:pointer;
+	margin-top:10px;
+	color:#000;
+}
+#MsgBoxContext .quesAns{
+	font-size:14px;
+	height:22px;
+	margin-top:10px;
+	text-align:center;
+}
+

@@ -1,0 +1,214 @@
+﻿<!DOCTYPE html PUBddC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<META HTTP-EQUIV="Pragma" CONTENT="no-cache">
+<META HTTP-EQUIV="Cache-Control" CONTENT="no-cache">
+<META HTTP-EQUIV="Expires" CONTENT="0">
+<title>{$org.org_platformname}</title>
+<script type="text/javascript" src="CoreScripts/jquery.js"></script>
+<script type="text/javascript" src="CoreScripts/PageBox.js"></script>
+<script type="text/javascript" src="CoreScripts/easydrag.js"></script>
+<script type="text/javascript" src="CoreScripts/Extend.js"></script>
+<script type="text/javascript" src="Scripts/public.js"></script>
+<script type="text/javascript" src="Scripts/AutoLoyout.js"></script>
+<script type="text/javascript" src="Scripts/Default.js"></script>
+<link href="Styles/Public.css" rel="stylesheet" type="text/css" />
+<link href="styles/default.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<vt:include id="inc" file="inc/header.html" />
+<div id="bodyBox" loyout="row">
+  <div id="bodyRight" loyout="column"> 
+    <!--左侧 --> 
+    <!--顶部 --> 
+    <!--内容 -->
+    <div id="context" loyout="row" width="100%" height="auto">
+      <div id="sidebar" loyout="column" width="221"> 
+        <!--考试信息 -->
+        <div class="boxContainer examInfo" loyout="row" height="300px">
+          <div loyout="row" height="35" class="top">
+            <div loyout="column" width="10" class="topLeft"> </div>
+            <div loyout="column" width="auto" class="topMiddle"><a href="/exam.ashx"><img src="Images/jrsb.png" /></a></div>
+            <div loyout="column" width="18" class="topRight"> </div>
+          </div>
+          <div loyout="row" class="body">
+            <div loyout="column" width="10" class="bodyLeft"> </div>
+            <div loyout="column" width="auto" class="bodyCenter">
+              <div class="boxContext"> 
+                <!--内容区域-->
+                <vt:foreach id="exams" from="$#.exams" index="i" item="data" count="6" remark="考试">
+                  <div class="item">{$:i}、 <a href="/exam.ashx" title="{$:#.data.Exam_title}">{$:#.data.Exam_title}</a><br/>
+                    考试时间：{$:#.data.Exam_Date  format="yyyy-M-dd"}</div>
+                </vt:foreach>
+              </div>
+            </div>
+            <div loyout="column" width="18" class="bodyRight"> </div>
+          </div>
+          <div loyout="row" height="15" class="foot">
+            <div loyout="column" width="10" class="footLeft"> </div>
+            <div loyout="column" width="auto" class="footMiddle"> </div>
+            <div loyout="column" width="18" class="footRight"> </div>
+          </div>
+        </div>
+        <!-- 通知公告 -->
+        <div class="boxContainer notice" loyout="row">
+          <div loyout="row" height="35" class="top">
+            <div loyout="column" width="10" class="topLeft"> </div>
+            <div loyout="column" width="auto" class="topMiddle">
+              <div class="title"> <a href="/notices.ashx"><img src="Images/gzgj.png" /></a> </div>
+            </div>
+            <div loyout="column" width="18" class="topRight"> </div>
+          </div>
+          <div loyout="row" class="body">
+            <div loyout="column" width="10" class="bodyLeft"> </div>
+            <div loyout="column" width="auto" class="bodyCenter">
+              <div class="boxContext"> 
+                <!--通知公告列表 -->
+                <vt:foreach id="notice" from="$#.notice" item="data" index="i" count="10" remark="通知公告">
+                  <div class="item" noid="{$:#.data.no_id}">
+                    <div class="item">{$:i}、<a href="/notice.ashx?id={$:#.data.no_id}" title="{$:#.data.no_ttl}"> {$:#.data.no_ttl}</a></div>
+                  </div>
+                </vt:foreach>
+              </div>
+            </div>
+            <div loyout="column" width="18" class="bodyRight"> </div>
+          </div>
+          <div loyout="row" height="15" class="foot">
+            <div loyout="column" width="10" class="footLeft"> </div>
+            <div loyout="column" width="auto" class="footMiddle"> </div>
+            <div loyout="column" width="18" class="footRight"> </div>
+          </div>
+        </div>
+        <!-- 通知公告  结束 --> 
+      </div>
+      <!--右侧大竖栏 -->
+      <div id="right" loyout="column" width="auto"> 
+        <!-- 中间上半部分 -->
+        <div loyout="row"> 
+          <!--信息展现 -->
+          <div class="boxContainer2" loyout="row">
+            <div loyout="row" height="39" class="top">
+              <div loyout="column" width="10" class="topLeft"> </div>
+              <div loyout="column" width="auto" class="topMiddle">
+                <div class="title" loyout="column" width="250"> <img src="Images/newsTitle.jpg" /> </div>
+                <div class="title_right orderTitle" loyout="column"> 
+                  <!--信息状态标识 -->
+                  <div class="more"><a href="/courses.ashx"> 更多</a></div>
+                </div>
+              </div>
+              <div loyout="column" width="18" class="topRight"> </div>
+            </div>
+            <div loyout="row" class="body">
+              <div loyout="column" width="10" class="bodyLeft"> </div>
+              <div loyout="column" class="bodyCenter newsArea"  overflow="auto"> 
+                <!--展现的实际的内容区 -->
+                <div class="boxContext" id="courseBox">
+                  <vt:foreach id="courseList" from="$#.courseList" item="data" index="i" count="20" remark="热门课程">
+                    <div class="hotkecheng-list">
+                      <div class="promote-li"> <a href="/course.ashx?id={$:#.data.cou_id}"> <img width="230" height="130" src="{$:#.data.cou_logosmall}" /> </a>
+                        <div class="ellipsis jiaoshi"> <a href="/course.ashx?id={$:#.data.cou_id}">{$:#.data.cou_name}</a> </div>
+                        <div class="font-size-12 "> <span class="hot-left count">{$:#.data.cou_viewNum}</span> <span class="hot-right">{$:#.data.th_name}/{$:#.data.sbj_name}</span> </div>
+                      </div>
+                    </div>
+                  </vt:foreach>
+                </div>
+              </div>
+              <div loyout="column" width="18" class="bodyRight"> </div>
+            </div>
+            <div loyout="row" height="15" class="foot">
+              <div loyout="column" width="10" class="footLeft"> </div>
+              <div loyout="column" width="auto" class="footMiddle"> </div>
+              <div loyout="column" width="18" class="footRight"> </div>
+            </div>
+          </div>
+          <!--教师风采 -->
+          <div class="boxContainer2 study" loyout="row" height="180">
+            <div loyout="row" height="39" class="top">
+              <div loyout="column" width="10" class="topLeft"> </div>
+              <div loyout="column" width="auto" class="topMiddle">
+                <div class="title" loyout="column" width="250"> <a href="/teacher/List.ashx"><img src="Images/lianxiTitle.jpg" /></a></div>
+                <!--状态标识 -->
+                <div class="more"><a href="/teacher/List.ashx"> 更多</a></div>
+              </div>
+              <div loyout="column" width="18" class="topRight"> </div>
+            </div>
+            <div loyout="row" class="body">
+              <div loyout="column" width="10" class="bodyLeft"> </div>
+              <div loyout="column" class="bodyCenter" >
+                <div class="boxContext">
+                  <vt:foreach id="teachers" from="$#.teachers" item="data" index="i" count="20" remark="教师信息列表">
+                    <div class="pic"> <a href="/teacher/Detail.ashx?id={$:#.data.th_id}" target="_blank">
+                    <img src="{$:#.data.th_photo}" width="83" height="110">
+                    <!--<div class="thName">{$:#.data.th_name}</div>--></a>
+                     
+                    </div>
+                  </vt:foreach>
+                </div>
+              </div>
+              <div loyout="column" width="18" class="bodyRight"> </div>
+            </div>
+            <div loyout="row" height="15" class="foot">
+              <div loyout="column" width="10" class="footLeft"> </div>
+              <div loyout="column" width="auto" class="footMiddle"> </div>
+              <div loyout="column" width="18" class="footRight"> </div>
+            </div>
+          </div>
+          <!--教师风采 结束 --> 
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="bodyLeft" loyout="column" width="200">
+    <div class="boxContainer message" loyout="row">
+      <div loyout="row" height="35" class="top">
+        <div loyout="column" width="10" class="topLeft"> </div>
+        <div loyout="column" width="auto" class="topMiddle"> <a href="/news.ashx"><img src="Images/bbs.png" /></a> </div>
+        <div loyout="column" width="18" class="topRight"> </div>
+      </div>
+      <div loyout="row" class="body">
+        <div loyout="column" width="10" class="bodyLeft"> </div>
+        <div loyout="column" width="auto" class="bodyCenter">
+          <div class="boxContext"> 
+            <!--/*内容区域*/-->
+            <vt:foreach id="newslist" from="$#.newslist" item="data" columns="-1" index="i" count="10" remark="columns为新闻栏目Id">
+              <div class="item">{$:i}、<a href="/article.ashx?id={$:#.data.art_id}" target="_blank">{$:#.data.art_title}</a></div>
+            </vt:foreach>
+          </div>
+        </div>
+        <div loyout="column" width="18" class="bodyRight"> </div>
+      </div>
+      <div loyout="row" height="15" class="foot">
+        <div loyout="column" width="10" class="footLeft"> </div>
+        <div loyout="column" width="auto" class="footMiddle"> </div>
+        <div loyout="column" width="18" class="footRight"> </div>
+      </div>
+    </div>
+    <!--学生信息-->
+    <div class="boxContainer empInfo" loyout="row" height="260">
+      <div loyout="row" height="35" class="top">
+        <div loyout="column" width="10" class="topLeft"> </div>
+        <div loyout="column" width="auto" class="topMiddle">
+          <div class="title"><a href="/mobile/default.ashx" ><img src="Images/ywdt.png" /> </a></div>
+        </div>
+        <div loyout="column" width="18" class="topRight"> </div>
+      </div>
+      <div loyout="row" class="body">
+        <div loyout="column" width="10" class="bodyLeft"> </div>
+        <div loyout="column" width="auto" class="bodyCenter">
+          <div id="empBox" class="boxContext"><a href="/mobile/default.ashx" ><img src="{$orgpath}qr_{$org.Org_TwoDomain}.png" width="100%"/></a>
+            <div class="empName">手机扫描二维码访问</div>
+          </div>
+        </div>
+        <div loyout="column" width="18" class="bodyRight"></div>
+      </div>
+      <div loyout="row" height="15" class="foot">
+        <div loyout="column" width="10" class="footLeft"> </div>
+        <div loyout="column" width="auto" class="footMiddle"> </div>
+        <div loyout="column" width="18" class="footRight"> </div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,47 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title></title>
+<meta name="Keywords"  content="{$org.Org_Keywords}" />
+<meta name="Description" content="{$org.Org_Description}" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script type="text/javascript" src="../CoreScripts/jquery.js"></script>
+<script type="text/javascript" src="../CoreScripts/Extend.js"></script>
+<!--<script type="text/javascript" src="Scripts/Startpage.js"></script>-->
+<script type="text/javascript" src="../Scripts/Public.js"></script>
+<link href="../Styles/public.css" rel="stylesheet" type="text/css" />
+<link href="Styles/Startpage.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div class="box">
+  <div class="titBar">
+    <div class="title">我的课程</div>
+  </div>
+  <div class="listBox">
+    <vt:foreach id="Course" from="$#.Course" item="data" index="i" size="15" remark="选修的课程">
+      <div class="item" couid="{$:#.data.Cou_ID}"> <a href="/course.ashx?id={$:#.data.Cou_ID}" target="_blank"><img src="{$:#.data.Cou_LogoSmall}"  alt="{$:#.data.Cou_Name}" subject="{$:#.data.sbj_Name}"/></a>
+        <div class="itemName"><a href="/course.ashx?id={$:#.data.Cou_ID}" target="_blank"> {$:#.data.Cou_Name}</a> </div>
+      </div>
+    </vt:foreach>
+  </div>
+</div>
+<!--测试成绩 -->
+<div class="box">
+  <div class="titBar">
+    <div class="title">测试成绩</div>
+  </div>
+  <div class="listBox">
+    <vt:foreach id="TestResults" from="$#.trs" item="data" index="i" count="15" remark="参加的测试">
+      <div class="testRow"> 
+      <div class="name">
+{$:#.data.Tp_Name}</div>
+ <div class="time">
+{$:#.data.Tr_CrtTime}</div>
+      <div class="score">成绩：
+{$:#.data.Tr_Score}分</div>
+      </div>
+    </vt:foreach>
+  </div>
+</div>
+</body>
+</html>

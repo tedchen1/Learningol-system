@@ -1,0 +1,14 @@
+.context .contextbox dd {
+	height: 120px;
+}
+.context .contextbox dd img {
+	height: 100px;
+	width:29%;
+	border: 2px solid #FFFFCC;
+	float: left;
+}
+.couRight {
+	height: 80px;
+	width: 68%;
+	float: right;
+}

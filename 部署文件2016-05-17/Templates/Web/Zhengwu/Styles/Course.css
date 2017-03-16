@@ -1,0 +1,126 @@
+﻿/*章节列表*/
+.outline{
+	
+}
+.indent{
+	margin-left:20px;
+}
+.outline a, .outline span{
+	margin-left:8px;
+	line-height:30px;
+	font-size:14px;
+}
+.outline a:hover{
+	text-decoration: underline;	
+}
+.courseLogo
+{
+	width:600px;
+	height:400px;
+	margin-left:auto;
+	margin-right:auto;
+}
+.courseLogo img{
+	width:600px;
+	height:400px;
+}
+.itemMark {
+	font-size: 14px;
+	text-align: left;
+	line-height: 35px;
+	width: 600px;
+	font-family: "微软雅黑";
+	color: #FFFFFF;
+	POSITION: relative;
+	FILTER: alpha(opacity=50);
+	BACKGROUND: #000;
+	OVERFLOW: hidden;
+	opacity: 0.5;
+	-moz-opacity: 0.5;
+	top:-200px;
+	height:200px;
+}
+.itemInfo {
+	font-size: 14px;
+	text-align: left;
+	line-height: 35px;
+	width: 600px;
+	font-family: "微软雅黑";
+	color: #FFFFFF;
+	POSITION: relative;
+	OVERFLOW: hidden;
+	top:-400px;
+	height:200px;
+	z-index: 10;
+}
+.bvr_con
+{
+	padding-top: 10px;
+	padding-right: 0px;
+	padding-bottom: 10px;
+	padding-left: 30px;
+	max-height:300px;
+
+}
+.bvr_con p
+{
+
+	font-size:14px;
+	line-height: 30px;
+}
+.couBtn {
+	background-image: url(../Images/btnBg.jpg);
+	background-repeat: repeat-x;
+	height: 50px;
+	width: 200px;
+	text-align: center;
+	margin-left:30px;
+
+}
+.couBtn, .couBtn a {
+	font-family: "微软雅黑", "黑体", "Simplified Arabic Fixed";
+	font-size: 22px;
+	line-height: 50px;
+	color: #333333;
+	font-weight: bold;
+	display: block;
+}
+.courseInfo, .courseInfo p, .courseInfo font, .courseInfo div, .courseInfo span, .courseInfo *{
+	font-family: "微软雅黑", "黑体", "Simplified Arabic Fixed";
+	font-size: 15px;
+	background-color:transparent !important;
+	color:#fff !important;
+}
+/*知识库*/
+#knlArea{
+	height:auto;
+	display: table;
+	width: 100%;
+}
+#knlframe{
+	overflow-y:auto;
+	overflow-x:hidden;
+}
+#knlArea #knlleft {
+	float: left;
+	width: 35%;
+	margin-top: 5px;
+}
+#knlArea #knlleft #leftInnert {
+	margin: 10px;
+}
+
+#knlArea #knlright {
+	float: right;
+	width: 60%;
+	margin-top: 5px;
+}
+#knlArea #knlleft .sortTitle {
+	font-family: "微软雅黑", "黑体", "Simplified Arabic Fixed";
+	font-size: 16px;
+	line-height: 40px;
+	color: #FFFFFF;
+	background-color: #fe5842;
+	height: 40px;
+	text-indent: 20px;
+}

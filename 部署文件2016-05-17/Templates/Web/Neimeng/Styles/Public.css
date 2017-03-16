@@ -1,0 +1,399 @@
+﻿@charset "utf-8";
+@font-face {
+	font-family: "iconphone";
+	src: url('phone/iconphone.eot'); /* IE9*/
+	src: url('phone/iconphone.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */  url('phone/iconphone.woff') format('woff'), /* chrome, firefox */  url('phone/iconphone.ttf') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/  url('phone/iconphone.svg#iconphone') format('svg'); /* iOS 4.1- */
+}
+@font-face {
+	font-family: "icondepart";
+	src: url('depart/icondepart.eot'); /* IE9*/
+	src: url('depart/icondepart.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */  url('depart/icondepart.woff') format('woff'), /* chrome, firefox */  url('depart/icondepart.ttf') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/  url('depart/icondepart.svg#iconphone') format('svg'); /* iOS 4.1- */
+}
+@font-face {
+	font-family: "iconfont";
+	src: url('iconfont.eot'); /* IE9*/
+	src: url('iconfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */  url('iconfont.woff') format('woff'), /* chrome、firefox */  url('iconfont.ttf') format('truetype'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/  url('iconfont.svg#iconfont') format('svg'); /* iOS 4.1- */
+}
+@font-face {font-family: "examico";
+  src: url('examico/examico.eot'); /* IE9*/
+  src: url('examico/examico.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('examico/examico.woff') format('woff'), /* chrome、firefox */
+  url('examico/examico.ttf') format('truetype'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+  url('examico/examico.svg#examico') format('svg'); /* iOS 4.1- */
+}
+.iconfont {
+	font-family: "iconfont" !important;
+	font-size: 16px;
+	font-style: normal;
+	-webkit-font-smoothing: antialiased;
+	-webkit-text-stroke-width: 0.2px;
+	-moz-osx-font-smoothing: grayscale;
+}
+.iconphone {
+	font-family: "iconphone" !important;
+	font-size: 16px;
+	font-style: normal;
+	-webkit-font-smoothing: antialiased;
+	-webkit-text-stroke-width: 0.2px;
+	-moz-osx-font-smoothing: grayscale;
+}
+.icondepart {
+	font-family: "icondepart" !important;
+	font-size: 16px;
+	font-style: normal;
+	-webkit-font-smoothing: antialiased;
+	-webkit-text-stroke-width: 0.2px;
+	-moz-osx-font-smoothing: grayscale;
+}
+.examico {
+	font-family: "examico" !important;
+	font-size: 16px;
+	font-style: normal;
+	-webkit-font-smoothing: antialiased;
+	-webkit-text-stroke-width: 0.2px;
+	-moz-osx-font-smoothing: grayscale;
+}
+* {
+	-webkit-text-size-adjust: none;
+	margin: 0;
+	padding: 0;
+	border: none;
+	-webkit-tap-highlight-color: rgba(0,0,0,0);
+	font-size: 12px;
+}
+body {
+	margin: 0px;
+	padding: 0px;
+}
+body,a,p,div,td{
+	font-size: 13px;
+}
+a{
+	text-decoration: none;
+}
+a:hover{
+	text-decoration: underline;
+}
+img{
+	border-top-style: none;
+	border-right-style: none;
+	border-bottom-style: none;
+	border-left-style: none;
+}
+.VerifyShow_Box 
+{
+	line-height: 30px;
+	text-indent: 10px;
+	color: #FF0000;
+	background-color: #FFFFCC;
+	border: 1px solid #FF0000;
+}
+/*图标*/
+.icoMore{
+	background-image: url(../Images/icon-1.png);
+	background-repeat: no-repeat;
+	background-position: -86px -180px;
+	height: 18px;
+	width: 18px;
+	display: block;
+}
+
+/*头部设置*/
+#header
+{
+	background-color: #FFFFFF;
+	padding-top: 20px;
+}
+#qrcode
+{
+	height: 210px;
+	width: 210px;
+	position: absolute;
+	z-index: 2000;
+	text-align: center;
+	background-color: #FFFFFF;
+}
+#qrcode img{
+	height: 160px;
+	width: 160px;
+	margin-top: 25px;
+	margin-left: 0px;
+}
+#headerInner
+{
+	margin-right: auto;
+	margin-bottom: 0px;
+	margin-left: auto;
+	text-align: left;
+	height: 70px;
+	width: 980px;
+	background-color: #FFFFFF;
+}
+
+#header .logo
+{
+	float: left;
+	margin-top: 2px;
+	max-height:80px;
+}
+#header .rightBox
+{
+	float: right;
+	width: 580px;
+	margin-top: 5px;
+	margin-right: 5px;
+	text-align: right;
+}
+/*右上方菜单*/
+#header .rightBox .rightBar
+{
+	float: right;
+	height: 25px;
+	width: 400px;
+}
+#header .rightBox .rightBar .menu
+{
+	text-align: center;
+	float: right;
+	height: 20px;
+	width: 85px;
+	line-height: 20px;
+}
+#header .rightBox .rightBar .menu a
+{
+	color: #FFFFFF;
+	letter-spacing: 2px;
+}
+#header .rightBox .rightBar .teahcer
+{
+	font-family: "微软雅黑", "黑体", "Simplified Arabic Fixed";
+	line-height: 25px;
+	color: #FFFFFF;
+	background-color: #0074cb;
+	height: 25px;
+	width: 100px;
+	margin-left: 10px;
+}
+#header .rightBox .rightBar .student
+{
+	font-family: "微软雅黑", "黑体", "Simplified Arabic Fixed";
+	line-height: 25px;
+	color: #FFFFFF;
+	background-color: #ff9036;
+	height: 25px;
+	width: 100px;
+	margin-left: 10px;
+}
+#header .rightBox .rightBar .phone
+{
+	font-family: "微软雅黑", "黑体", "Simplified Arabic Fixed";
+	line-height: 25px;
+	color: #FFFFFF;
+	background-color: #0074cb;
+	height: 25px;
+	width: 100px;
+	margin-left: 10px;
+	cursor:pointer;
+}
+/*主菜单区域*/
+.menubBar
+{
+	line-height: 45px;
+	height: 45px;
+	margin-top: 20px;
+	background-color: #ff5842;
+	width: 100%;
+}
+.menubBar dl
+{
+	width: 980px;
+	margin-right: auto;
+	margin-left: auto;
+	height: 45px;
+	padding: 0px;
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+.menubBar dl dd
+{
+	line-height: 45px;
+	float: left;
+	height: 45px;
+	width: 120px;
+	text-align: center;
+	font-size: 15px;
+	font-weight: bold;
+	margin: 0px;
+	padding: 0px;
+}
+.menubBar dl dd a
+{
+	color: #FFFFFF;
+	font-family: "微软雅黑", "黑体", "Simplified Arabic Fixed";
+	font-size: 16px;
+	line-height: 45px;
+	height: 45px;
+	display: block;
+	width: 100%;
+	letter-spacing: 5px;
+	text-indent: 5px;
+}
+.menubBar dl dd a:hover{
+	text-decoration: none;
+}
+.menubBar dd.overMenu
+{
+	background-color: #f24933;
+}
+.menubBar dd.overMenu a
+{
+}
+.menubBar dd.curr
+{
+	background-color: #f24933;
+}
+.menubBar dd.curr a
+{
+	color: #FFFFCC;
+}
+#header  .rightTxt
+{
+	font-size: 24px;
+	float: right;
+	width: 580px;
+	line-height: 25px;
+	text-align: right;
+	margin-top: 10px;
+}
+#Context
+{
+	width: 980px;
+	margin-top: 0px;
+	margin-right: auto;
+	margin-bottom: 0px;
+	margin-left: auto;
+	text-align: left;
+	display: table;
+}
+/*底部*/
+#footer {
+	background-color: #333;
+	height: 120px;
+	text-align: center;
+	display: table;
+	width: 100%;
+	color: #CCCCCC;
+	margin-top: 50px;
+}
+.footerMenu{
+	padding: 0px;
+	height: 30px;
+	margin-right: auto;
+	margin-left: auto;
+	background-color: #CCCCCC;
+	margin-top: 0px;
+	margin-bottom: 0px;
+	text-align: center;
+}
+
+.footerMenu a{
+	font-size: 13px;
+	line-height: 30px;
+	color: #333333;
+	text-decoration: none;
+	margin-right: 20px;
+}
+#footer #footerConext {
+	height: 60px;
+	margin-top: 30px;
+	margin-bottom: 30px;
+	line-height: 25px;
+	text-align: center;
+	width: 980px;
+	margin-right: auto;
+	margin-left: auto;
+	font-size: 14px;
+	color: #CCCCCC;
+	font-family:arial;
+}
+/*分页导航*/
+#pagerBar {
+	height: 40px;
+	display: table;
+	width: auto;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+.pagerBtn {
+	line-height: 40px;
+	letter-spacing: 2px;
+	text-align: center;
+	float: left;
+	height: 40px;
+}
+.pagerBtn a
+{
+	color: #333333;
+	line-height: 40px;
+	display: block;
+	height: 40px;
+	font-size: 15px;
+}
+.pagerFirst {
+	width: 60px;
+	border: 1px solid #CCCCCC;
+}
+.pagerLast {
+	border: 1px solid #CCCCCC;
+	width: 60px;
+}
+.pagerPrev {
+	width: 80px;
+	border-top-width: 1px;
+	border-right-width: 1px;
+	border-bottom-width: 1px;
+	border-left-width: 1px;
+	border-top-style: solid;
+	border-right-style: solid;
+	border-bottom-style: solid;
+	border-left-style: none;
+	border-top-color: #CCCCCC;
+	border-right-color: #CCCCCC;
+	border-bottom-color: #CCCCCC;
+	border-left-color: #CCCCCC;
+}
+.pagerIndex {
+	width: 40px;
+	border-top-width: 1px;
+	border-right-width: 1px;
+	border-bottom-width: 1px;
+	border-left-width: 1px;
+	border-top-style: solid;
+	border-right-style: solid;
+	border-bottom-style: solid;
+	border-left-style: none;
+	border-top-color: #CCCCCC;
+	border-right-color: #CCCCCC;
+	border-bottom-color: #CCCCCC;
+	border-left-color: #CCCCCC;
+}
+.pagerNext {
+	width: 80px;
+	border-top-width: 1px;
+	border-right-width: 1px;
+	border-bottom-width: 1px;
+	border-left-width: 1px;
+	border-top-style: solid;
+	border-right-style: none;
+	border-bottom-style: solid;
+	border-left-style: none;
+	border-top-color: #CCCCCC;
+	border-right-color: #CCCCCC;
+	border-bottom-color: #CCCCCC;
+	border-left-color: #CCCCCC;
+}
+.pagerCurr
+{
+	background-color: #CCCCCC;
+}

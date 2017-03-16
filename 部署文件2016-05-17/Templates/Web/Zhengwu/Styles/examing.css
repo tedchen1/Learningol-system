@@ -1,0 +1,539 @@
+@charset "utf-8";
+#footer {
+	margin-top: 150px;
+}
+/*屏幕遮罩*/
+
+#loading {
+	position: absolute;
+	display:none;
+	z-index: 2000;
+	background-color: #FFFFFF;
+	height: 35px;
+	width: 280px;
+	margin-right: auto;
+	margin-left: auto;
+}
+#loadingTitle {
+	font-size: 14px;
+	line-height: 35px;
+	text-align: center;
+}
+#submitBox {
+	position: absolute;
+	display:none;
+	z-index: 100;
+	background-color: #FFFFFF;
+	height: 35px;
+	width: 280px;
+	margin-right: auto;
+	margin-left: auto;
+}
+#submitTitle {
+	font-size: 18px;
+	line-height: 35px;
+	text-align: center;
+	font-weight: bold;
+}
+
+
+/*考试主题*/
+#themeBox {
+	
+}
+
+#themeBox .themesub {
+	font-family: "微软雅黑", "黑体", "Simplified Arabic Fixed";
+	font-size: 20px;
+	line-height: 40px;
+	text-align: center;
+	height: 40px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+#themeBox .examInfo {
+	font-size: 14px;
+	line-height: 30px;
+
+	text-indent: 10px;
+	white-space: nowrap;
+	height: 30px;
+	
+	text-align: center;
+}
+/*考试已经结束*/
+#examOverBox {	
+	margin-top: 20px;
+}
+#examOverBox .title {
+	font-family: "黑体";
+	font-size: 25px;
+	line-height: 50px;
+	color: #FF0000;
+	text-align: center;
+	height: 50px;
+	margin-top: 20px;
+}
+#examOverBox .time {
+	font-size: 14px;
+	line-height: 30px;
+	text-align: center;
+	height: 40px;
+}
+/*已经交卷*/
+#examSubmitBox {	
+	height: 300px;
+
+	margin-top: 30px;
+}
+#examSubmitBox .title {
+	font-family: "黑体";
+	font-size: 25px;
+	line-height: 50px;
+	color: #FF0000;
+	text-align: center;
+	height: 50px;
+	margin-top: 20px;
+}
+#examSubmitBox .text {
+	line-height: 30px;
+	text-align: center;
+	height: 30px;
+}
+
+/* 试卷上方控制条*/
+#pagerTitle {
+	line-height: 40px;
+	height: 40px;
+	border: 1px solid #CCCCCC;
+	margin-top: 0px;
+}
+/*试卷上方控制条的试题类型*/
+#pagerTitle .type {
+	line-height: 40px;
+	text-align: center;
+	float: left;
+	width: 120px;
+	border-top-style: none;
+	border-right-style: solid;
+	border-bottom-style: none;
+	border-left-style: none;
+	border-right-width: 1px;
+	border-right-color: #CCCCCC;
+	cursor:pointer;
+}
+#pagerTitle .typeCurrent {
+	background-color: #666;
+}
+#pagerCard {
+	
+}
+.startTimediv{
+	text-align:center;
+}
+.startTime {
+	font-size: 14px;
+	line-height: 30px;
+	color: #333333;
+	text-align: center;
+	height: 30px;
+	border-bottom-width: 1px;
+	border-top-style: none;
+	border-right-style: none;
+	border-bottom-style: solid;
+	border-left-style: none;
+	border-bottom-color: #999999;
+	width: 260px;
+}
+#residueTime {
+	height: 60px;
+	font-family: "黑体";
+	font-size: 70px !important;
+	line-height: 60px;
+	font-weight: bold;
+	color:#FF9;
+	text-align: center;
+}
+#residueTime span{
+	font-size: 45px !important;
+}
+/*交卷按钮*/
+#pagerSubmitBox {
+	font-family: "黑体";
+	font-size: 20px;
+	line-height: 40px;
+	font-weight: bold;
+	color: #FFFFFF;
+	height: 40px;
+	width: 260px;
+	text-align: center;
+	cursor: pointer;
+	background-image: url(../Images/submit.jpg);
+	background-repeat: no-repeat;
+	background-position: -8px 0px;
+}
+#pagerSubmitBox.noStart
+{
+	background-image: url(../Images/submit2.jpg);
+	cursor:default;
+}
+#pagerCard .quesCard {
+	margin-top: 0px;	
+	display:none;
+}
+.quesCard .cardTit {
+	background-color: #e8e8e8;
+	height: 40px;
+	border-bottom-width: 1px;
+	border-top-style: none;
+	border-right-style: none;
+	border-bottom-style: solid;
+	border-left-style: none;
+	border-bottom-color: #CCCCCC;
+}
+.quesCard .cardTit .txt {
+	font-family: "黑体";
+	font-size: 16px;
+	line-height: 40px;
+	font-weight: bold;
+	color: #FF6600;
+	float: left;
+	height: 40px;
+	width: 60px;
+	margin-left: 10px;
+}
+.cardTit .number {
+	font-size: 14px;
+	line-height: 40px;
+	float: right;
+	height: 40px;
+	width: 180px;
+	margin-right: 10px;
+	text-align: right;
+}
+#cardBox .quesType {
+	line-height: 25px;
+	height: 25px;
+	margin-bottom: 10px;
+	width: 100%;
+	cursor:pointer;
+}
+#cardBox .quesType .tit {
+	line-height: 25px;
+	float: left;
+	height: 25px;
+	width: 80px;
+	margin-top: 5px;
+	font-weight: bold;
+	margin-left: 10px;
+	text-indent: 20px;
+	background-image: url(../Images/tk_exam.png);
+	background-repeat: no-repeat;
+	background-position: -195px 6px;
+}
+#cardBox .quesType .num {
+	line-height: 25px;
+	float: right;
+	height: 25px;
+	width: 150px;
+	margin-top: 5px;
+	text-align: right;
+	margin-right: 10px;
+}
+#cardBox dl {
+	display: table;
+	padding: 0px;
+	width: 250px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	margin-left: 10px;
+}
+#cardBox dl dd {
+	text-align: center;
+	white-space: nowrap;
+	padding: 0px;
+	height: 20px;
+	width: 20px;
+	margin-top: 0px;
+	margin-right: 5px;
+	margin-bottom: 5px;
+	margin-left: 0px;
+	float: left;
+	font-size: 13px;
+	line-height: 20px;
+	color: #FFFFFF;
+	background-color: #999999;
+	font-weight: bold;
+	cursor:pointer;
+	border-top-width: 1px;
+	border-right-width: 1px;
+	border-bottom-width: 3px;
+	border-left-width: 1px;
+	border-top-style: solid;
+	border-right-style: solid;
+	border-bottom-style: solid;
+	border-left-style: solid;
+	border-top-color: #999999;
+	border-right-color: #999999;
+	border-bottom-color: #333333;
+	border-left-color: #999999;
+}
+#cardBox dl dd.level1{
+	color: #0066CC;
+	border-top-color: #00CCFF;
+	border-right-color: #00CCFF;
+	border-bottom-color: #00CCFF;
+	border-left-color: #00CCFF;
+	background-color: #80FFFF;
+}
+#cardBox dl dd.level2{
+	color: #0066CC;
+	border-top-color: #0066FF;
+	border-right-color: #0066FF;
+	border-bottom-color: #FF6600;
+	border-left-color: #0066FF;
+	background-color: #80FFFF;
+}
+#cardBox dl dd.level3{
+	color: #0066CC;
+	border-top-color: #0066FF;
+	border-right-color: #0066FF;
+	border-bottom-color: #FF0000;
+	border-left-color: #0066FF;
+	background-color: #80FFFF;
+}
+/*试卷区域*/
+#pagerArea {
+	
+}
+#pagerArea #distanceTime {
+	height: 200px;
+	margin-top: 20px;
+	margin-right: auto;
+	margin-left: auto;
+}
+#distanceTime .timeTitle {
+	font-size: 14px;
+	line-height: 30px;
+	text-align: center;
+	height: 30px;
+	color: #FF0000;
+	font-weight: bold;
+}
+#distanceTime .currTime {
+	font-size: 14px;
+	line-height: 30px;
+	text-align: center;
+	height: 30px;
+	margin-top: 10px;
+}
+/*试卷中的试题*/
+/*大题的标题*/
+#pagerArea dl dt {
+	font-size: 14px;
+	line-height: 40px;
+	font-weight: bold;
+	margin: 10px;
+	height: 40px;
+	border: 3px solid #cccccc;
+	text-indent: 10px;
+}
+#pagerArea dl dd {
+	margin: 10px;
+	padding: 0px;
+	border: 1px solid #cccccc;
+}
+/*试题的题目区域*/
+#pagerArea dl dd .titleBox {
+	display: table;
+	margin-bottom: 15px;
+}
+#pagerArea dl dd .titleBox .order {
+	font-size: 22px;
+	line-height: 50px;
+	font-weight: bold;
+	text-align: center;
+	float: left;
+	height: 50px;
+	width: 50px;
+	font-family: Arial;
+}
+#pagerArea dl dd .titleBox .title {
+	font-size: 15px;
+	line-height: 30px;
+	float: right;
+	width: 620px;
+	margin-top: 10px;
+}
+#pagerArea dl dd .titleBox .title * {
+	font-size: 15px;
+	margin-top: 0px;
+}
+.titleBox img{
+	max-width:80%;
+}
+#pagerArea dl dd .itemBox {
+	width: 100%;
+	display: table;
+	margin-bottom: 10px;
+}
+#pagerArea dl dd .itemBox .ansItem {
+	font-size: 14px;
+	line-height: 35px;
+	display: table;
+	height: 35px;
+	cursor:pointer;
+	width: 100%;
+}
+#pagerArea dl dd .itemBox .ansItem5{
+	font-size: 14px;
+	line-height: 30px;
+	display: table;
+	height: 30px;
+	cursor:pointer;
+	width: 625;
+	margin-left: 60px;
+}
+#pagerArea dl dd .itemBox .ansItem  .char{
+	font-size: 14px;
+	line-height: 35px;
+	float: left;
+	height: 35px;
+	width: 30px;
+	margin-left: 60px;
+}
+#pagerArea dl dd .itemBox .ansItemContext {
+	font-size: 14px;
+	line-height: 35px;
+	display: table;
+	width:560px;
+	float: left;
+	min-height: 35px;
+}
+#pagerArea dl dd .itemBox .ansbtn{
+	font-size: 16px;
+	line-height: 40px;
+	background-image: url(../Images/tk_exam.png);
+	background-repeat: no-repeat;
+	background-position: 0px -130px;
+	text-indent: 40px;
+	height: 40px;
+	color:#333;
+	width: 92px;
+	float: left;
+	margin-left: 60px;
+	cursor:pointer;
+}
+#pagerArea dl dd .itemBox .seleted{
+	font-size: 16px;
+	line-height: 40px;
+	background-image: url(../Images/tk_exam.png);
+	background-repeat: no-repeat;
+	background-position: -90px -130px;
+	text-indent: 40px;
+	height: 40px;
+	width: 92px;
+	float: left;
+	margin-left: 60px;
+	cursor:pointer;
+	font-weight: bold;
+	color: #FFFFFF;
+}
+/*填空题的输入框*/
+#pagerArea dl dd .itemBox .textbox {
+	height: 30px;
+	width: 300px;
+	font-size: 14px;
+	line-height: 30px;
+}
+/*简答题的输入框*/
+#pagerArea dl dd .itemBox textarea {
+	height: 80px;
+	width: 600px;
+	margin-left: 50px;
+	border: 1px solid #CCCCCC;
+}
+/*简答题的上传区域*/
+#pagerArea dl dd .fileupBox {
+ margin-left:50px;
+ margin-top:10px;
+}
+#pagerArea dl dd .fileupBox input.fileinput{
+	line-height: 22px;
+	height: 22px;
+	margin-top:2px;
+	width:400px;
+}
+#pagerArea dl dd .fileupBox .btnUp {
+	width: 50px;
+	border: thin outset #FFFFFF;
+	margin-left: 10px;
+	line-height: 22px;
+	height: 22px;
+	margin-top:-2px;
+}
+#pagerArea dl dd .fileupBox .delfile {
+	font-size: 12px;
+	line-height: 16px;
+	color: #FF0000;
+	margin-left: 10px;
+	font-family: consolas;
+	font-weight: 100;
+	cursor:pointer;
+}
+#pagerArea dl dd .btnBox {
+	height: 40px;
+	width: 620px;
+	margin-left: 20px;
+	margin-bottom: 20px;
+}
+#pagerArea dl dd .btnBox .tit{
+	font-size: 14px;
+	line-height: 35px;
+	height: 35px;
+	float: left;
+	width: 150px;
+}
+#pagerArea dl dd .btnBox .btn {
+	font-size: 14px;
+	line-height: 25px;
+	float: left;
+	height: 25px;
+	width: 100px;
+	margin-right: 20px;
+	cursor:pointer;
+	font-family: Arial;
+	border: 1px solid #0066FF;
+	text-align: center;
+	margin-top: 5px;
+}
+#pagerArea dl dd .btnBox .sure1 {
+	border: 1px solid #00CCFF;
+	color: #00CCFF;
+}
+#pagerArea dl dd .btnBox .sure2 {
+	border: 1px solid #FF6600;
+	color: #FF6600;
+}
+#pagerArea dl dd .btnBox .sure3 {
+	border: 1px solid #FF0000;
+	color: #FF0000;
+}
+
+/*单选题，鼠标滑过*/
+#pagerArea dl dd .itemBox .type1Over
+{
+	background-image: url(../Images/ok.gif);
+	background-repeat: no-repeat;
+	background-position: 25px 5px;
+	
+	color: #000;
+}
+#pagerArea dl dd .btnBox .type1BtnOver
+{
+	background-image: url(../Images/tk_exam.png);
+	background-position: -94px -83px;
+	font-weight: bold;
+	color: #FFFFFF;
+}

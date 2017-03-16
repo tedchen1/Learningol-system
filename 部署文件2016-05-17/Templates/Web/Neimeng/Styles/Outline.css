@@ -1,0 +1,189 @@
+@charset "utf-8";
+#Context{
+	margin-top:10px !important;
+}
+#LeftBox {
+	width: 280px;
+	float: left;
+	border-right-width: 1px;
+	border-top-style: none;
+	border-right-style: none;
+	border-bottom-style: none;
+	border-left-style: none;
+	border-right-color: #CCCCCC;
+}
+.boxBar {
+	border-bottom-width: 1px;
+	border-top-style: none;
+	border-right-style: none;
+	border-bottom-style: solid;
+	border-left-style: none;
+	border-bottom-color: #CCCCCC;
+	height: 75px;
+	margin-bottom: 20px;
+}
+.title {
+	font-size: 20px;
+	font-family: "微软雅黑";
+	background-image: url(/images/line.png);
+	background-repeat: no-repeat;
+	background-position: left bottom;
+	float: left;
+	height: 30px;
+	text-align: left;
+	padding-bottom: 5px;
+	padding-top: 8px;
+	color: #333;
+	padding-left: 10px;
+	margin-bottom: 15px;
+	border-bottom-width: 5px;
+	border-top-style: none;
+	border-right-style: none;
+	border-bottom-style: solid;
+	border-left-style: none;
+	border-bottom-color: #ff5842;
+	width: 150px;
+	text-indent: 10px;
+	margin-top: 30px;
+}
+.itemList
+{
+	
+}
+.item1 {
+	line-height: 30px;
+	font-family: "黑体";
+}
+.item1 .itemName{
+	text-indent: 10px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+.item2 {
+	font-size: 15px;
+	line-height: 30px;
+}
+.item2 .itemName{
+	text-indent: 30px;
+}
+
+
+#RightBox {
+	float: right;
+	width: 700px;
+	background-color: #CCCCCC;
+}
+.courseBox {
+	height: 20px;
+	margin-right: 10px;
+	font-size: 14px;
+	line-height: 20px;
+	text-indent: 20px;
+	color: #000000;
+	text-align: right;
+	margin-top: 10px;
+}
+#playerBox {
+	padding-right: 10px;
+	padding-left: 10px;
+}
+#playerInfo
+{
+    margin:10px;
+}
+.oltitle {
+	font-size: 20px;
+	font-family: "微软雅黑";
+	background-image: url(/images/line.png);
+	background-repeat: no-repeat;
+	background-position: left bottom;
+	height: 30px;	
+	text-align: left;
+	padding-bottom: 5px;
+	padding-top: 8px;
+	color: #333;
+	padding-left: 10px;
+	margin-bottom: 15px;
+	border-bottom-width: 5px;
+	border-top-style: none;
+	border-right-style: none;
+	border-bottom-style: solid;
+	border-left-style: none;
+	border-bottom-color: #ff5842;
+	text-indent: 10px;
+	overflow:hidden;
+	white-space: nowrap;
+	text-overflow:ellipsis;
+}
+.noVideo{
+	min-height:300px;
+	text-align:center;
+	line-height:45px;
+}
+#details{
+	min-height:600px;
+	font-size: 16px;
+	line-height: 20px;
+	margin: 10px;
+}
+/*章节列表*/
+.outline{
+	color:#333;
+}
+.indent{
+	margin-left:15px;
+}
+.outline a{
+	margin-left:8px;
+	line-height:30px;
+	color:#333;
+	font-size:14px;
+}
+.current{
+	background-color:#CCC;
+}
+.current, .current a, .current span{
+	font-weight: bold;
+	color:#900;
+}
+/*附件*/
+#access {
+	margin-bottom: 20px;
+}
+#access a {
+	font-size: 16px;
+	text-indent: 20px;
+	display: block;
+}
+/* 视频事件中的试题窗口*/
+#MsgBoxContext .eventContext{
+	font-size:14px;
+	height:22px;
+	margin-bottom:10px;
+}
+#MsgBoxContext .quesBox{
+	margin-left:14px;
+}
+#MsgBoxContext .quesBox .ansItem{
+	font-size:14px;
+	height:22px;
+	cursor:pointer;
+	margin-top:10px;
+}
+#MsgBoxContext .quesAns{
+	font-size:14px;
+	height:22px;
+	margin-top:10px;
+	text-align:center;
+}
+
+
+.historyInfo
+{
+	margin-left:20px;
+	cursor:pointer;
+	color:#06F;
+}
+#footer{
+	margin-top:10px !important;
+}

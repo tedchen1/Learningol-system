@@ -1,0 +1,664 @@
+﻿@charset "utf-8";
+body {
+	background-color: #F7F7F7;
+}
+#Context-body {
+	margin: 0px auto; width: 100%; text-align: left; display: table; height:557px; background-color:#333333;
+}
+#Context-body-new {
+	margin: 0px auto; width: 100%; text-align: left; display: table; height:660px; background-color:#333333;
+}
+#Navi {
+	height: 30px; margin-top: 0px; 
+}
+#Navi {
+	color: #ffffff;
+	line-height: 30px;
+	font-family: "微软雅黑";
+	font-size: 16px;
+	margin-top:20px;
+}
+#Navi span{
+color:#ffffff; line-height: 35px; font-family: "微软雅黑"; font-size: 16px; font-weight: bold; 
+}
+#Navi a {
+	color:#ffffff; line-height: 35px; font-family: "微软雅黑"; font-size: 16px; text-decoration:none;
+}
+#teacherTop {
+	width: 162px;
+	height: auto;
+	margin-top: 0px;
+	margin-bottom: 20px;
+	border:1px solid #DDDDDD;
+    float: right;
+	background-color: #ffffff;
+}
+#teacherTop .photo {
+	width: 124px;
+	height: 157px;
+	margin-top: 5px;
+	margin-left: 13px;
+	float: left;
+}
+#teacherTop .photo img {
+	margin-top: 2px; margin-left: 2px;
+}
+#teacherTop .details {
+	width: 162px;
+	height: auto;
+	margin-top: 0px;
+	float: left;
+}
+#teacherTop .details .infoFirst {
+	width: 162px; height: 64px; line-height: 35px;
+}
+.infoFirst .name {
+	width: 124px; height: 35px; color: #000000; line-height: 35px; font-family: "微软雅黑"; font-size: 18px; font-weight: bold; text-align:center; margin-left:13px; border-bottom:1px solid #BBBBBB;
+}
+.infoFirst .title {
+	width: 124px; height: 30px; line-height: 30px; font-size: 15px; margin-top: 0px;margin-left:13px;  text-align:center;
+}
+.details .intro {
+	width: 124px;
+	margin-left:13px;
+	margin-bottom:13px;
+	height: auto;
+	line-height: 20px;
+	font-size: 12px;
+	color:#676767;
+}
+.kechengBox {
+	width: 980px; margin-top: 20px; display: table;
+}
+.current{
+	font-weight: bold;
+	color: #FF9900;
+}
+.kechengBox .teacherLeft {
+	width: 652px; float: left; display: table;
+}
+.kechengBox .teacherRight {
+	width: 290px; float: right; display: table;
+}
+#history {
+	margin: 0px 0px 20px; padding: 0px;
+}
+#history dt {
+	border-style: none none solid; height: 40px; margin-bottom: 10px; border-bottom-color: rgb(204, 204, 204); border-bottom-width: 1px;
+}
+#history .title {
+	border-style: none none solid; width: 150px; height: 38px; text-align: center; line-height: 30px; font-family: "微软雅黑", "黑体", "Simplified Arabic Fixed"; font-size: 22px; margin-top: 1px; border-bottom-color: rgb(66, 165, 255); border-bottom-width: 4px; float: left;
+}
+#history dd {
+	margin: 0px; padding: 0px; width: 650px; height: 40px; line-height: 20px;
+}
+#history dd div {
+	line-height: 40px; font-size: 14px;
+}
+#history .time {
+	width: 180px; height: 40px; text-align: center; float: left;
+}
+#history .type {
+	width: 60px; text-align: center; float: left;
+}
+#history .post {
+	width: auto; float: left;
+}
+#history .post {
+	width: 160px; text-align: left; float: right;
+}
+#history .theme {
+	width: auto; float: left;
+}
+.courseBox {
+	margin-bottom: 20px;
+	min-height: auto;
+	border: 1px solid #DDDDDD;
+	background-color: #FFFFFF;
+}
+.courseBox .courseTitle {
+	height: 25px;
+	margin-bottom: 10px;
+	margin-top: 20px;
+}
+.courseBox .courseTitle .title {
+	width: 150px;
+	height: 25px;
+	line-height: 25px;
+	font-family: "微软雅黑";
+	font-size: 20px;
+	float: left;
+	margin-left: 15px;
+}
+.courseItem {
+	width: 200px; height: 250px; margin-right: 25px; float: left;
+}
+.courseBox .courses {
+	width: 645px; overflow: hidden;
+}
+.courses .coursesInner {
+	width: 800px;
+}
+.courseBox .noCourse {
+	color: rgb(153, 153, 153);
+}
+.courseBox .info {
+	color: #343434;
+	margin: 15px;
+	font-size: 15px;
+	line-height: 28px;
+}
+.xgkecheng
+{
+	width: 969px;
+	margin-top: 10px;
+	margin-right: auto;
+	margin-bottom: 0px;
+	margin-left: -8px;
+	height:193px;
+}
+.xgkecheng-list
+{
+	margin-left: 10px;
+	margin-right: 0px;
+	float:left;
+}
+
+.xgkecheng-list .promote-li
+{
+	width: 230px;
+	margin-bottom: 20px;
+	padding-bottom: 10px;
+	margin-left: 0px;
+	background-color: #FFFFFF;
+	border: #DDDDDD 1px solid;
+	padding-bottom: 25px;
+}
+.xg-left
+{
+	float: left; font-size: 12px; color: #666666;
+}
+.xg-right
+{
+	float: right; font-size: 12px; color: #666666; padding-right: 5px;
+}
+
+.count
+{
+	padding-top: 0px; padding-left: 20px; background:url(../images/sl.gif)  0 6px no-repeat; margin-left:3px;
+
+}
+
+.jiaoshi
+{
+	margin-top: 5px;
+	margin-bottom: 0px;
+	padding-left: 5px;
+	line-height: 24px;
+	color: #333;
+	font-size: 12px;
+
+}
+.jiaoshi a
+{
+	color: #333333;
+}
+.jiaoshi a hover
+{
+	color: #333333;
+}
+.courseItem img {
+	width: 200px; height: 123px;
+}
+.courseItem .courseName {
+	height: 25px; line-height: 25px; overflow: hidden; white-space: nowrap;
+}
+.courseItem .courseName a {
+	color: rgb(102, 102, 102); font-size: 15px;
+}
+.teacherRight .thlist dd {
+	margin: 0px 0px 20px; width: 300px; height: 150px; background-color: rgb(240, 240, 240);
+}
+.thImg {
+	background-position: center; width: 150px; height: 150px; margin-right: 10px; float: left;
+}
+.thRight {
+	width: 130px; height: 150px; float: right;
+}
+.thRight .thTop {
+	height: 30px; line-height: 20px; font-size: 15px; margin-top: 10px; margin-bottom: 10px;
+}
+.thRight .signature {
+	width: 120px; color: rgb(153, 153, 153); line-height: 25px; font-size: 16px; margin-top: 20px;
+}
+.thTop .thName {
+	width: auto; color: rgb(51, 51, 51); line-height: 25px; font-family: "微软雅黑", "黑体", "Simplified Arabic Fixed"; font-size: 18px; margin-right: 5px; float: left;
+}
+.thTop .thName a {
+	width: auto; color: rgb(51, 51, 51); line-height: 25px; font-family: "微软雅黑", "黑体", "Simplified Arabic Fixed"; font-size: 18px; margin-right: 5px; float: left;
+}
+.thTop .thTitle {
+	width: auto; font-size: 14px; margin-top: 5px; float: left;
+}
+
+.fl
+{
+	float: left;
+}
+.f2
+{
+	float: right;
+}
+.f18
+{
+	font-size: 18px;
+}
+.vlf26
+{
+	font-size: 16px;color: #f29804;
+}
+.vlf28
+{
+	font-size: 18px;color: #FEFEFE; font-weight:bold;
+}
+.kecheng_video
+{
+	width: 980px;
+	overflow: hidden;
+	margin-top: 15px;
+	zoom: 1;
+	background-attachment: scroll;
+	background-repeat: repeat;
+	background-position-x: 0%;
+	background-position-y: 0%;
+	background-size: auto;
+	background-origin: padding-box;
+	background-clip: border-box;
+	background-color: #333333;
+}
+.bv_left
+{
+	width: 673px;
+}
+.bvl_video
+{
+	width: 640px;
+	height: 480px;
+}
+.bvl_video img
+{
+	width: 640px;
+	height: 480px;
+}
+.bv_right
+{
+	width: 292px; 
+}
+.bvr_title
+{
+	height: 45px;
+	padding-top: 30px;
+	padding-right: 0px;
+	padding-left: 30px;
+}
+.bvr_con
+{
+	padding-top: 10px;
+	padding-right: 0px;
+	padding-bottom: 10px;
+	padding-left: 30px;
+}
+.bvr_con p
+{
+	color: #ffffff;
+	font-size:14px;
+	line-height: 30px;
+}
+
+.bvr_button
+{
+	padding-top: 10px;
+	padding-right: 0px;
+	padding-bottom: 10px;
+	padding-left: 30px;
+	font-family: "微软雅黑", "黑体", "Simplified Arabic Fixed";
+	font-weight:bold;
+}
+.bvr_mr 
+{
+	width: 171px;
+	height: 44px;
+	text-align: center;
+	color: #fff;
+	line-height: 38px;
+	display: block;
+	background-color: #f29804;
+	background-image:url(../images/ksxx_enter.jpg);
+}
+.bvr_button a
+{
+	font-size:23px; text-decoration:none
+}
+.kechengli_video
+{
+	width: 980px;
+	overflow: hidden;
+	margin-top: 15px;
+	zoom: 1;
+	background-attachment: scroll;
+	background-repeat: repeat;
+	background-position-x: 0%;
+	background-position-y: 0%;
+	background-size: auto;
+	background-origin: padding-box;
+	background-clip: border-box;
+	background-color: #333333;
+}
+.bvli_left
+{
+	width: 728px;
+}
+.bvlli_video
+{
+	width: 728px;
+	height: 579px;
+}
+.bvli_right
+{
+	width: 252px; 
+}
+.bvrli_title
+{
+	height: 45px;
+	padding-top: 30px;
+	padding-right: 0px;
+	padding-left: 10px;
+}
+.bvrli_con
+{
+	padding-top: 10px;
+	padding-right: 0px;
+	padding-bottom: 10px;
+	padding-left: 30px;
+}
+.bvrli_con p
+{
+	color: #ffffff;
+	font-size:14px;
+	line-height: 30px;
+}
+
+.bvrli_button
+{
+	padding-top: 10px;
+	padding-right: 0px;
+	padding-bottom: 10px;
+	padding-left: 30px;
+	font-family: "微软雅黑", "黑体", "Simplified Arabic Fixed";
+	font-weight:bold;
+}
+.bvrli_mr 
+{
+	width: 171px;
+	height: 44px;
+	text-align: center;
+	color: #fff;
+	line-height: 38px;
+	display: block;
+	background-color: #f29804;
+	background-image:url(../images/ksxx_enter.jpg);
+}
+.bvrli_button a
+{
+	font-size:23px; text-decoration:none
+}
+
+.sjList
+{
+	padding-top: 10px;
+	padding-right: 10px;
+	padding-bottom: 10px;
+	padding-left: 10px;
+
+}
+.sjList li
+{
+	color: #999;
+	line-height: 35px;
+	overflow: hidden;
+	font-size: 14px;
+	margin-top: 8px;
+	border-bottom-color: #e6e6e6;
+	border-bottom-width: 1px;
+	border-bottom-style: dashed;
+}
+.sjList li div.newtitle
+{
+	width: 460px;
+	height: 35px;
+	line-height: 35px;
+	overflow: hidden;
+}
+.sjList li a
+{
+	color: #999;
+	float: left;
+	font-size: 14px;
+}
+.sjList li span
+{
+	float: left;
+}
+.sjList li div
+{
+	overflow: hidden;
+	float: left;
+}
+.sjList .mTitle
+{
+	height: 35px;
+	color: #333333;
+	overflow: hidden;
+	margin-left: 10px;
+	float: none;
+	display: inline;
+}
+.sjList .time
+{
+	width: 186px;
+	text-align: center;
+	display: block;
+	color: 666666;
+}
+.paper_btn
+{
+	width: 84px;
+	float: right;
+	border:1px #CCCCCC solid;
+	margin-top:5px;
+}
+.paper_btn .exam_btn
+{
+	width: 84px;
+	height: 22px;
+	text-align: center;
+	color: #000000;
+	line-height: 22px;
+	font-size: 14px;
+	font-weight: bold;
+	display: inline-block;
+	background-color:#eeeeee;
+}
+
+.kcmlList
+{
+	padding-top: 10px;
+	padding-right: 10px;
+	padding-bottom: 10px;
+	padding-left: 10px;
+
+}
+.kcmlList li
+{
+	color: #999;
+	line-height: 35px;
+	overflow: hidden;
+	font-size: 14px;
+	margin-top: 8px;
+	border-bottom-color: #e6e6e6;
+	border-bottom-width: 1px;
+	border-bottom-style: dashed;
+}
+.kcmlList li div.newtitle
+{
+	width: 290px;
+	height: 35px;
+	line-height: 35px;
+	overflow: hidden;
+}
+.kcmlList li div.newtitle2
+{
+	width: 270px;
+	height: 35px;
+	line-height: 35px;
+	overflow: hidden;
+	padding-left:20px;
+	font-size: 12px;
+}
+.kcmlList li a
+{
+	color: #999;
+	float: left;
+	font-size: 14px;
+}
+.kcmlList li span
+{
+	float: left;
+}
+.kcmlList li div
+{
+	overflow: hidden;
+	float: left;
+}
+.kcmlList .mTitle
+{
+	height: 35px;
+	color: #333333;
+	overflow: hidden;
+	margin-left: 10px;
+	float: none;
+	display: inline;
+}
+
+
+.kcmlListtop
+{
+	padding-top: 10px;
+	padding-right: 10px;
+	padding-bottom: 10px;
+	padding-left: 0px;
+
+}
+.kcmlListtop li
+{
+	color: #FEFEFE;
+	line-height: 25px;
+	overflow: hidden;
+	font-size: 14px;
+	margin-top: 0px;
+
+}
+.kcmlListtop li div.newtitle
+{
+	width: 232px;
+	height: 35px;
+	line-height: 35px;
+	overflow: hidden;
+}
+.kcmlListtop li div.newtitle2
+{
+	width: 202px;
+	height: 35px;
+	line-height: 35px;
+	overflow: hidden;
+	font-size: 12px;
+
+}
+.newtitlered a {
+	color: #333333;
+	text-decoration: none;
+	padding-left:30px;
+	font-size: 15px;
+	line-height: 40px;
+	display: block;
+}
+.newtitlered a:hover {
+	color: #f19703;
+	width:250px;
+	height:35px;
+	text-decoration: none;
+	background-image: url(../images/kcli.jpg);
+	background-repeat: no-repeat;
+	background-position: -16px 0px;
+	display: block;
+}
+
+.kcmlListtop li a
+{
+	color: #FEFEFE;
+	float: left;
+	font-size: 14px;
+}
+.kcmlListtop li span
+{
+	float: left;
+}
+.kcmlListtop li div
+{
+	overflow: hidden;
+	float: left;
+}
+.mTitle
+{
+	height: 35px;
+	color: #FEFEFE;
+	overflow: hidden;
+	margin-left: 10px;
+	float: none;
+	display: inline;
+	font-size: 14px;
+}
+/*知识库*/
+#knlArea{
+	height:auto;
+	display: table;
+	width: 100%;
+}
+#knlframe{
+	overflow-y:auto;
+	overflow-x:hidden;
+}
+#knlArea #knlleft {
+	float: left;
+	width: 25%;
+	margin-top: 5px;
+	border: 1px solid #CCCCCC;
+}
+#knlArea #knlleft #leftInnert {
+	margin: 10px;
+}
+
+#knlArea #knlright {
+	float: right;
+	width: 70%;
+	margin-top: 5px;
+}
+#knlArea #knlleft .sortTitle {
+	font-family: "微软雅黑", "黑体", "Simplified Arabic Fixed";
+	font-size: 16px;
+	line-height: 40px;
+	color: #FFFFFF;
+	background-color: #fe5842;
+	height: 40px;
+	text-indent: 20px;
+}

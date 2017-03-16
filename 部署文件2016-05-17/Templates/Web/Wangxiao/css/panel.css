@@ -1,0 +1,383 @@
+﻿@charset "utf-8";
+body {
+	text-align: center;
+	margin: 0px;
+	padding: 0px;
+	background-color: #f7f7f7;
+}
+
+body,p,div,td{
+	font-size: 14px;
+	line-height: 18px;
+}
+#Context {
+	width: 980px;
+	margin-top: 13px;
+	margin-right: auto;
+	margin-bottom: 50px;
+	margin-left: auto;
+	text-align: left;
+	display: table;
+	height:700px;
+}
+#bodyTop {
+	background-position: center 0px; width: 100%; height: 260px; background-image: url("../Images/student-banner.jpg"); background-repeat: no-repeat;
+}
+#bodyTop_teachercenter {
+	background-position: center 0px; height: 260px; background-image: url("../Images/teachercenter-banner.jpg"); background-repeat: no-repeat;
+}
+#bodyTop #bodyTopContext {
+	height: 250px;
+	width: 980px;
+	margin-right: auto;
+	margin-left: auto;
+	display: table;
+}
+.stPhoto {
+	height: 215px;
+	width: 186px;
+	padding-top: 15px;
+	background-color: #FFFFFF;
+	margin-top: 20px;
+	float: left;
+}
+.stPhoto .mark {
+
+	height: 40px;
+	position: relative;
+	width: 186px;
+	top: -40px;
+	z-index: 1;
+	background-color: #FFFFFF;
+	opacity:0.6;
+	filter:alpha(opacity=60);
+}
+.stPhoto .info {
+	font-family: "微软雅黑", "黑体", "Simplified Arabic Fixed";
+	color: #000000;
+	font-size: 16px;
+	line-height: 40px;
+	font-weight: bold;
+	height: 40px;
+	width: 186px;
+	position: relative;
+	top: -80px;
+	z-index: 2;
+}
+
+.bar {
+	height: 40px;
+	margin-top: 0px;
+	margin-bottom: 15px;
+}
+
+.bar .menuBar {
+	float: right;
+	width: 996px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	margin-left: 0px;
+	
+	height: 40px;
+	border: 1px solid #CCCCCC;
+	background-color: #FFFFFF;
+}
+.bar .menuBar, .bar .menuBar a
+{
+	font-size: 15px;
+	line-height: 40px;
+	color: #333333;
+}
+.menuBar a:hover{
+	text-decoration: underline;
+}
+.bar .menuTitle {
+	background-color: #ff8e30;
+	text-align: center;
+	font-family: "微软雅黑", "黑体", "Simplified Arabic Fixed";
+	line-height: 40px;
+	font-weight: bold;
+	color: #FFFFFF;
+
+	float: left;
+	width: 186px;
+	font-size: 16px;
+	height: 40px;
+	font-family: "微软雅黑", "黑体", "Simplified Arabic Fixed";
+	line-height: 40px;
+	font-weight: bold;
+	color: #FFFFFF;
+}
+.bar .menuBar .menuNav #menuPath {
+	text-decoration: none;
+}
+
+.bar .menuBar .menuNav {
+	float: left;
+	width: 600px;
+	text-indent: 10px;
+	line-height: 40px;
+	height: 40px;
+}
+
+.bar .menuBar .loginInfo {
+	float: right;
+	width: 60px;
+	text-align: center;
+	line-height: 40px;
+}
+#Context #menuBoxleft {
+	float: left;
+	width: 186px;
+	display: table;
+}
+#Context #menuBox {
+	float: left;
+	width: 186px;
+	display: table;
+	border-bottom: 1px #CCCCCC solid;
+}
+#Context #menuBox .mmtop {
+	height: 40px;
+	line-height: 40px;
+	cursor:pointer;
+	background-color: #FFFFFF;
+	font-size: 15px;
+	font-weight: bold;
+	border-top-width: 1px;
+	border-right-width: 1px;
+	border-bottom-width: 1px;
+	border-left-width: 1px;
+	border-top-style: solid;
+	border-right-style: solid;
+	border-bottom-style: none;
+	border-left-style: solid;
+	border-top-color: #cccccc;
+	border-right-color: #cccccc;
+	border-bottom-color: #cccccc;
+	border-left-color: #cccccc;
+}
+
+.mmtop .topTxt
+{
+	float: center;
+	width: auto;
+	height: 42px;
+	cursor:pointer;
+	font-size: 16px;
+	text-align: center;
+	font-family: "微软雅黑";
+	line-height: 40px;
+	font-weight: bold;
+
+}
+
+#Context #menuBox .currTop
+{
+	color: #ffffff; background-color: #ff8e30;
+} 
+
+#Context #menuBox .twoBox {
+	margin-right: 0px;
+	margin-left: 0px;
+	background-color: #FFFFFF;
+	border-right-width: 1px;
+	border-left-width: 1px;
+	border-top-style: solid;
+	border-right-style: solid;
+	border-bottom-style: none;
+	border-left-style: solid;
+	border-right-color: #cccccc;
+	border-left-color: #cccccc;
+	border-top-width: 1px;
+	border-bottom-width: 1px;
+	border-top-color: #cccccc;
+	border-bottom-color: #cccccc;
+}
+#Context #menuBox .twoBox .mmtwo
+{
+	float: center;
+	width: auto;
+	height: 42px;
+	cursor:pointer;
+	font-size: 14px;
+	text-align: center;
+	font-family: "微软雅黑";
+	line-height: 40px;
+	color: #333333;
+}
+
+#Context #menuBox .twoBox .currTwo
+{
+	background-color: #FFFFCC;
+	font-weight: bold;
+}
+#Context #menuBox .twoBox .mmtwo a {
+	color: #333333;
+	text-decoration: none;
+	font-size: 15px;
+	line-height: 40px;
+	display: block;
+}
+#Context #menuBox .twoBox .mmtwo a:hover {
+	color: #f19703;
+	text-decoration: none;
+	background-image: url(../Images/xs.jpg);
+	background-repeat: no-repeat;
+	background-position: 0px 5px;
+
+}
+
+
+#Context #menuBoxs {
+	float: left;
+	width: 186px;
+	display: table;
+	border-bottom: 1px #CCCCCC solid;
+}
+#Context #menuBoxs .mmtop {
+	height: 40px;
+	line-height: 40px;
+	cursor:pointer;
+	background-color: #FFFFFF;
+	font-size: 15px;
+	font-weight: bold;
+	border-top-width: 1px;
+	border-right-width: 1px;
+	border-bottom-width: 1px;
+	border-left-width: 1px;
+	border-top-style: solid;
+	border-right-style: solid;
+	border-bottom-style: none;
+	border-left-style: solid;
+	border-top-color: #cccccc;
+	border-right-color: #cccccc;
+	border-bottom-color: #cccccc;
+	border-left-color: #cccccc;
+}
+
+.mmtops .topTxt
+{
+	float: center;
+	width: auto;
+	height: 42px;
+	cursor:pointer;
+	font-size: 16px;
+	text-align: center;
+	font-family: "微软雅黑";
+	line-height: 40px;
+	font-weight: bold;
+
+}
+
+#Context #menuBoxs .currTop
+{
+	color: #ffffff; background-color: #0d7ccb;
+} 
+
+#Context #menuBoxs .twoBox {
+	margin-right: 0px;
+	margin-left: 0px;
+	background-color: #FFFFFF;
+	border-right-width: 1px;
+	border-left-width: 1px;
+	border-top-style: solid;
+	border-right-style: solid;
+	border-bottom-style: none;
+	border-left-style: solid;
+	border-right-color: #cccccc;
+	border-left-color: #cccccc;
+	border-top-width: 1px;
+	border-bottom-width: 1px;
+	border-top-color: #cccccc;
+	border-bottom-color: #cccccc;
+}
+#Context #menuBoxs .twoBox .mmtwo
+{
+	float: center;
+	width: auto;
+	height: 42px;
+	cursor:pointer;
+	font-size: 14px;
+	text-align: center;
+	font-family: "微软雅黑";
+	line-height: 40px;
+	color: #333333;
+}
+
+#Context #menuBoxs .twoBox .currTwo
+{
+	background-color: #FFFFCC;
+	font-weight: bold;
+}
+#Context #menuBoxs .twoBox .mmtwo a {
+	color: #333333;
+	text-decoration: none;
+	font-size: 15px;
+	line-height: 40px;
+	display: block;
+}
+#Context #menuBoxs .twoBox .mmtwo a:hover {
+	color: #0d7ccb;
+	text-decoration: none;
+	background-image: url(../Images/tc.jpg);
+	background-repeat: no-repeat;
+	background-position: 0px 5px;
+
+}
+
+
+#Context #manageBoxright {
+	float: right;
+	width: 996px;
+	margin-right: 0px;
+}
+
+#Context #manageBox {
+	float: right;
+	width: 996px;
+	height: 620px;
+	border: 1px solid #CCCCCC;
+	margin-right: 0px;
+	background-color: #FFFFFF;
+}
+#adminPage {
+	margin-top: 10px;
+	margin-right: 10px;
+	margin-bottom: 0px;
+	margin-left: 10px;
+}
+
+#studentTop {
+	width: 184px;
+	height: auto;
+	margin-top: 0px;
+	padding-bottom: 0px;
+    float: left;
+	background-color: #ffffff;
+	border-top: 1px solid #CCCCCC;
+	border-left: 1px solid #CCCCCC;
+	border-right: 1px solid #CCCCCC;
+}
+#studentTop .photo {
+	width: 110px;
+	height: 140px;
+	margin-top: 19px;
+	margin-left: 38px;
+	float: left;
+}
+#studentTop .photo img {
+	width: 110px;
+	height: 140px;
+
+}
+#studentTop .details {
+	width: 184px;
+	height: auto;
+	margin-top: 0px;
+	float: left;
+}
+.infoFirst .name {
+	width: 184px; height: 35px; color: #333333; line-height: 35px; font-family: "微软雅黑"; font-size: 16px; font-weight: bold; text-align:center;
+}

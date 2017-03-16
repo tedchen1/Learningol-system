@@ -1,0 +1,126 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<title>{$course.cou_Name}</title>
+<meta name="Keywords" content="{$org.Org_Keywords}" />
+<meta name="Description" content="{$org.Org_Description}" />
+<script type="text/javascript" src="CoreScripts/jquery.js"></script>
+<script type="text/javascript" src="CoreScripts/Extend.js"></script>
+<script type="text/javascript" src="CoreScripts/Base64.js"></script>
+<script type="text/javascript" src="Scripts/Public.js"></script>
+<script type="text/javascript" src="CoreScripts/MessageBox.js"></script>
+<link href="Styles/public.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" type="text/css" href="Styles/MessageBox.css"/>
+<link href="Styles/Outline.css" rel="stylesheet" type="text/css" />
+<link href="Styles/Jme.css" rel="stylesheet" type="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!--播放器的引用-->
+<script type="text/javascript" src="/Utility/Ckplayer/js/offlights.js"></script>
+<script type="text/javascript" src="/Utility/Ckplayer/ckplayer/ckplayer.js" charset="utf-8"></script>
+</head>
+<body>
+<vt:include id="inc" file="inc/Header.html" />
+<vt:include id="inc" file="inc/Depart.html" />
+<div id="Context">
+  <div id="LeftBox">
+    <div class="boxBar">
+      <div class="title"> 课程目录<a name="study" id="study">&nbsp;</a></div>
+    </div>
+    <div class="itemList"> {$olTree} </div>
+  </div>
+  <div id="RightBox">
+    <div class="courseBox"> <a href="course.ashx?id={$course.cou_id}">课程：{$course.cou_Name}</a></div>
+    <div class="oltitle"> 《{$outline.ol_name}》 </div>
+    <vt:if var="isStudy" value="true" compare="=">
+      <vt:if var="video.As_FileName" value="" compare="!="> 
+        <!--如果存在视频文件，则播放-->
+        <div id="videobox" style="width:680px; height:400px; margin-left:10px;position:relative;z-index: 100;"></div>
+        <!--播放器的各种信息-->
+        <div id="playerInfo"> 
+        视频时长： <span id="totalTime">0</span> 
+        播放进度： <span id="playTime">0</span> 
+        学习时间： <span id="studyTime">0</span>秒
+         
+          <vt:if var="studyLog" value="" compare="!="> <span class="historyInfo">上次学习到<span id="historyTime">{$historyPlay}</span>，点击此处接上次进度学习</span> </vt:if>
+        </div>
+        <script type="text/javascript">
+		//视频地址
+        var videoPath="{$video.As_FileName}";
+		//课程ID,章节ID
+		var couid='{$outline.cou_id}';
+		var olid='{$outline.ol_id}';
+        </script> 
+        <!--视频播放事件-->
+        <div id="events" style="display:none">
+          <vt:foreach from="$events" item="event" index="i">
+            <div class="eventItem" eventid="{$event.Oe_ID}" type="{$event.Oe_EventType}" winWidth="{$event.Oe_Width}" winHeight="{$event.Oe_Height}" point="{$event.Oe_TriggerPoint}">
+              <div class="eventTitle" title="此为视频播放事件的窗口标题"> {$event.Oe_Title} </div>
+              <!--如果是“提醒”-->
+              <vt:if var="event.Oe_EventType" value="1" compare="=">
+                <div class="eventContext"> {$event.Oe_Context} </div>
+              </vt:if>
+              <!--如果是“知识展示”-->
+              <vt:if var="event.Oe_EventType" value="2" compare="=">
+                <div class="eventContext"> {$event.Oe_Context} </div>
+              </vt:if>
+              <!--如果是“课堂提问”-->
+              <vt:if var="event.Oe_EventType" value="3" compare="=">
+                <div class="eventContext"> {$event.Oe_Context} </div>
+                <vt:function var="ques" method="getEventQues" args="$#.event.Oe_ID"/>
+                <div class="quesBox">
+                  <vt:foreach from="$ques" item="answer" index="i">
+                    <vt:if var="answer.item" value="" compare="!=">
+                     <vt:function var="tax" method="GetOrder" args="$i"/>
+                      <div class="ansItem" iscorrect="{$:answer.iscorrect}">{$:tax}、{$:answer.item}</div>
+                    </vt:if>
+                  </vt:foreach>
+                </div>
+                <div class="quesAns"></div>
+              </vt:if>
+              <!--如果是“实时反馈”-->
+              <vt:if var="event.Oe_EventType" value="4" compare="=">
+                <div class="eventContext"> {$event.Oe_Context} </div>
+                <vt:function var="ques" method="getEventFeedback" args="$#.event.Oe_ID"/>
+                <div class="quesBox">
+                  <vt:foreach from="$ques" item="answer" index="i">
+                    <vt:if var="answer.item" value="" compare="!=">
+                     <vt:function var="tax" method="GetOrder" args="$i"/>
+                      <div class="ansItem" point="{$:answer.point}">{$:tax}、{$:answer.item}（跳转到:{$:answer.point}秒）</div>
+                    </vt:if>
+                  </vt:foreach>
+                </div>
+                <div class="quesAns"></div>
+              </vt:if>
+            </div>
+          </vt:foreach>
+        </div>
+      </vt:if>
+      <vt:if var="outline.ol_intro" value="" compare="!=">
+        <vt:if var="video.As_FileName" value="" compare="!=">
+          <div class="oltitle"> 课程内容 </div>
+        </vt:if>
+        <vt:if var="outline.ol_intro" value="" compare="!=">
+          <div id="details"> {$outline.ol_intro} </div>
+          <vt:else/>
+          <div class="noVideo">没有上传课程内容！</div>
+        </vt:if>
+        <vt:else/>
+        <vt:if var="video.As_FileName" value="" compare="=">
+          <div class="noVideo">没有上传课程内容！</div>
+        </vt:if>
+      </vt:if>
+      <vt:if var="acces.Length" value="0" compare=">">
+        <div class="oltitle"> 附件下载 </div>
+        <div id="access">
+          <vt:foreach from="$#.acces" item="acc" index="j"> <a class="accItem" target="_blank" href="{$acc.As_FileName}">{$:j}、{$acc.As_Name} </a> </vt:foreach>
+        </div>
+      </vt:if>
+      <vt:else/>
+      <div class="noVideo">您没有选修此课程！</div>
+    </vt:if>
+  </div>
+</div>
+<vt:include id="inc" file="inc/footer.html" />
+<script type="text/javascript" src="Scripts/Outline.js"></script>
+</body>
+</html>

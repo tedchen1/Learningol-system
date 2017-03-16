@@ -1,0 +1,15 @@
+#noTitle {
+	line-height: 40px;
+	text-align: center;
+	font-family: "黑体";
+	font-size: 20px;
+}
+#artContext {
+	margin-top: 10px;
+}
+.artAttrBar {
+	font-size: 14px;
+	line-height: 20px;
+	color: #333333;
+	text-align: center;
+}

@@ -1,0 +1,105 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
+<!-- saved from url=(0025)http://exam.weisha100.cn/ -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><HTML 
+xmlns="http://www.w3.org/1999/xhtml"><HEAD><TITLE>教师{$org.org_platformname}</TITLE>
+<META content="text/html; charset=utf-8" http-equiv="Content-Type">
+<meta name="Keywords"  content="{$org.Org_Keywords}" />
+<meta name="Description" content="{$org.Org_Description}" />
+<LINK rel="stylesheet" type="text/css" href="../css/public.css">
+<LINK rel="stylesheet" type="text/css" href="../css/default.css">
+<LINK rel="stylesheet" type="text/css" href="css/list.css">
+<link href="../styles/public.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="../CoreScripts/jquery.js"></script>
+<script type="text/javascript" src="../CoreScripts/Extend.js"></script>
+<script type="text/javascript" src="../Scripts/public.js"></script>
+<META name="GENERATOR" content="MSHTML 9.00.8112.16723"></HEAD>
+<BODY>
+<vt:include id="inc" file="../inc/Header.html" />
+<DIV id="top_xian_bg"></DIV>
+<!--第一行 -->
+<DIV id="bodyTop">&nbsp;</DIV>
+
+<DIV id="Context">
+<DIV id="teacherTitle">教师列表<span>></span></DIV>
+<DIV id="list">
+ <vt:foreach id="teachers" from="$#.teachers" item="data" index="i" size="4" remark="教师信息列表">
+<DIV class="item"><!--教师信息 -->
+<DIV class="info">
+<DIV class="photo"><img src="{$:#.data.th_photo}" width="124" height="157" /></DIV>
+<DIV class="infoRight">
+<DIV class="infoFirst">
+<DIV class="name"> {$:#.data.th_name}</DIV>
+<DIV class="title">{$:#.data.Ths_Name}</DIV></DIV>
+<DIV class="intro">{$:#.data.th_intro}</DIV>
+<DIV class="btn"><A 
+href="/teacher/detail.ashx?id={$:#.data.th_id}">了解更多></A></DIV></DIV></DIV><!--教师所肩负的课程 -->
+<DIV class="courseBox">
+<DIV class="courseTitle">所讲课程</DIV>
+ <vt:function var="courses" method="getCourse" args="$#.data.Th_ID"/>
+<div class="sykecheng">
+ <vt:if var="courses.Count" value="0" compare="=">
+            <div class="noCourse">暂时没有课程</div>
+          </vt:if>
+          
+            <vt:foreach from="$#.courses" item="c" index="i">
+<div class="sykecheng-list ">
+ <div class="promote-li">
+          <a href="/course.ashx?id={$:#.c.cou_id}" title="{$:#.c.cou_name}">
+              <img width="200" height="116" src="{$:#.c.cou_logosmall}" />
+          </a>
+  <div class="ellipsis sykecheng-title">
+               <a href="/course.ashx?id={$:#.c.cou_id}" title="{$:#.c.cou_name}">{$:#.c.cou_name} </a>
+  </div>
+ </div>
+ </div>
+ 
+  </vt:foreach>
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+</div>
+<DIV class="courses"></DIV>
+</DIV></DIV>
+</vt:foreach>
+
+
+
+
+</DIV><!--分页导航 -->
+ <!--分页导航 -->
+  <vt:if var="pageAmount.Length" value="1" compare=">">
+    <div id="pagerBar">
+      <div class="pagerFirst pagerBtn"><a href="/teacher/list.ashx">首页</a></div>
+      <!--上一页 -->
+      <vt:expression var="pagerPrev" expression="{0}-1" args="$pageIndex" />
+      <vt:if var="#.pagerPrev" value="1" compare="<">
+        <div class="pagerPrev pagerBtn"><a href="#">上一页</a></div>
+        <vt:else />
+        <div class="pagerPrev pagerBtn"><a href="/teacher/list.ashx?index={$:#.pagerPrev}">上一页</a></div>
+      </vt:if>
+      <!--分页数字 -->
+      <vt:foreach id="pageAmount" from="$#.pageAmount" item="data" index="i" remark="分页数字">
+        <vt:if var="#.data" value="$pageIndex" compare="=">
+          <div class="pagerIndex pagerBtn pagerCurr"><a href="/teacher/list.ashx?index={$:i}">{$:i}</a></div>
+          <vt:else />
+          <div class="pagerIndex pagerBtn"><a href="/teacher/list.ashx?index={$:i}">{$:i}</a></div>
+        </vt:if>
+      </vt:foreach>
+      <!--下一页 -->
+      <vt:expression var="pagerNext" expression="{0}+1" args="$pageIndex" />
+      <vt:if var="#.pagerNext" value="$pageAmount.Length" compare=">">
+        <div class="pagerNext pagerBtn"><a href="#">下一页</a></div>
+        <vt:else />
+        <div class="pagerNext pagerBtn"><a href="/teacher/list.ashx?index={$:#.pagerNext}">下一页</a></div>
+      </vt:if>
+      <div class="pagerLast pagerBtn"><a href="/teacher/list.ashx?index={$:pageAmount.length}">末页</a></div>
+    </div>
+  </vt:if></DIV>
+
+<vt:include id="inc" file="../inc/footer.html" />
+
+</BODY></HTML>

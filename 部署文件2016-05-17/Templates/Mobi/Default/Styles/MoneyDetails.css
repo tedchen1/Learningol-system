@@ -1,0 +1,89 @@
+@charset "utf-8";
+.moneyInfo {
+	background-color: #FFE3D7;
+	height: 70px;
+	padding-top: 10px;
+}
+
+
+.moneyTitle {
+	font-family: "黑体", "微软雅黑";
+	font-size: 14px;
+	line-height: 20px;
+	color: #666666;
+	height: 20px;
+	margin-left: 10px;
+	width: auto;
+}
+.moneyNumber {
+	font-family: "黑体", "微软雅黑";
+	font-size: 35px;
+	line-height: 40px;
+	color: #FF3300;
+	text-align: center;
+	font-weight: bold;
+	height: 40px;
+}
+.dateSection {
+	line-height: 25px;
+	height: 25px;
+	text-align: center;
+}
+.dateSection input {
+	width: 45%;
+}
+.ico {
+	font-size: 35px;
+}
+.ico1 {
+	color: #FF6633;
+}
+.ico2 {
+	color: #0091F0;
+}
+
+.row .logo {
+	line-height: 60px;
+	text-align: center;
+	height: 60px;
+	width: 60px;
+	float: left;
+}
+.row {
+	height: 60px;
+	width: 100%;
+	border-bottom-width: 1px;
+	border-top-style: none;
+	border-right-style: none;
+	border-bottom-style: dashed;
+	border-left-style: none;
+	border-bottom-color: #E0E0E0;
+}
+.row .rowtxt .text {
+	line-height: 20px;
+	height: 20px;
+	margin-top: 10px;
+}
+.context .detailsBox {
+	overflow-y: auto;
+	overflow-x: hidden;
+}
+
+.row .rowtxt .intro {
+	line-height: 15px;
+	height: 30px;
+	overflow: hidden;
+	text-overflow:ellipsis;
+	color: #666666;
+	font-size: 14px;
+	margin-top: 5px;
+	padding-right: 20px;
+}
+.time {
+	font-size: 14px;
+	float: right;
+	margin-right: 10px;
+}
+.alert {
+	color: #FF0000;
+}

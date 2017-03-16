@@ -1,0 +1,42 @@
+﻿<!doctype html>
+<head>
+<title>我的笔记</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<meta name="format-detection" content="telephone=yes" />
+<meta name="format-detection" content="email=no" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="Keywords"  content="{$org.Org_Keywords}" />
+<meta name="Description" content="{$org.Org_Description}" />
+<script type="text/javascript" src="CoreScripts/jquery.js"></script>
+<script type="text/javascript" src="CoreScripts/Extend.js"></script>
+<script type="text/javascript" src="Scripts/AutoLoyout.js"></script>
+<script type="text/javascript" src="Scripts/Public.js"></script>
+<script type="text/javascript" src="Scripts/PageBox.js"></script>
+<script type="text/javascript" src="Scripts/Notes.js"></script>
+<link href="Styles/Public.css?tick={$tick}" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" href="Styles/iconfont.css"/>
+<link href="Styles/Notes.css" rel="stylesheet" type="text/css" />
+</head>
+<body backurl="default.ashx">
+<vt:include id="inc" file="inc/Header.html" />
+<div loyout="row"  class="context">
+  <div class="contextbox">
+    <vt:foreach id="notes" from="$#.notes" item="note" index="i" remark="笔记">
+      <div class="item">
+        <div class="titleBox" btn="view" qid="{$:#.note.qus_id}"> {$:i}、 {$:#.note.qus_title} </div>
+        <div class="note" btn="view" qid="{$:#.note.qus_id}">笔记：{$:#.note.Stn_Context} </div>
+        <div class="foot">
+          <div class="time">{$:#.note.Stn_crtTime format="yyyy-M-dd HH:ss"} </div>
+          <div class="btn btnDelete"><a href="notes.ashx?action=delete&id={$:#.note.Stn_id}" class="delete"><span>&#xe63d;</span> 删除</a></div>
+          <div class="btn btnEdit" stnid="{$:#.note.Stn_id}" qid="{$:#.note.qus_id}"><span>&#xe60d;</span> 编辑</div>
+        </div>
+      </div>
+    </vt:foreach>
+  </div>
+</div>
+<vt:include id="inc" file="inc/footer.html" />
+</body>
+</html>

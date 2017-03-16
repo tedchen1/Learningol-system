@@ -1,0 +1,97 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
+<!-- saved from url=(0025)http://exam.weisha100.cn/ -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<HTML xmlns="http://www.w3.org/1999/xhtml">
+<HEAD>
+<TITLE>机构管理-{$org.org_platformname}</TITLE>
+<META content="text/html; charset=utf-8" http-equiv="Content-Type">
+<meta name="Keywords"  content="{$org.Org_Keywords}" />
+<meta name="Description" content="{$org.Org_Description}" />
+<script type="text/javascript" src="../CoreScripts/jquery.js"></script>
+<script type="text/javascript" src="Scripts/panel.js"></script>
+<script type="text/javascript" src="../CoreScripts/PageBox.js"></script>
+<script type="text/javascript" src="../CoreScripts/easydrag.js"></script>
+<script type="text/javascript" src="../CoreScripts/Extend.js"></script>
+<script type="text/javascript" src="../CoreScripts/PageExt.js"></script>
+<script type="text/javascript" src="../Scripts/Public.js"></script>
+<link href="../Styles/public.css" rel="stylesheet" type="text/css" />
+<link href="../Styles/PageBox.css" rel="stylesheet" type="text/css" />
+<LINK rel="stylesheet" type="text/css" href="../css/public.css">
+<LINK rel="stylesheet" type="text/css" href="../css/pagebox.css">
+<LINK rel="stylesheet" type="text/css" href="Styles/panel.css">
+<link href="../styles/public.css" rel="stylesheet" type="text/css" />
+</HEAD>
+<BODY>
+
+<vt:include id="inc" file="../inc/header.html" />
+<DIV id="top_xian_bg"></DIV>
+<!--第一行 -->
+<DIV id="bodyTop">&nbsp;</DIV>
+
+<div id="Context">
+  <!--内容区的顶部 -->
+  
+  <!--左侧菜单 -->
+  
+<div id="menuBoxleft"> 
+
+<DIV id="studentTop">
+<DIV class="photo">
+<vt:if var="CurrUser.Acc_Photo" value="" compare="="> <img src="../images/nophoto.jpg" style="width:110px; height:140px"/>
+        <vt:else />
+        <img src="{$adminpath}{$CurrUser.Acc_Photo}"  style="width:110px; height:140px"/> </vt:if>
+</DIV>
+<DIV class="details">
+<DIV class="infoFirst">
+<DIV class="name"> <vt:if var="CurrUser.acc_name" value="" compare="=">（暂无姓名） <vt:else />{$CurrUser.acc_name} </vt:if></DIV>
+</DIV>
+</DIV></DIV>
+  
+  <div id="menuBox">
+    <vt:function var="mmtop" method="getMenuTop" args="$#.org.org_id"/>
+    <vt:foreach from="$mmtop" item="m" index="i">
+      <div class="mmtop" title="{$:m.MM_Intro}" tax="{$:i}">
+         <!--图标 -->
+        <vt:if var="m.mm_icox" value="0" compare=">">
+          <div class="ico" style="background-position: -{$:m.mm_icox}px -{$:m.mm_icoy}px"></div>
+          <vt:else />
+          <div class="ico"></div>
+        </vt:if><div class="topTxt">{$:m.mm_name}</div>
+        <div class="rightIco">&nbsp;</div>
+      </div>
+      <vt:function var="mmtwo" method="getMenuTwo" args="$#.m.mm_id"/>
+      <div class="twoBox" style="display:none">
+        <vt:foreach from="$#.mmtwo" item="m2" index="j">
+          <div class="mmtwo" mmtype="{$:m2.mm_type}" title="{$:m2.MM_Intro}" tax="{$:i}.{$:j}"> 
+            <!--图标 -->
+        <vt:if var="m2.mm_icox" value="0" compare=">">
+          <div class="ico" style="background-position: -{$:m2.mm_icox}px -{$:m2.mm_icoy}px"></div>
+          <vt:else />
+          <div class="ico"></div>
+        </vt:if>
+          <a href="{$:m2.MM_Link}" mmid="{$:m2.MM_ID}" isBold="{$:m2.mm_isbold}"> &nbsp;{$:m2.mm_name}</a> </div>
+        </vt:foreach>
+      </div>
+    </vt:foreach>
+  </div>
+   </div>
+  <!--右侧管理区 -->
+    <div id="manageBoxright">
+  <div class="bar">
+    <div class="menuBar">
+      <div class="menuNav"> 当前操作：<a id="menuPath" href="/admin/Startpage.ashx">启始页</a></div>
+      <div class="versionBox"><a href="/license.aspx" target="_blank">{$version}</a></div>
+      <div class="loginInfo">  <a href="/admin/logout.ashx"><span class="iconfont">&#xe637;</span> 退出</a></div>
+    </div>
+  </div>    
+ <div id="manageBox">
+    <iframe src="Startpage.ashx" name="adminPage" id="adminPage" class="frame"	marginwidth="0"  marginheight="0"
+   align="top" scrolling="auto" width="760" frameborder="0" allowtransparency="true"></iframe>
+  </div>
+   </div> 
+  
+</div>
+
+<vt:include id="inc" file="../inc/footer.html" />
+
+</BODY></HTML>

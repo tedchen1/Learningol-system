@@ -1,0 +1,60 @@
+﻿<!doctype html>
+<head>
+<title>添加笔记</title>
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<meta name="format-detection" content="telephone=yes" />
+<meta name="format-detection" content="email=no" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="Keywords"  content="{$org.Org_Keywords}" />
+<meta name="Description" content="{$org.Org_Description}" />
+<link href="Styles/Public.css?tick={$tick}" rel="stylesheet" type="text/css" />
+<link href="Styles/iconfont.css" rel="stylesheet" type="text/css" />
+<link href="Styles/Message.css" rel="stylesheet" type="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script type="text/javascript" src="CoreScripts/jquery.js"></script>
+<script type="text/javascript" src="CoreScripts/Extend.js"></script>
+<script type="text/javascript" src="Scripts/AutoLoyout.js"></script>
+<script type="text/javascript" src="CoreScripts/Verify.js"></script>
+</head>
+<body>
+<vt:if var="isSuccess" value="true" compare="=">
+  <script type="text/javascript">
+parent.PageBox.Close();
+</script>
+  <vt:else/>
+  <form  loyout="row" id="addnote" name="addnote" method="post">
+    <div loyout="row" height="10"></div>
+    <!--消息录入 -->
+    <div loyout="row" height="110">
+      <div loyout="column" width="10"></div>
+      <div loyout="column">
+        <textarea name="tbContext" class="context"  nullable="false" group="note"></textarea>
+      </div>
+      <div loyout="column" width="10"></div>
+    </div>
+    <!-- QQ -->
+    <div loyout="row" height="40">
+      <div loyout="column" width="60" class="tit">QQ：</div>
+      <div loyout="column"  class="txt" >
+        <input name="tbQQ"  type="text" class="textbox"  datatype="number" group="note" />
+      </div>
+       <div loyout="column" width="10"></div>
+    </div>
+    <!--电话 -->
+    <div loyout="row" height="40">
+      <div loyout="column" width="60" class="tit">电话：</div>
+      <div loyout="column"  class="txt" >
+        <input name="tbPhone" type="text" datatype="mobile" class="textbox"  group="note"  />
+      </div>
+       <div loyout="column" width="10"></div>
+    </div>
+    <div loyout="row"></div>
+    <div loyout="row" height="40">
+      <input type="submit" name="btnSubmit" id="btnSubmit" value="确&nbsp;&nbsp;定"  verify="true"  group="note" class="btnLogin"/>
+    </div>
+  </form>
+</vt:if>
+</body>
+</html>
